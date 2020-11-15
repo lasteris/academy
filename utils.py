@@ -1,7 +1,7 @@
 import json
+from types import SimpleNamespace
 
 def load_data():
-    text = ''
     with open('characters.json', 'r') as f:
-        text = json.load(f)
-    return text
+        characters_dict = json.load(f)
+    return characters_dict

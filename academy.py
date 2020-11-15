@@ -1,79 +1,106 @@
-import discord
 import datetime
 import utils
-
-from constants import TOKEN, NEW_PLAYER
+import discord
+from discord.ext import commands
+from constants import PREDATORS, STARS, TIME, NEW_PLAYER, TOKEN, VIPERS
 
 CHARACTERS_DATA = utils.load_data()
 
-client = discord.Client()
+bot = commands.Bot(command_prefix='-')
 
-@client.event
+
+@bot.event
 async def on_ready():
-    print(f'{client.user.name} has connected to Discord!')
+    print('Logged in as')
+    print(bot.user.name)
+    print(bot.user.id)
 
-@client.event
-async def on_message(message):
-    if message.author == client.user:
-        return
+@bot.command()
+async def time(ctx):
+    await ctx.send(TIME.format(datetime.datetime.now(datetime.timezone.utc).strftime("%H:%M:%S")))
 
-    message_lowered = message.content.lower()
+@bot.command()
+async def passives(ctx, arg):
+    for c in CHARACTERS_DATA:
+        if c["acronym"] == arg:
+            passives_text = ''
+            for p in c["passives"]:
+                passives_text +=  "**" + p['name'] + "**\n" + p["description"] + "\n"
+                for buff in p['buffs']:
+                    passives_text += "*" + buff + "*\n"
+                passives_text += '\n'
+            await ctx.send(passives_text)
+            break
 
-    if message_lowered.startswith('-'):
-        command_line = message_lowered[1:]
-        if command_line == "time":
-            now_time = datetime.datetime.now(datetime.timezone.utc).strftime("%H:%M:%S")
-            await message.channel.send('{0}\n***This is Academy time (GMT)***'.format(now_time))
-        elif command_line == "predators":
-            await message.channel.send('*2EH9EW*')
-        elif command_line == "stars":
-            await message.channel.send('*P87X95*')
-        elif command_line == "vipers":
-            await message.channel.send('*GKETR1*')
-        elif command_line == "newplayer":
-            inactive = client.get_channel(731571816631369868)
-            fast_improve = client.get_channel(753734930583781437)
-            choose_league = client.get_channel(717026493557112963)
-            await message.channel.send(NEW_PLAYER.format(choose_league, fast_improve, inactive))
-        elif command_line == 'batman-son':
-            await message.channel.send("Who is daddy ?")
-        elif command_line.startswith('passives'):
-            splitted_command_line = command_line.split(maxsplit=1)
-            character_name  = splitted_command_line[1]
-            for c in CHARACTERS_DATA:
-                if c["acronym"] == character_name:
-                    passives_text = ''
-                    for p in c["passives"]:
-                        passives_text +=  "**" + p['name'] + "**\n" + p["description"] + "\n"
-                        for buff in p['buffs']:
-                            passives_text += "*" + buff + "*\n"
-                        passives_text += '\n'
-                    await message.channel.send(passives_text)
-                    break
-        elif command_line.startswith('specials'):
-            splitted_command_line = command_line.split(maxsplit=1)
-            character_name  = splitted_command_line[1]
-            for c in CHARACTERS_DATA:
-                if c["acronym"] == character_name:
-                    specials_text = ''
-                    for sp in c["specials"]:
-                        specials_text +=  "**" + sp['name'] + "**\n" + sp["description"] + "\n"
-                        for buff in sp['buffs']:
-                            specials_text += "*" + buff + "*\n"
-                        specials_text += '\n'
-                    await message.channel.send(specials_text)
-                    break
-        elif command_line.startswith("supermove"):
-            splitted_command_line = command_line.split(maxsplit=1)
-            character_name  = splitted_command_line[1]
-            for c in CHARACTERS_DATA:
-                if c["acronym"] == character_name:
-                    sm = c["supermove"]
-                    supermove_text =  "**" + sm['name'] + "**\n" + sm["description"] + "\n"
-                    for buff in sm['buffs']:
-                        supermove_text += "*" + buff + "*\n"
-                    supermove_text += '\n'
-                    await message.channel.send(supermove_text)
-                    break
+@bot.command()
+async def specials(ctx, arg):
+    for c in CHARACTERS_DATA:
+        if c["acronym"] == arg:
+            specials_text = ''
+            for sp in c["specials"]:
+                specials_text +=  "**" + sp['name'] + "**\n" + sp["description"] + "\n"
+                for buff in sp['buffs']:
+                    specials_text += "*" + buff + "*\n"
+                specials_text += '\n'
+            await ctx.send(specials_text)
+            break
 
-client.run(TOKEN)
+@bot.command()
+async def supermove(ctx, arg):
+    for c in CHARACTERS_DATA:
+        if c["acronym"] == arg:
+            sm = c["supermove"]
+            supermove_text =  "**" + sm['name'] + "**\n" + sm["description"] + "\n"
+            for buff in sm['buffs']:
+                supermove_text += "*" + buff + "*\n"
+            supermove_text += '\n'
+            await ctx.send(supermove_text)
+            break
+
+@bot.command()
+async def name(ctx, arg):
+    for c in CHARACTERS_DATA:
+        if c["acronym"] == arg:
+            await ctx.send(c["name"])
+            break
+
+@bot.command()
+async def predators(ctx):
+    await ctx.send(PREDATORS)
+
+@bot.command()
+async def vipers(ctx):
+    await ctx.send(VIPERS)
+
+@bot.command()
+async def stars(ctx):
+    await ctx.send(STARS)
+
+@bot.command()
+async def batmanson(ctx):
+    await ctx.send("Who is your daddy ?")
+
+@bot.command()
+async def kirito(ctx):
+    await ctx.send("All hail to The King")
+
+@bot.command()
+async def blackwolf(ctx):
+    await ctx.send("King's knight")
+
+@bot.command()
+async def haitodo(ctx):
+    haitodo_member = await ctx.guild.fetch_member(355445149393879040)
+    await ctx.send("Relax Alex {0.mention}".format(
+        haitodo_member
+        ))
+
+@bot.command()
+async def newplayer(ctx):
+    choose_league_channel = await ctx.guild.get_channel(717026493557112963)
+    fast_improve_channel = await ctx.guild.get_channel(753734930583781437)
+    await ctx.send(NEW_PLAYER.format(
+    choose_league_channel,
+    fast_improve_channel))
+
+bot.run(TOKEN)
