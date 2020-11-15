@@ -1,25 +1,10 @@
 import discord
 import datetime
-import json
+import utils
 
-from discord import team
+from constants import TOKEN, NEW_PLAYER
 
-TOKEN = 'NzAxNTIxNTk5MDU2MDUyMjc2.Xpys5g.QT7kt5vVab5H7cHKPIMLe8KKkjg'
-
-NEW_PLAYER = """1. Buy only heroes from the league store, that are described in {0.mention}.
-2. From arena store buy only JSGL for start.
-3. Fund every raid a reasonable amount.
-4. Be present at raids or write us how much time you will be inactive in {1.mention}.
-5. Select your league in {2.mention}.
-**Have fun**"""
-
-def load_data():
-    text = ''
-    with open('characters.json', 'r') as f:
-        text = json.load(f)
-    return text
-
-CHARACTERS_DATA = load_data()
+CHARACTERS_DATA = utils.load_data()
 
 client = discord.Client()
 
@@ -49,7 +34,7 @@ async def on_message(message):
             inactive = client.get_channel(731571816631369868)
             fast_improve = client.get_channel(753734930583781437)
             choose_league = client.get_channel(717026493557112963)
-            await message.channel.send(NEW_PLAYER.format(fast_improve, inactive, choose_league))
+            await message.channel.send(NEW_PLAYER.format(choose_league, fast_improve, inactive))
         elif command_line == 'batman-son':
             await message.channel.send("Who is daddy ?")
         elif command_line.startswith('passives'):
