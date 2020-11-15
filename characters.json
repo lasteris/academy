@@ -1,0 +1,5249 @@
+[
+{
+    "acronym" : "aga",
+    "name":"Ace Green Arrow",
+    "passives" :
+        [
+            {
+            "description": "As he tags out, Green Arrow fires an arrow that temporarily stops his opponent's power generation",
+            "name":"POWER LOCK ARROW",
+            "buffs":
+                [
+                    " n seconds of power lock on opponent"
+                ]
+            }
+        ],
+    "specials":
+        [
+            {
+                "description": "Green Arrow fires an electric arrow from a crouching stance. Draining power from his opponents",
+                "name":"ELECTRIC ARROW",
+                "buffs":
+                    [
+                        "n,nnn Damage",
+                        "n.nn Power Bars drained"
+                    ]
+                },
+            {
+                "description": "At close distance, Ollie twirls his bladed bow. Knocking away his opponent.",
+                "name":"HURRICANE BOW",
+                "buffs":
+                    [
+                        "n,nnn Damage"
+                ]
+            },
+            {
+                "description": "Green Arrow strikes from above with a boxing glove arrow, knocking down his opponent.",
+                "name":"BOXING GLOVE ARROW",
+                "buffs":
+                    [
+                        "n,nnn Damage"
+                ]
+            }
+        ],
+    "supermove" :
+            {
+            "description": "Green Arrow unloads arrows of fire and ice onto his victim",
+            "name":"TARGET PRACTICE",
+            "buffs":
+                [
+                    "n.nnn Damage",
+                    "+nn% Damage for the duration of the battle"
+                ]
+            }
+},
+{
+    "acronym" : "aww",
+    "name" : "Amazon Wonder Woman",
+    "passives" :
+        [
+            {
+                "description": "Princess Diana of Themyscira grants extra health in battle to all females within the same Roster.",
+                "name":"AMAZON ROYALTY",
+                "buffs":
+                    [
+                    "+n% Health for female teammates if this character in your Roster"
+                    ]
+            }
+        ],
+    "specials":
+        [
+            {
+                "description": "At close distance, Diana twirls into a heavy uppercut, knocking back her opponent.",
+                "name":"AMAZON SPIN",
+                "buffs":
+                    [
+                        "nnn Damage"
+                    ]
+            },
+            {
+                "description": "A defensive pose that reflects a portion of incoming damage (excluding damage over time) back onto the attacking opponent. While defending, power is slowly drained from Wonder Woman.",
+                "name":"BRACELET BLOCK",
+                "buffs":
+                    [
+                        "+nn% Incoming damage reflected",
+                        "-nn% Icoming damage"
+                    ]
+            },
+            {
+                "description": "",
+                "name":"locked",
+                "buffs":
+                    [
+                        ""
+                    ]
+            }
+        ],
+    "supermove" :
+        {
+        "description": "Wonder Woman smites her opponent with her Amazonian strength and unmatched martial prowess",
+        "name":"AMAZON ARSENAL",
+        "buffs":
+            [
+                "nnn Damage",
+                "+n% Damage for the duration of the battle"
+            ]
+        }
+},
+{
+        "acronym" : "am",
+        "name" : "Aquaman",
+        "passives" :
+            [
+                {
+                    "description": "Aquaman's entire team gains bonuses when Might or Metahuman heroes are on his team: Team Stun Resistance from Might. Team Defense from Metahuman",
+                    "name":"SUPER FRIENS",
+                    "buffs":
+                        [
+                        "+n% team's stun resistance per Might teammates",
+                        "+n% Defense for team per Metahuman teammates"
+                        ]
+                }
+            ],
+        "specials":
+            [
+                {
+                    "description": "At close distance, Arthur's magical trident gives way to powerful thrusts that push his opponent away",
+                    "name":"TRIDENT TROUBLE",
+                    "buffs":
+                        [
+                            "n Damage"
+                        ]
+                },
+                {
+                    "description": "Hazard Damage: Aquaman summons an electrified trap that, during contact,power drains his opponent while dealing hazard damage over time (DoT)",
+                    "name":"POWER OF NEPTUNE",
+                    "buffs":
+                        [
+                            "n.n Power Bars drained",
+                            "n Damage",
+                            "n Hazard DoT Damage"
+                        ]
+                },
+                {
+                    "description": "locked",
+                    "name":"locked",
+                    "buffs":
+                        [
+                            "locked"
+                        ]
+                }
+            ],
+        "supermove" :
+            {
+            "description": "An aquatic ally aids in striking down Aquaman's opponent",
+            "name":"FROM THE DEEP",
+            "buffs":
+                [
+                    "n Damage",
+                    "+n% Damage for the duration of the battle"
+                ]
+            }
+},
+{
+            "acronym" : "akbm",
+            "name" : "Arkham Knight Batman",
+            "passives" :
+                [
+                    {
+                        "description": "Batman and his teammates deal increased hazard damage. Tech and Agility heroes also gain increased defense and health when they enter combat",
+                        "name":"WAYNETECH",
+                        "buffs":
+                            [
+                            "+n% team's Hazard and Hazard DoT Damage",
+                            "+n% Defense for Tech and Agility teammates",
+                            "+n% Health for Tech and Agility teammates"
+                            ]
+                    },
+                    {
+                        "description": "Batman or any teammate regenerates health and power when knocking out an opponent.",
+                        "name":"FEAR MULTI-TAKEDOWN",
+                        "buffs":
+                            [
+                            "n Power Bar gained",
+                            "n% Health regenerated"
+                            ]
+                    },
+                    {
+                        "description": "The Arkham Knight can interrupt and counterattackSpecials from Metahuman opponents, leaving them stunned for a few seconds.",
+                        "name":"FREEFLOW COUNTER",
+                        "buffs":
+                            [
+                            "n Second stun",
+                            "n Counterattacks per battle"
+                            ]
+                    }
+                ],
+            "specials":
+                [
+                    {
+                        "description": "Bruce perfoms a close distance quartet of kicks that staggerback his opponent",
+                        "name":"WHEEL KICKS",
+                        "buffs":
+                            [
+                                "n Damage",
+                                "Automatically perform Critical Hits against Stunned opponents"
+                            ]
+                    },
+                    {
+                        "description": "Hazard Damage: Batman deploys a smoke bomb on the ground. Opponents caught in its blast are briefly stunned and suffer hazard damage.",
+                        "name":"STUN BOMB",
+                        "buffs":
+                            [
+                                "n second stun",
+                                "n Hazard Damage",
+                                "n Damage",
+                                "n% Chance to affect Raid Bosses"
+                            ]
+                    },
+                    {
+                        "description": "locked",
+                        "name":"locked",
+                        "buffs":
+                            [
+                                "locked"
+                            ]
+                    }
+                ],
+            "supermove" :
+                {
+                "description": "The Dark Knight brings unyielding vengeance from the skies",
+                "name":"KNIGHT OF THE ECLIPSE",
+                "buffs":
+                    [
+                        "n Damage",
+                        "+n% Damage for the duration of the battle"
+                    ]
+                }
+},
+{
+        "acronym" : "aaam",
+        "name" : "Atlantean Armor Aquaman",
+        "passives" :
+            [
+                {
+                    "description": "Upon each Ability use, Aquaman heals his entire team over time",
+                    "name":"THE WATERBEARER",
+                    "buffs":
+                        [
+                        "n Healing for n seconds on Ability end for Special Abilities to team"
+                        ]
+                }
+            ],
+        "specials":
+            [
+                {
+                    "description": "At close distance, Aquaman stabs multiple times with his trident",
+                    "name":"TRIDENT RUSH",
+                    "buffs":
+                        [
+                            "n Damage",
+                            "armor-pierce"
+                        ]
+                },
+                {
+                    "description": "Hazard Damage: Aquaman summons an electrified trap that? during contact, power drains his opponent while dealing hazard DoT",
+                    "name":"POWER OF NEPTUNE",
+                    "buffs":
+                        [
+                            "n Power Bar drained",
+                            "n Damage",
+                            "n Hazard DoT Damage"
+                        ]
+                },
+                {
+                    "description": "At close distance, Arthur twirls hisr trident into a heavy upwards strike, knocking away his opponent",
+                    "name":"TRIDENT WHIRL",
+                    "buffs":
+                        [
+                            "n Damage"
+                        ]
+                }
+            ],
+        "supermove" :
+            {
+            "description": "An acquatic ally aids in striking down Aquaman's opponent",
+            "name":"FROM THE DEEP",
+            "buffs":
+                [
+                    "n Damage",
+                    "+n% Damage for the duration of the battle"
+                ]
+            }
+},
+{
+    "acronym" : "asm",
+    "name" : "Armored Superman",
+    "passives" :
+        [
+            {
+                "description": "Superman boosts team defense an ignores damage from first Special Ability of every battle. May be ineffective in Raid Boss battles",
+                "name":"KRYPTONIAN ARMOR",
+                "buffs":
+                    [
+                    "Ignore damage from opponent's first Special 1, Special 2, or Special 3",
+                    "+n% Defense for team"
+                    ]
+            }
+        ],
+    "specials":
+        [
+            {
+                "description": "Hazard Damage: Superman flies back then uses heat vision to create a wall of fire on the ground that can cause hazard DoT",
+                "name":"HEAT VISION",
+                "buffs":
+                    [
+                        "n DoT",
+                        "n Hazard DoT Damage"
+                    ]
+            },
+            {
+                "description": "A defensive pose that reflects a portion of incoming damage(excluding damage over time) back onto the attacking opponent. While defending, power is slowly drained from Superman.",
+                "name":"SUPER BLOCK",
+                "buffs":
+                    [
+                        "+n% Incoming damage reflected",
+                        "-n% Incoming damage"
+                    ]
+            },
+            {
+                "description": "Superman flies into his opponent",
+                "name":"THE LAST SON",
+                "buffs":
+                    [
+                        "n Damage"
+                    ]
+            }
+        ],
+    "supermove" :
+        {
+        "description": "Superman shows his unparalleled power and gives his foe a pummeling in the skies",
+        "name":"KRYPTONIAN CRUSH",
+        "buffs":
+            [
+                "n Damage",
+                "+n% Damage for the duration of the battle"
+            ]
+        }
+},
+{
+    "acronym" : "atr",
+    "name" : "Atrocitus",
+    "passives" :
+        [
+            {
+                "description": "Dex-Starr is ordered to assist on battle start and whenever a new teammate tags in. Buff on active teammate may be a reflect shield, lethal chance increase or power steel",
+                "name":"DEX-STARR",
+                "buffs":
+                    [
+                    "Random chance of: n seconds Reflect Shield, n seconds Lethal chance boost, Steal n Power Bars"
+                    ]
+            }
+        ],
+    "specials":
+        [
+            {
+                "description": "Hazard Damage: Atrocitus unleashes a pool of rage that can deal hazard DoT",
+                "name":"NAPALM VOMIT",
+                "buffs":
+                    [
+                        "Costs n Power and n% Health",
+                        "n Damage",
+                        "n Hazard DoT"
+                    ]
+            },
+            {
+                "description": "Hazard Damage: Atrocitus forms a vortex of blood that seeks the opponent and deals hazard DoT",
+                "name":"BLOOD_NADO",
+                "buffs":
+                    [
+                        "n Damage",
+                        "n Hazard DoT Damage"
+                    ]
+            },
+            {
+                "description": "locked",
+                "name":"locked",
+                "buffs":
+                    [
+                        "locked"
+                    ]
+            }
+        ],
+    "supermove" :
+        {
+        "description": "Atrocitus summons the Butcher, who charges at the opponent",
+        "name":"THE BUTCHER",
+        "buffs":
+            [
+                "n Damage",
+                "+n% Damage for the duration of the battle"
+            ]
+        }
+},
+{
+    "acronym" : "bane",
+    "name" : "Bane",
+    "passives" :
+        [
+            {
+                "description": "When hit by an Ability, Bane enrages becoming unblockable for a limited time",
+                "name":"ANTIHERO",
+                "buffs":
+                    [
+                    "n seconds unblockable duration"
+                    ]
+            }
+        ],
+    "specials":
+        [
+            {
+                "description": "Bane rushes head-first towards his opponent",
+                "name":"RAGING CHARGE",
+                "buffs":
+                    [
+                        "n Damage"
+                    ]
+            },
+            {
+                "description": "Bane delivers a few close range powerful punches",
+                "name":"DOUBLE PUNCH",
+                "buffs":
+                    [
+                        "n Damage"
+                    ]
+            },
+            {
+                "description": "At medium distance. Bane drops an elbow, knocking down his opponent",
+                "name":"KNIGHTFALL",
+                "buffs":
+                    [
+                        "n Damage"
+                    ]
+            }
+        ],
+    "supermove" :
+        {
+        "description": "Bane pops up his victim for an airborne beatdown",
+        "name":"VENGEANCE OF BANE",
+        "buffs":
+            [
+                "n Damage",
+                "+n% Damage for the duration of the battle"
+            ]
+        }
+},
+{
+    "acronym" : "sbm",
+    "name" : "Batman",
+    "passives" :
+        [
+            {
+                "description": "Batman's teammates gain the element of surprise and higher critical attack chance",
+                "name":"AMBUSH",
+                "buffs":
+                    [
+                    "+n% team critical attack chance"
+                    ]
+            }
+        ],
+    "specials":
+        [
+            {
+                "description": "Bruce perfoms a close distance quartet of kicks that stagger back his opponent",
+                "name":"WHEEL KICKS",
+                "buffs":
+                    [
+                        "n Damage"
+                    ]
+            },
+            {
+                "description": "Hazard Damage: Batman deploys a smoke bomb on the ground. Opponents caught in its blast are briefly stunned and suffer hazard damage.",
+                "name":"STUN BOMB",
+                "buffs":
+                    [
+                        "n Damage",
+                        "n Hazard Damage",
+                        "n second stun"
+                    ]
+            },
+            {
+                "description": "Batman fires his grapple hook to pull himself towards his opponent, delivering a powerful kick",
+                "name":"GRAPPLE KICK",
+                "buffs":
+                    [
+                        "n Damage"
+                    ]
+            }
+        ],
+    "supermove" :
+        {
+        "description": "The Dark Knight brings unyielding vengeance from the skies",
+        "name":"KNIGHT OF THE ECLIPSE",
+        "buffs":
+            [
+                "n Damage",
+                "+n% Damage for the duration of the battle"
+            ]
+        }
+},
+{
+    "acronym" : "bc",
+    "name" : "Black Canary",
+    "passives" :
+        [
+            {
+                "description": "Black Canary's Fast Attack hits deal extra damage. Any Green Arrow teammate gains an increased critical chance",
+                "name":"FAST STRIKES",
+                "buffs":
+                    [
+                    "+n% Fast Attack Damage",
+                    "+n% Critical Attack chance for Green Arrow teammates"
+                    ]
+            }
+        ],
+    "specials":
+        [
+            {
+                "description": "Black Canary emits a blast from medium distance",
+                "name":"SOUND WAVES",
+                "buffs":
+                    [
+                        "n Damage"
+                    ]
+            },
+            {
+                "description": "Black Canary springs forward a medium distance into a scissor kick, pushing back her opponent",
+                "name":"SCISSOR KICK",
+                "buffs":
+                    [
+                        "n Damage"
+                    ]
+            },
+            {
+                "description": "Canary swiftly kicks over a medium distance, knocking down her opponent",
+                "name":"LEARNING TO FLY",
+                "buffs":
+                    [
+                        "n Damage"
+                    ]
+            }
+        ],
+    "supermove" :
+        {
+        "description": "Black Canary launches her opponent into a violent canary cry",
+        "name":"SONIC SCREAM",
+        "buffs":
+            [
+                "n Damage",
+                "+n% Damage for the duration of the battle"
+            ]
+        }
+},
+{
+    "acronym" : "bm",
+    "name" : "Black Manta",
+    "passives" :
+        [
+            {
+                "description": "Special Abilities used by Black Manta or Legendary allies inflict DoT for a percentage of Black Manta's Attack and temporarily block healing.",
+                "name":"OPEN WOUNDS",
+                "buffs":
+                    [
+                    "4 seconds of Heal Block on opponent",
+                    "+n% of Black Manta's Attack stat is applied as DoT for n seconds"
+                    ]
+            },
+            {
+                "description": "With each consecutive Basic, Swipe or Fast Attack, Black Manta's next attack against the same opponent gets stronger. This stacking effect expires when either or different hero is hit or after a short duration of not landing any Basic or Swipe attacks. Bonus damage is tripled against Aquaman opponents. This effect stacks up to 100 times.",
+                "name":"REVENGE MISSION",
+                "buffs":
+                    [
+                    "+n% damage per Basic, Swipe, or Fast Attack for n seconds"
+                    ]
+            },
+            {
+                "description": "Black Manta gains increased health when entering combat. Additionally, whenever Black Manta or Legendary allies perform successful blocks, their damage reduction from blocking increases temporarily. This effect stacks.",
+                "name":"BLACK MANTA SUIT",
+                "buffs":
+                    [
+                    "+n% Health",
+                    "+n% Damage reduction from Blocking for n seconds"
+                    ]
+            }
+        ],
+    "specials":
+        [
+            {
+                "description": "Black Manta dives underground and uppercuts his opponent, temporarily reducing their Power generation.",
+                "name":"RISING TIDE",
+                "buffs":
+                    [
+                        "5.589 Damage",
+                        "-50.02% Power generation for 20.005 seconds"
+                    ]
+            },
+            {
+                "description": "Black Manta unleashes an optic blast, applying a Burning effect that halves the opponent's current Defense.",
+                "name":"MANTA BEAM",
+                "buffs":
+                    [
+                        "8.384 Damage",
+                        "Applies Burn to opponent for 18.42 seconds"
+                    ]
+            },
+            {
+                "description": "Black Manta headbutts his opponent, stunning them and reducing their Stun Resist for the remainder of battle",
+                "name":"FLYING HEADBUT",
+                "buffs":
+                    [
+                        "16.766 Damage",
+                        "6.14 seconds stun",
+                        "50% Chance to affect Raid Bosses",
+                        "15% Stun resistance"
+                    ]
+            }
+        ],
+    "supermove" :
+        {
+        "description": "Black Manta pulls his oppopent in for a heavy optic blast.",
+        "name":"SPEARED AND SEARED",
+        "buffs":
+            [
+                "18.784 Damage",
+                "+15% Damage for the duration of the battle"
+            ]
+        }
+},
+{
+    "acronym" : "bmr",
+    "name" : "Blademaster Robin",
+    "passives" :
+        [
+            {
+                "description": "Robin starts his Combo Meter with extra hits, increasing the bonus damage dealt from his Abilities.",
+                "name":"PERFECT SON",
+                "buffs":
+                    [
+                    "n Hits minimum on Combo Meter"
+                    ]
+            }
+        ],
+    "specials":
+        [
+            {
+                "description": "Robin jump twirls forward into a grand uppercut",
+                "name":"SWORD DANCE",
+                "buffs":
+                    [
+                        "n Damage"
+                    ]
+            },
+            {
+                "description": "Gadgetry bookends a trio of Damian's sword maneuvers",
+                "name":"VENGEANCE",
+                "buffs":
+                    [
+                        "n Damage",
+                        "n% Chance to stun"
+                    ]
+            },
+            {
+                "description": "Steel and foot combine to knock down Damian's opponent",
+                "name":"LOVE AND RESPECT",
+                "buffs":
+                    [
+                        "n Damage"
+                    ]
+            }
+        ],
+    "supermove" :
+        {
+        "description": "Combines sword and gadgets into a high damage sequence",
+        "name":"HOLDING BACK",
+        "buffs":
+            [
+                "n Damage",
+                "+20% Damage for the duration of the battle"
+            ]
+        }
+},
+{
+    "acronym" : "bb",
+    "name" : "Blue Beetle",
+    "passives" :
+        [
+            {
+                "description": "After using any Special Ability, Blue Beetle is boosted with shielding or Basic and Swipe Attacks that deal additional damage and effects. Only 1 effect active at one time.",
+                "name":"POWER BLADES",
+                "buffs":
+                    [
+                    "+n% Basic attack damage after using any Special Ability"
+                    ]
+            }
+        ],
+    "specials":
+        [
+            {
+                "description": "Activates temporarily lethal Power Blades on Blue Beetle's Basic and Swipe Attacks, granting a chance to bypass his opponent's block",
+                "name":"SCARAB STABS",
+                "buffs":
+                    [
+                    "n Damage",
+                    "n% Lethal chance boost on Basic and Swipe Attacks for n seconds"
+                    ]
+            },
+            {
+                "description": "Activates temporarily armor-piercing Power Blades on Blue Beetle's Basic and Swipe Attacks, bypassing this opponent's defense",
+                "name":"BLADE BARRAGE",
+                "buffs":
+                    [
+                        "n Damage",
+                        "n seconds of armor-pierce on Basic and Swipe Attacks"
+                    ]
+            },
+            {
+                "description": "Activates temporarily shielding Power Blades that grant Blue Beetle a defense bonus",
+                "name":"SHIELD SLAM",
+                "buffs":
+                    [
+                        "n Damage",
+                        "n% defense boost for n seconds"
+                    ]
+            }
+        ],
+    "supermove" :
+        {
+        "description": "Blue Beetle unloads an arsenal of weaponry upon his opponent.",
+        "name":"SHAPE SHIFTER",
+        "buffs":
+            [
+                "n Damage",
+                "+n% Damage for the duration of the battle"
+            ]
+        }
+},
+{
+    "acronym" : "bnbm",
+    "name" : "Batman Ninja Batman",
+    "passives" :
+        [
+            {
+                "description": "When Batman is hit by a critical attack or armor-piercing attack, he automatically crits or armor-pierces on all his attacks for a limited time.",
+                "name":"AIKIDO",
+                "buffs":
+                    [
+                    "Automatically perform Critical attacks for n seconds when damaged from critical attacks",
+                    "Automatically perform armor-pierce attacks for n seconds when damaged from armor-piercing attacks"
+                    ]
+            }
+        ],
+    "specials":
+        [
+            {
+                "description": "Deals hazard damage over time and blinds opponent's Basic and Swipe Attacks, causing them to often miss",
+                "name":"BAT SWARM",
+                "buffs":
+                    [
+                    "n Damage",
+                    "n Hazard DoT Damage",
+                    "n% chance for opponents to miss on Basic and Swipe attacks"
+                    ]
+            },
+            {
+                "description": "Multiple strikes with a chance to trigger Storm Kick Special Ability for no power cost",
+                "name":"BLADE BARRAGE",
+                "buffs":
+                    [
+                        "n Damage",
+                        "n% Chance for Special 3 to cost no power"
+                    ]
+            },
+            {
+                "description": "Knock down attack with a chance to stun",
+                "name":"STORM KICKS",
+                "buffs":
+                    [
+                        "n Damage",
+                        "n% chance to stun"
+                    ]
+            }
+        ],
+    "supermove" :
+        {
+        "description": "The Dark Knight brings unyielding vengeance from the skies",
+        "name":"KNIGHT OF THE ECLIPSE",
+        "buffs":
+            [
+                "n Damage",
+                "+n% Damage for the duration of the battle"
+            ]
+        }
+},
+{
+    "acronym" : "bncw",
+    "name" : "Batman Ninja Catwoman",
+    "passives" :
+        [
+            {
+                "description": "Each of Catwoman's Special Abilities temporarily Blind her opponent against Batman Ninja teammates",
+                "name":"BLINDING STRIKES",
+                "buffs":
+                    [
+                    "50% chance for opponents to miss against Batman Ninja teammates for 12 seconds"
+                    ]
+            },
+            {
+                "description": "When at low health, Batman Ninja teammates temporarily become immortal, which prevents them from being knocked out.",
+                "name":"9 LIVES",
+                "buffs":
+                    [
+                    "9 seconds of immortal whenever health drops below 15%"
+                    ]
+            },
+            {
+                "description": "Whenever Batman Ninja teammates successfully block the whole Special, they gain part of its power cost. Additionally, if block is performed by Catwoman, her special 3 is triggered for no cost.",
+                "name":"ARE YOU KITTEN ME?",
+                "buffs":
+                    [
+                    "60% of power cost gained as Power Bars"
+                    ]
+            }
+        ],
+    "specials":
+        [
+            {
+                "description": "Catwoman cracks her whip on her airborne opponent, dealing extra damage to them if they are suffering from Blind",
+                "name":"PICK POCKET",
+                "buffs":
+                    [
+                    "n Damage",
+                    "n% Damage to Blinded opponents"
+                    ]
+            },
+            {
+                "description": "Catwoman calls for an assist from her favorite feline, healing herself based on the amount of Damage over time she dealt.",
+                "name":"CURIOUS CAT",
+                "buffs":
+                    [
+                        "n Damage",
+                        "n Damage over time",
+                        "n seconds of DoT",
+                        "Heal over time for n% of the DoT dealt"
+                    ]
+            },
+            {
+                "description": "Catwoman pulls in her opponent for a closer look, temporarily decreasing their power generation while she gains increased Lethal Attack chance",
+                "name":"CAT-LATERAL DAMAGE",
+                "buffs":
+                    [
+                        "n Damage",
+                        "-n% Power generation",
+                        "+n% Lethal Attack chance to Catwoman for n seconds"
+                    ]
+            }
+        ],
+    "supermove" :
+        {
+        "description": "Catwoman decides to take her opponent on the ride of their lifes",
+        "name":"RIDE ALONG",
+        "buffs":
+            [
+                "n Damage",
+                "+n% Damage for the duration of the battle"
+            ]
+        }
+},
+{
+    "acronym" : "bngg",
+    "name" : "Batman Ninja Gorilla Grodd",
+    "passives" :
+        [
+            {
+                "description": "Batman Ninja teammates deal increased damage and temporarily lower opponent's damage and Defense on every 5th successful Basic or Swipe Attack",
+                "name":"CRIPPLING BLOW",
+                "buffs":
+                    [
+                    "+450% Damage bonus on every 5th successful Basic or Swipe Attack",
+                    "-30% Damage and Defense for 14 seconds"
+                    ]
+            },
+            {
+                "description": "When at 30% Health, Gorilla Grodd temporarily boosts his Lethal Attack chance and heals himself for a percentage of Basic and Swipe damage dealt.",
+                "name":"DRAMATIC REVERSAL",
+                "buffs":
+                    [
+                    "+60% Lethal Attack chance for 14 seconds",
+                    "25% of Damage from Basic Attacks, Swipe and Tag Attacks heals for 14 seconds"
+                    ]
+            },
+            {
+                "description": "Whenever Gorilla Grodd, Batman Ninja teammates or Legendari allies land an unblocked Lethal Attack, they gain power.",
+                "name":"MASTER PLAN",
+                "buffs":
+                    [
+                    "0.6 Power Bars gained"
+                    ]
+            }
+        ],
+    "specials":
+        [
+            {
+                "description": "Gorilla Grodd's battle roar knocks down his opponent.",
+                "name":"GIANT HAYMAKER",
+                "buffs":
+                    [
+                    "n Damage",
+                    "n% Damage to Blinded opponents"
+                    ]
+            },
+            {
+                "description": "A defensive pose that reflects a portion of incoming damage (excluding DoT) back onto the attacking opponent. While defending, power is slowly drained from Gorilla Grodd.",
+                "name":"ACTIVE SHIELD",
+                "buffs":
+                    [
+                        "+n% Incoming damage reflected",
+                        "-n% Incoming damage"
+                    ]
+            },
+            {
+                "description": "Gorilla Grodd uses psychic powers to smash his opponent. All healing effects applied to Batman Ninja teammates temporarily get buffed and shared between all of them.",
+                "name":"MIND FORCE",
+                "buffs":
+                    [
+                        "n Damage",
+                        "+n% Healing bonus for n seconds"
+                    ]
+            }
+        ],
+    "supermove" :
+        {
+        "description": "Grodd's telekinesis kicks off a beatdown from the King of Gorilla City",
+        "name":"MIND TRIP",
+        "buffs":
+            [
+                "26,936 Damage",
+                "+35% Damage for the duration of the battle"
+            ]
+        }
+},
+{
+    "acronym" : "bnhq",
+    "name" : "Batman Ninja Harley Quinn",
+    "passives" :
+        [
+            {
+                "description": "If Harley is on your Roster, All Batman Ninja heroes gain an additional percentage of Harley's base attack and health, without gear, Talents or Passive effects. Bonus activates in combat.",
+                "name":"NINJA SIDEKICK",
+                "buffs":
+                    [
+                    "+30% of this hero base health gained for Batman Ninja teammates if this character is on your Roster",
+                    "+30% of this hero base attack gained for Batman Ninja teammates if this character is on your Roster"
+                    ]
+            }
+        ],
+    "specials":
+        [
+            {
+                "description": "Harley wildly swings her drum mallet, knocking back her opponent.",
+                "name":"DRUM MALLET",
+                "buffs":
+                    [
+                    "n Damage"
+                    ]
+            },
+            {
+                "description": "Harley tosses an explosive with a chance to stun",
+                "name": "BOOM BOOM",
+                "buffs":
+                    [
+                        "n Damage",
+                        "n% Chance to stun"
+                    ]
+            },
+            {
+                "description": "Harley fires her pistol, releasing a random number of projectiles",
+                "name":"CRAZY FLINTLOCK",
+                "buffs":
+                    [
+                        "n Damage",
+                        "Fires 1 to 5 shots, each dealing stated damage."
+                    ]
+            }
+        ],
+    "supermove" :
+        {
+        "description": "Harley Quinn gives Bud and Lou a snack and then turns out the lights",
+        "name":"LIGHTS OUT",
+        "buffs":
+            [
+                "25,160 Damage",
+                "+35% Damage for the duration of the battle"
+            ]
+        }
+},
+{
+    "acronym" : "bnlj",
+    "name" : "Batman Ninja Lord Joker",
+    "passives" :
+        [
+            {
+                "description": "If Batman is on the opponent's team, Lord Joker revives up to two heroes from knockout",
+                "name":"ETERNAL FOE",
+                "buffs":
+                    [
+                    "35% Health restored to KO'd heroes"
+                    ]
+            }
+        ],
+    "specials":
+        [
+            {
+                "description": "Lord Joker throws a poison gas bomb, slowing his opponent, preventing Fast Attacks for a limited time",
+                "name":"POISON GAS",
+                "buffs":
+                    [
+                    "n Damage",
+                    "n second disable of opponent's Fast Attacks"
+                    ]
+            },
+            {
+                "description": "Lord Joker pokes with his blade, knocking down his opponent",
+                "name": "POKING AROUND",
+                "buffs":
+                    [
+                        "n Damage"
+                    ]
+            },
+            {
+                "description": "If the current opponent is affected by the Poison Gas Special Ability, this attack will also damage tagged out opponents",
+                "name":"ACID FLOWER",
+                "buffs":
+                    [
+                        "n Damage",
+                        "n Damage to tagged out opponents"
+                    ]
+            }
+        ],
+    "supermove" :
+        {
+        "description": "Lord Joker offers up a seat with shocking results",
+        "name":"NOT SO FUNNY IS IT?",
+        "buffs":
+            [
+                "26,944 Damage",
+                "+35% Damage for the duration of the battle"
+            ]
+        }
+},
+{
+    "acronym" : "bnr",
+    "name" : "Batman Ninja Robin",
+    "passives" :
+        [
+            {
+                "description": "For Batman Ninja teammates, at battle start and on each tag-in Robin adds bonus hits to the Combo Meter. Batman Ninja teammates' Combo Meter cannot be lowered completely",
+                "name":"COMBO KID",
+                "buffs":
+                    [
+                    "7 Bonus hits to the Combo Meter",
+                    "7 Hits minimum on Combo Meter"
+                    ]
+            },
+            {
+                "description": "Each Lethal attack landed by Robin or Batman Ninja teammates temporarily increases their Lethal Attack Damage. Effects stack.",
+                "name":"NINJA LETHALITY",
+                "buffs":
+                    [
+                    "30% Lethal Attack damage for 14 seconds"
+                    ]
+            },
+            {
+                "description": "Whenever an opponent misses a Basic Attack. Robin and Batman Ninja teammates temporarily gain Lethal Attack Chance buff. Effects stack.",
+                "name":"MONKEY STYLE SWORDPLAY",
+                "buffs":
+                    [
+                    "30% Lethal Attack chance for 14 seconds"
+                    ]
+            }
+        ],
+    "specials":
+        [
+            {
+                "description": "Robin teleport jumps off the opponent, temporarily Blinding them",
+                "name":"SWOOP",
+                "buffs":
+                    [
+                    "n Damage",
+                    "n% chance for opponents to miss for n seconds"
+                    ]
+            },
+            {
+                "description": "Hazard Damage: Robin calls upon his monkey for an assist, forcing the opponent to tag-out.",
+                "name": "LEGACY AND CURSE",
+                "buffs":
+                    [
+                        "n Damage",
+                        "n Hazard Damage"
+                    ]
+            },
+            {
+                "description": "Robin kicks back his opponent with an armor-piercing attack and healing himself for some of the damage dealt.",
+                "name":"SKILL AND TRAINING",
+                "buffs":
+                    [
+                        "n Damage",
+                        "Armor-pierce",
+                        "Heal for n% of Special damage dealt"
+                    ]
+            }
+        ],
+    "supermove" :
+        {
+        "description": "Combines swordand gadgets into a high damage sequence",
+        "name":"HOLDING BACK",
+        "buffs":
+            [
+                "26,448 Damage",
+                "+35% Damage for the duration of the battle"
+            ]
+        }
+},
+{
+    "acronym" : "bra",
+    "name" : "Brainiac",
+    "passives" :
+        [
+            {
+                "description": "Damage from Basic Attacks directed at Brainiac and his teammates cannot get higher than a certain percentage of their max health. Brainiac cannot be KO'd for this effect to take place.",
+                "name":"FORCE FIELD",
+                "buffs":
+                    [
+                    "3% cap for Damage from Basic, Tag and Swipe attacks"
+                    ]
+            },
+            {
+                "description": "All Legendary heroes and summoned teammates on Brainiac's team gain increased Attack and Health. They also receive an additional percentage of Brainiac's Lethal chance and Lethal Attack damage.",
+                "name":"LIVING METAL",
+                "buffs":
+                    [
+                    "+75% Attack",
+                    "+25% Health",
+                    "+150% Lethal Attack damage",
+                    "+150% Lethal Attack chance"
+                    ]
+            },
+            {
+                "description": "Brainiac hacks KO'd Tech opponents and makes them fight for him in battle. Brainiac does not need to be tagged in for this effect, but cannot be KO'd. Hacked heroes are granted all living metal bonuses. May be ineffective in Challenge and Raid Boss battles.",
+                "name":"12TH LEVEL INTELLECT",
+                "buffs":
+                    [
+                    "40% Hacked Heroes Health"
+                    ]
+            }
+        ],
+    "specials":
+        [
+            {
+                "description": "Brainiac's Tendrils Slither forward along his arms, knocking away the opponent. Each unblocked tendril strike grants Brainiac a Lethal Attack chance bonus.",
+                "name":"TENDRIL STRIKE",
+                "buffs":
+                    [
+                    "n Damage",
+                    "+n% Lethal Attack chance (up to 75%) for each unblocked Tendril Strike"
+                    ]
+            },
+            {
+                "description": "Brainiac shoulder charges forward, knocking down his opponent. Each  unblocked tendril strike grants Brainiac a Lethal Attack damage bonus.",
+                "name": "POWER LUNGE",
+                "buffs":
+                    [
+                        "n Damage",
+                        "+n% Lethal Attack damage (up to 200%) for each unblocked Power Lunge"
+                    ]
+            },
+            {
+                "description": "Brainiac summons an Assault Drone, whose stats are a percentage of Brainiac's stats. Living metal effects get applied to Drone.",
+                "name":"ASSAULT DRONE",
+                "buffs":
+                    [
+                        "n% Drone Attack",
+                        "n% Drone Health",
+                        "n Second Cooldown",
+                        "n% Damage to Brainiac when Drone is destroyed"
+                    ]
+            }
+        ],
+    "supermove" :
+        {
+        "description": "Brainiac calls upon his ship for a devastating blow.",
+        "name":"SKULL SHIP",
+        "buffs":
+            [
+                "7,942 Damage",
+                "+25% Damage for the duration of the battle"
+            ]
+        }
+},
+{
+    "acronym" : "cc",
+    "name" : "Captain Cold",
+    "passives" :
+        [
+            {
+                "description": "When he is the active combatant. Captain Cold has a chance to disable opponent Special 1 or Special 2. He also grants his entire team critical hit resistance.",
+                "name":"ABSOLUTE ZERO",
+                "buffs":
+                    [
+                    "+n% team Critical attack resitance",
+                    "n% Chance to disable"
+                    ]
+            }
+        ],
+    "specials":
+        [
+            {
+                "description": "Hazard Damage: Captain Cold creates a cold filed that, upon contact, slows his opponent's power generation while dealing hazard DoT",
+                "name":"FROST FIELD",
+                "buffs":
+                    [
+                    "n Damage",
+                    "n Hazard DoT Damage",
+                    "-n% Power generation"
+                    ]
+            },
+            {
+                "description": "THE WALL",
+                "name": "Snart kicks forward a wall of ice, knocking back his opponent/",
+                "buffs":
+                    [
+                        "n Damage"
+                    ]
+            },
+            {
+                "description": "Captain Cold drops a large icicle onto his opponent.",
+                "name":"DEATH-CICLE",
+                "buffs":
+                    [
+                        "n Damage"
+                    ]
+            }
+        ],
+    "supermove" :
+        {
+        "description": "Captain Cold unleashes a barrage of icy shots onto his opponent.",
+        "name":"ABSOLUTE ZERO",
+        "buffs":
+            [
+                "n Damage",
+                "+25% Damage for the duration of the battle"
+            ]
+        }
+},
+{
+    "acronym" : "cw",
+    "name" : "Catwoman",
+    "passives" :
+        [
+            {
+                "description": "Carpe Diem. Catwoman seizes the day and recieves more Credits from Completing Operations.",
+                "name":"CAT BURGLAR",
+                "buffs":
+                    [
+                    "+n% Bonus Credit in Operations"
+                    ]
+            }
+        ],
+    "specials":
+        [
+            {
+                "description": "Dashing a medium distance forward with a single claw slash. Catwoman staggers her opponent back, dealing DoT.",
+                "name":"SLASH DASH",
+                "buffs":
+                    [
+                    "n DoT"
+                    ]
+            },
+            {
+                "description": "Selina uses both claws for a close distance five scratch sequence that smacks down her opponent.",
+                "name": "CAT SCRATCH",
+                "buffs":
+                    [
+                        "n Damage"
+                    ]
+            },
+            {
+                "description": "Catwoman viciously claws her opponent at close distance for a four hit attack",
+                "name":"KITTY KITTY",
+                "buffs":
+                    [
+                        "n Damage"
+                    ]
+            }
+        ],
+    "supermove" :
+        {
+        "description": "Catwoman decides to take her opponent on the ride of their life.",
+        "name":"RIDE ALONG",
+        "buffs":
+            [
+                "n Damage",
+                "+15% Damage for the duration of the battle"
+            ]
+        }
+},
+{
+    "acronym" : "ch",
+    "name" : "Cheetah",
+    "passives" :
+        [
+            {
+                "description": "After perfoming any of her Abilities. Cheetah gains armor-piercing on all attacks for a limited time.",
+                "name":"CLAWS OF DEATH",
+                "buffs":
+                    [
+                    "Abilities give armor-pierce on attack.\nSpecial 1: n seconds.\nSpecial 2: n seconds.\nSpecial 3: n seconds."
+                    ]
+            }
+        ],
+    "specials":
+        [
+            {
+                "description": "Cheetah drop kicks, knocking her opponent away.",
+                "name":"SILENT STALKER",
+                "buffs":
+                    [
+                    "n Damage"
+                    ]
+            },
+            {
+                "description": "From close distance, Cheetah launches her opponent, clawing multiple times as she lands.",
+                "name": "PRIMAL RAGE",
+                "buffs":
+                    [
+                        "n Damage"
+                    ]
+            },
+            {
+                "description": "From medium distance, Cheetah flips and dives forward, knocking back her opponent.",
+                "name":"BLOOD RITUAL",
+                "buffs":
+                    [
+                        "n Damage"
+                    ]
+            }
+        ],
+    "supermove" :
+        {
+        "description": "Cheetah launches her opponent, then scratches from multiple directions.",
+        "name":"QUEEN OF THE JUNGLE",
+        "buffs":
+            [
+                "n Damage",
+                "+15% Damage for the duration of the battle"
+            ]
+        }
+},
+{
+    "acronym" : "cbm",
+    "name" : "Classic Batman",
+    "passives" :
+        [
+            {
+                "description": "If Classic Batman is in your Roster, all Batman heroes gain a bonus to their Attack and Health when they enter combat.",
+                "name":"BATMAN INC.",
+                "buffs":
+                    [
+                    "+n% Attack for Batman teammates if this character in yor Roster.",
+                    "+n% Health for Batman teammates if this character in yor Roster."
+                    ]
+            },
+            {
+                "description": "If Classic Batman is in your Roster, all Batman heroes gain a bonus to XP awarded from battle and when using XP Capsules.",
+                "name":"CLASSICALLY TRAINED",
+                "buffs":
+                    [
+                    "+10% XP Bonus",
+                    "+10% XP Capsule Bonus"
+                    ]
+            },
+            {
+                "description": "When an opponent misses an attack on Classic Batman due to being Blinded, Batman gains Power.",
+                "name":"POWER SEIZE",
+                "buffs":
+                    [
+                    "n Power Bar gained"
+                    ]
+            }
+        ],
+    "specials":
+        [
+            {
+                "description": "Batman utilizes his silken rope to swing kick his opponent.",
+                "name":"SILKEN ROPE SWING",
+                "buffs":
+                    [
+                    "n Damage"
+                    ]
+            },
+            {
+                "description": "Batman tosses outa Batarang that may inflict Blind, causing the opponent to occasionally miss.",
+                "name": "BLINDING BAT",
+                "buffs":
+                    [
+                        "n Damage",
+                        "n% chance for opponents to miss for n seconds"
+                    ]
+            },
+            {
+                "description": "Batman strikes forward with his palm.",
+                "name":"PALM STRIKE",
+                "buffs":
+                    [
+                        "n Damage"
+                    ]
+            }
+        ],
+    "supermove" :
+        {
+        "description": "The Dark Knight brings unyielding vengeance from the skies",
+        "name":"KNIGHT OF THE ECLIPSE",
+        "buffs":
+            [
+                "n Damage",
+                "+15% Damage for the duration of the battle"
+            ]
+        }
+},
+{
+    "acronym" : "csm",
+    "name" : "Classic Superman",
+    "passives" :
+        [
+            {
+                "description": "Each use of Superman's Blast from the Past ability deals additional damage to tagged out opponents and decreases the defense of the current opponent for the remainder of the battle.",
+                "name":"TITANIC STRENGTH",
+                "buffs":
+                    [
+                    "n Damage to tagged out opponents",
+                    "n% Decrease of current opponent's defense"
+                    ]
+            }
+        ],
+    "specials":
+        [
+            {
+                "description": "Superman leaps forward, striking with a single powerful punch.",
+                "name":"LEAPING PUNCH",
+                "buffs":
+                    [
+                    "n Damage"
+                    ]
+            },
+            {
+                "description": "Superman springs into action, quickly grabbing a vehicle to slam upon his opponent.",
+                "name": "BLAST FROM THE PAST",
+                "buffs":
+                    [
+                        "n Damage"
+                    ]
+            },
+            {
+                "description": "Superman heats up his opponent, causing damage over time (DoT) at any distance.",
+                "name":"X-RAY VISION",
+                "buffs":
+                    [
+                        "n Damage"
+                    ]
+            }
+        ],
+    "supermove" :
+        {
+        "description": "Superman shows his unparalleled power and gives his foe a pumelling in the skies",
+        "name":"KRYPTONIAN CRUSH",
+        "buffs":
+            [
+                "n Damage",
+                "+15% Damage for the duration of the battle"
+            ]
+        }
+},
+{
+    "acronym" : "cyb",
+    "name" : "Cyborg",
+    "passives" :
+        [
+            {
+                "description": "Cyborg's battle systems adjust when tagged out to regenerate health. He also boosts team health.",
+                "name":"REGENERATION",
+                "buffs":
+                    [
+                    "n% Health regenerated per second while tagged out",
+                    "n% Health for team"
+                    ]
+            }
+        ],
+    "specials":
+        [
+            {
+                "description": "Cyborg sprints back and summons an electromagnetic hazard that periodically drains power of nearly opponents.",
+                "name":"EMP",
+                "buffs":
+                    [
+                    "n Damage",
+                    "n Power Bar drained"
+                    ]
+            },
+            {
+                "description": "Victor showcase his technomorphing talents by shapeshifting his ar for a double hit medium distance attack that blasts his opponent away.",
+                "name": "POWER FIST",
+                "buffs":
+                    [
+                        "n Damage"
+                    ]
+            },
+            {
+                "description": "Cyborg launches a duo of explosives onto his opponent.",
+                "name":"TARGET ACQUIRED",
+                "buffs":
+                    [
+                        "n Damage"
+                    ]
+            }
+        ],
+    "supermove" :
+        {
+        "description": "Cyborg knocks his opponent into another reality and brings them back for a final blow.",
+        "name":"BOOM TUBE",
+        "buffs":
+            [
+                "n Damage",
+                "+15% Damage for the duration of the battle"
+            ]
+        }
+},
+{
+    "acronym" : "dsg",
+    "name" : "Dark Supergirl",
+    "passives" :
+        [
+            {
+                "description": "On tag-in, Supergirl lands an unblockable attack that deals damage and can interrupt Special Abilities. If she interrupts a Special Ability, she gains 100% damage and 100% critical chance for 7 seconds.",
+                "name":"KRYPTONIAN SLAM",
+                "buffs":
+                    [
+                    "n Damage tag-in attack"
+                    ]
+            }
+        ],
+    "specials":
+        [
+            {
+                "description": "With authority, Supergirl maintains a continuous heat vision beam that deals damage over time (DoT) at any distance.",
+                "name":"WALKING LASER",
+                "buffs":
+                    [
+                    "n Damage over time"
+                    ]
+            },
+            {
+                "description": "Kara flies forward, knocking away her opponent.",
+                "name": "SPEEDING BULLET",
+                "buffs":
+                    [
+                        "n Damage"
+                    ]
+            },
+            {
+                "description": "Supergirl performs a quick close distance set of strikes that knock down her opponent.",
+                "name":"POWER OF RAO",
+                "buffs":
+                    [
+                        "n Damage"
+                    ]
+            }
+        ],
+    "supermove" :
+        {
+        "description": "Supergirl blasts her opponent from space.",
+        "name":"SOLAR SHOWER",
+        "buffs":
+            [
+                "n Damage",
+                "+20% Damage for the duration of the battle"
+            ]
+        }
+},
+{
+    "acronym" : "dks",
+    "name" : "Darkseid",
+    "passives" :
+        [
+            {
+                "description": "Improves Health and Deense of summoned Parademons and increases how many Parademons can be summoned per battle. Parademons stats are a percentage of Darkseid's stats.",
+                "name":"PARADEMONS",
+                "buffs":
+                    [
+                    "100% Parademonic Defense",
+                    "60% Parademon Health",
+                    "3 Parademons per battle"
+                    ]
+            },
+             {
+                "description": "Teammates who lose more than 15% of max health over 1 second gain an absorption barrier for 6 seconds with a 5 second cooldown. When any hero, including a summoned Parademon, is knocked out, Darkseid regenerates Health and gains Attack for the rest of the battle, Effects stack.",
+                "name":"SACRIFICES ARE NECESSARY",
+                "buffs":
+                    [
+                    "30% Health absorbed",
+                    "30% Attack absorbed",
+                    "Barrier for 500% of current Health"
+                    ]
+            },
+             {
+                "description": "When tagged out, Darkseid comands apokolips to bombard the battlefield. Apokolips deals damage and can interrupt opponent Special Attacks and bypass shields.",
+                "name":"APOKOLIPS BOMBARDMENT",
+                "buffs":
+                    [
+                    "100% Chance of firing",
+                    "80% Damage",
+                    "8 seconds intervals"
+                    ]
+            }
+        ],
+    "specials":
+        [
+            {
+                "description": "Darkseid fires armor-piercing omega beams from his eyes.",
+                "name":"OMEGA BEAMS",
+                "buffs":
+                    [
+                    "n Damage",
+                    "armor-pierce"
+                    ]
+            },
+            {
+                "description": "Darkseid utilizes Omega power to track and drain power from his opponent.",
+                "name": "OMEGA EFFECT",
+                "buffs":
+                    [
+                        "n Damage",
+                        "n Power Bar drained"
+                    ]
+            },
+            {
+                "description": "Darkseid summons a Parademon soldier to battle. If the maximum number of Parademons have been used, this Special is disabled. Parademon stats are a percentage of Darkseid's stats.",
+                "name":"SUMMON PARADEMONS",
+                "buffs":
+                    [
+                        "n Damage"
+                    ]
+            }
+        ],
+    "supermove" :
+        {
+        "description": "Darkseid sends his opponent into orbit for a crushing blow.",
+        "name":"BOSS DARKSEID",
+        "buffs":
+            [
+                "31,704 Damage",
+                "+25% Damage for the duration of the battle"
+            ]
+        }
+},
+{
+    "acronym" : "ds",
+    "name" : "Deadshot",
+    "passives" :
+        [
+            {
+                "description": "Deadshot deals extra damage based on his opponent's distance. His team also gets a critical attack chance boost.",
+                "name":"SHARPSHOOTER",
+                "buffs":
+                    [
+                    "+n% Damage based on opponent distance",
+                    "+n% team critical attack chance",
+                    "3 Parademons per battle"
+                    ]
+            }
+        ],
+    "specials":
+        [
+            {
+                "description": "Floyd masterfully delivers several rifle shots that knocks back his opponent at any distance",
+                "name":"MARKSMANSHIP",
+                "buffs":
+                    [
+                    "n Damage"
+                    ]
+            },
+            {
+                "description": "Deadshot dual burst fires his wrist-mounted guns. Upon use, tap once to determine an aim result ranging from low to critical damage.",
+                "name": "TWINS",
+                "buffs":
+                    [
+                        "n Damage"
+                    ]
+            },
+            {
+                "description": "Deadshot hurls himself forward, striking with a knee into kick combo that knocks down his opponent.",
+                "name":"ASSASSIN KNEE",
+                "buffs":
+                    [
+                        "n Damage"
+                    ]
+            }
+        ],
+    "supermove" :
+        {
+        "description": "The ultimate assassin shows why he is THE true professional.",
+        "name":"FACE TIME",
+        "buffs":
+            [
+                "n Damage",
+                "+15% Damage for the duration of the battle"
+            ]
+        }
+},
+{
+    "acronym" : "df",
+    "name" : "Doctor Fate",
+    "passives" :
+        [
+            {
+                "description": "Doctor Fate's team's Abilities require less power (does not stack with similar passive Abilities)",
+                "name":"TWIST OF FATE",
+                "buffs":
+                    [
+                    "-10% Defense for opposing team",
+                    "-2 to team's Power Bar cost for Special Abilities"
+                    ]
+            }
+        ],
+    "specials":
+        [
+            {
+                "description": "Fate summons a large ankh at meduim distance, knocking away his opponent.",
+                "name":"GLYPH OF ANUBIS",
+                "buffs":
+                    [
+                    "n Damage"
+                    ]
+            },
+            {
+                "description": "Hazard Damage: Fate places an ankh in the world that causes hazard damage over time (DoT) to nearby opponents.",
+                "name": "NABU'S CURSE",
+                "buffs":
+                    [
+                        "n Damage",
+                        "n Hazard DoT Damage"
+                    ]
+            },
+            {
+                "description": "A close distance combo into a flip kick.",
+                "name":"BINDING FATE",
+                "buffs":
+                    [
+                        "n Damage"
+                    ]
+            }
+        ],
+    "supermove" :
+        {
+        "description": "Doctor Fate transports his victim into a group beatdown.",
+        "name":"THE AMULET OF ANUBIS",
+        "buffs":
+            [
+                "18,856 Damage",
+                "+35% Damage for the duration of the battle"
+            ]
+        }
+},
+{
+    "acronym" : "egl",
+    "name" : "Emerald Green Lantern",
+    "passives" :
+        [
+            {
+                "description": "Green Lantern creates various constructs to help teammates on battle start and tag-in. Green Lantern buffs first with stun, then randomly with Power Bar gain, auto-critical attack, or stun.",
+                "name":"FOR THE CORPS",
+                "buffs":
+                    [
+                    "Hammer: n seconds Stun duration\nLantern: n Power Bars gained\nSword: n% Critical Attack damage"
+                    ]
+            }
+        ],
+    "specials":
+        [
+            {
+                "description": "Hazard Damage: Green Lantern floats back then constructs a trap of spinning blades that can deal hazard damage over time (DoT)",
+                "name":"GRINDER",
+                "buffs":
+                    [
+                    "n Damage",
+                    "n Hazard DoT Damage"
+                    ]
+            },
+            {
+                "description": "Hal utilizes the ring's power to create a temporary barrier that significantly reduces incoming damage.",
+                "name": "WILL POWER",
+                "buffs":
+                    [
+                        "n Damage",
+                        "-n% Incoming damage"
+                    ]
+            },
+            {
+                "description": "Green Lantern strikes from a distance, hurling a trio of rocket constructs towards his opponent.",
+                "name":"ROCKET POWER",
+                "buffs":
+                    [
+                        "n Damage"
+                    ]
+            }
+        ],
+    "supermove" :
+        {
+        "description": "Hal Jordan harnesses his willpower into a devastating attack.",
+        "name":"MECHANIZED ASSAULT",
+        "buffs":
+            [
+                "n Damage",
+                "+20% Damage for the duration of the battle"
+            ]
+        }
+},
+{
+    "acronym" : "enc",
+    "name" : "Enchantress",
+    "passives" :
+        [
+            {
+                "description": "Enchantress helps her mortal host when her health drops too low. When under this buff, Enchantress deals encreased damage and auto-crit on Special Attacks, ignoring Critical resistance. When triggered at 25% of Max Health for the first time. Enchantress additionally gets extra Power.",
+                "name":"MORTAL HOST",
+                "buffs":
+                    [
+                    "Mortal host triggered at n% and n% of max health",
+                    "n seconds Mortal host duration",
+                    "+n% damage under Mortal host buff at n% of Max Health",
+                    "+n% Damage under Mortal hosr buff at n% of Max Health",
+                    "Successful Specials auto-Crit, when under Mortal Host",
+                    "+n Power Bars, when triggering Mortal Host at 25% of max health for the first time"
+                    ]
+            },
+            {
+                "description": "Each time Enchantress or her Suicide Squad teammates resist a Critical Attack, they get healed over 10 seconds for a percentage of their health. This effect does not stack.",
+                "name":"OUTWORLDLY NATURE",
+                "buffs":
+                    [
+                    "n% max health healed over time when resisting Critical Attack"
+                    ]
+            },
+            {
+                "description": "Successful Ranged attacks performed by Enchantress or Suicide Squad teammates steal part of opponent's current Power.",
+                "name":"UNLIMITED POWER",
+                "buffs":
+                    [
+                    "Steal n% of opponent current Power"
+                    ]
+            }
+        ],
+    "specials":
+        [
+            {
+                "description": "Enchantress summons a demon, that damages her opponent and temporarily disables their block.",
+                "name":"XIBALBA",
+                "buffs":
+                    [
+                    "n Damage",
+                    "n% Chance to disable the opponent's block for n seconds after performing Special 1"
+                    ]
+            },
+            {
+                "description": "Enchantress casts an armor-piercing spell striking her opponent.",
+                "name": "ENTROPIC WILL",
+                "buffs":
+                    [
+                        "n Damage",
+                        "Armor-pierce"
+                    ]
+            },
+            {
+                "description": "Enchantress uses magical powers to smash her opponent and heal herself. She also temporarily summons a large immortal barrier, that removes opponent hazards in the area and protects heroes standing in it from being K0'd. May be ineffective in Raid Boss battles.",
+                "name":"IMMORTAL VISAGE",
+                "buffs":
+                    [
+                        "n Damage",
+                        "Heal for n% of Special 3 damage dealt",
+                        "n seconds of immortal barrier"
+                    ]
+            }
+        ],
+    "supermove":
+        {
+        "description": "Enchantress takes her opponent's soul and controls the soul by making it hit the opponent.",
+        "name":"OUT OF BODY EXPERIENCE",
+        "buffs":
+            [
+                "n Damage",
+                "+15% Damage for the duration of the battle"
+            ]
+        }
+},
+{
+    "acronym" : "esf",
+    "name" : "Energized Starfire",
+    "passives" :
+        [
+            {
+                "description": "Starfire regenerates a portion of her health per bar of power spent by her current opponent. Also, upon using her Starry Night Supermove, she heals her teammates.",
+                "name":"ENERGY ABSORPTION",
+                "buffs":
+                    [
+                    "n% Health regenerated per Power Bar",
+                    "n%-m% Health regenerated for team after perfoming a Supermove"
+                    ]
+            }
+        ],
+    "specials":
+        [
+            {
+                "description": "Koriand'r attacks with her fiery hair then releases a cluster bomb, knocking away her opponent.",
+                "name":"BURNING DESIRE",
+                "buffs":
+                    [
+                    ""
+                    ]
+            },
+            {
+                "description": "Starfire releases a slow moving energy orb that knocks away her opponent.",
+                "name": "STAR DUST",
+                "buffs":
+                    [
+                        "n Damage"
+                    ]
+            },
+            {
+                "description": "Starfire files forward, dealing damage over time (DoT) and knocking away her opponent.",
+                "name":"TAMARANEAN CHARGE",
+                "buffs":
+                    [
+                        "n Damage"
+                    ]
+            }
+        ],
+    "supermove" :
+        {
+        "description": "Starfire launches her opponent into orbit for an energy smackdown.",
+        "name":"STARRY NIGHT",
+        "buffs":
+            [
+                "n Damage",
+                "+15% Damage for the duration of the battle"
+            ]
+        }
+},
+{
+    "acronym" : "eb",
+    "name" : "Enranged Bane",
+    "passives" :
+        [
+            {
+                "description": "when hit by an Ability, Bane enrages becoming unblockable for a limited time.",
+                "name":"ANTIHERO",
+                "buffs":
+                    [
+                    "6 seconds unblockable duration "
+                    ]
+            }
+        ],
+    "specials":
+        [
+            {
+                "description": "Bane rushes head-first towards his opponent.",
+                "name":"RAGING CHARGE",
+                "buffs":
+                    [
+                    "n Damage"
+                    ]
+            },
+            {
+                "description": "Bane delivers a few close range powerful punches",
+                "name": "DOUBLE PUNCH",
+                "buffs":
+                    [
+                        "n Damage"
+                    ]
+            },
+            {
+                "description": "At medium distance, Bane drops an elbow, knocking down his opponent.",
+                "name":"KNIGHTFALL",
+                "buffs":
+                    [
+                        "n Damage"
+                    ]
+            }
+        ],
+    "supermove" :
+        {
+        "description": "Bane pops up his victim for an airborne beatdown",
+        "name":"VENGEANCE OF BANE",
+        "buffs":
+            [
+                "20.000 Damage",
+                "+35% Damage for the duration of the battle"
+            ]
+        }
+},
+{
+    "acronym" : "epi",
+    "name" : "Entangling Poison Ivy",
+    "passives" :
+        [
+            {
+                "description": "Poison Ivy's Special Abilities Bed of Thorns and Root Pound disable Evade, Ranged, Rush, and Jump Attacks of the opponent for a limited time.",
+                "name":"ENTANGLING VINES",
+                "buffs":
+                    [
+                    "n seconds of movement disable"
+                    ]
+            },
+            {
+                "description": "Until Poison Ivy is knocked out, Basic and Swipe Attacks dealt by League of Anarchy teammates do additional damage as DoT.",
+                "name":"TOXINS",
+                "buffs":
+                    [
+                    "n% additional damage over time on Basic and Swipe attacks"
+                    ]
+            },
+            {
+                "description": "White Poison Ivy is the active combatant, she heals herself and her League of Anarchy teammates for a percentage of DoT dealt.",
+                "name":"REGROWTH",
+                "buffs":
+                    [
+                    "n% of DoT dealt heals"
+                    ]
+            }
+        ],
+    "specials":
+        [
+            {
+                "description": "Poison Ivy gracefully performs a deadly butterfly kick.",
+                "name":"PRUNE THE WEAK",
+                "buffs":
+                    [
+                    "n Damage"
+                    ]
+            },
+            {
+                "description": "Hazard Damage: Poison Ivy summons a bed of thorns that deal hazard DoT to nearby opponents while slowing their power generation.",
+                "name": "BED OF THORNS",
+                "buffs":
+                    [
+                        "n Damage",
+                        "n Hazard DoT Damage",
+                        "-n% Power generation"
+                    ]
+            },
+            {
+                "description": "From medium distance, Ivy strikes her opponent with a series of vines from below, briefly stunning them.",
+                "name":"ROOT POUND",
+                "buffs":
+                    [
+                        "n Damage",
+                        "n second stun"
+                    ]
+            }
+        ],
+    "supermove" :
+        {
+        "description": "Poison Ivy summons her friends to do her dirty work",
+        "name":"FEED ME",
+        "buffs":
+            [
+                "n Damage",
+                "+15% Damage for the duration of the battle"
+            ]
+        }
+},
+{
+    "acronym" : "fs",
+    "name" : "Firestorm",
+    "passives" :
+        [
+            {
+                "description": "Firestorm and his teammates gain an increase to DoT resistance.",
+                "name":"DOT RESISTANCE",
+                "buffs":
+                    [
+                    "+50% DoT resistance for team"
+                    ]
+            }
+        ],
+    "specials":
+        [
+            {
+                "description": "Firestorm charges towards the opponent",
+                "name":"FUSION CHARGE",
+                "buffs":
+                    [
+                    "n Damage"
+                    ]
+            },
+            {
+                "description": "Firestorm releases a proximity blast.",
+                "name": "ATOMIC BURST",
+                "buffs":
+                    [
+                        "n Damage"
+                    ]
+            },
+            {
+                "description": "Hazard Damage: Firestorm creates a hazard that deals DoT",
+                "name":"GROUND FLAME",
+                "buffs":
+                    [
+                        "n Damage",
+                        "n Hazard DoT Damage"
+                    ]
+            }
+        ],
+    "supermove" :
+        {
+        "description": "Firestorm demonstrates nuclear power.",
+        "name":"GOING NUCLEAR",
+        "buffs":
+            [
+                "19,504 Damage",
+                "+35% Damage for the duration of the battle"
+            ]
+        }
+},
+{
+    "acronym" : "fpi",
+    "name" : "Flora Poison Ivy",
+    "passives" :
+        [
+            {
+                "description": "Poison Ivy's Special Abilities Vine Drill and Daruta Hammer disable Evade, Ranged, Rush, and Jump Attacks of the opponent for a limited time.",
+                "name":"POISON VINES",
+                "buffs":
+                    [
+                    "6 seconds of movement disable and DoT"
+                    ]
+            }
+        ],
+    "specials":
+        [
+            {
+                "description": "At close distance, Ivy pokes, pushing her opponent back.",
+                "name":"RE-LEAFED",
+                "buffs":
+                    [
+                    "7,609 Damage"
+                    ]
+            },
+            {
+                "description": "At any distance, Ivy sumons a large drill vine that knocks away her opponent.",
+                "name": "VINE DRILL",
+                "buffs":
+                    [
+                        "11,414 Damage"
+                    ]
+            },
+            {
+                "description": "At close distance, Ivy wildly swings her plant-made weapon, knocking down her opponent.",
+                "name":"DATURA HAMMER",
+                "buffs":
+                    [
+                        "22,827 Damage"
+                    ]
+            }
+        ],
+    "supermove" :
+        {
+        "description": "Poison Ivy summons her friends to do her dirty work",
+        "name":"FEED ME",
+        "buffs":
+            [
+                "25,576 Damage",
+                "+35% Damage for the duration of the battle"
+            ]
+        }
+},
+{
+    "acronym" : "gg",
+    "name" : "Gorilla Grodd",
+    "passives" :
+        [
+            {
+                "description": "When Gorilla Grodd's health gets low he goes into a primal fury.",
+                "name":"BERSERK",
+                "buffs":
+                    [
+                    "+n% Damage below m% health"
+                    ]
+            }
+        ],
+    "specials":
+        [
+            {
+                "description": "Gorilla Grodd rages forward a medium distance, pushing his opponent farther back.",
+                "name":"STAMPEDE",
+                "buffs":
+                    [
+                    "n Damage"
+                    ]
+            },
+            {
+                "description": "A defensive pose that reflects a portion of incoming damage (excluding DoT) back onto the attacking opponent. While defending, power is slowly drained from Grodd.",
+                "name": "PSI SHIELD",
+                "buffs":
+                    [
+                        "+n% Incoming damage reflected",
+                        "-n% Incoming damage"
+                    ]
+            },
+            {
+                "description": "Grodd focuses telekinetic energy forward, knocking back his opponent.",
+                "name":"PSIONIC PUSH",
+                "buffs":
+                    [
+                        "n Damage"
+                    ]
+            }
+        ],
+    "supermove" :
+        {
+        "description": "Grodd's telekinesis kicks off a beatdown from the King of Gorilla City.",
+        "name":"MIND TRIP",
+        "buffs":
+            [
+                "n Damage",
+                "+20% Damage for the duration of the battle"
+            ]
+        }
+},
+{
+    "acronym" : "ga",
+    "name" : "Green Arrow",
+    "passives" :
+        [
+            {
+                "description": "Whenever Special Abilities Electric Arrow or Stinger deal critical damage, additional damage is dealt to the entire opposing team. Black Canary teammates gain increased Fast Attack.",
+                "name":"EXPLODING ARROWS",
+                "buffs":
+                    [
+                    "+n% damage on all opponents for Special 1 and Special 2 critical",
+                    "+n% Fast Attack chance for Black Canary teammates"
+                    ]
+            }
+        ],
+    "specials":
+        [
+            {
+                "description": "Green Arrow fires an electric arrow from a crouching stance, draining power from his opponent.",
+                "name":"ELECTRIC ARROW",
+                "buffs":
+                    [
+                    "n Damage",
+                    "n Power Bar drained"
+                    ]
+            },
+            {
+                "description": "At medium distance, Green Arrow slides into his opponent before firing a quick shot, pushing his opponent farther back.",
+                "name": "STINGER",
+                "buffs":
+                    [
+                        "n Damage"
+                    ]
+            },
+            {
+                "description": "Green Arrow fires multiple arrows from a medium distance that knock down his opponent.",
+                "name":"SAVAGE BLAST",
+                "buffs":
+                    [
+                        "n Damage"
+                    ]
+            }
+        ],
+    "supermove" :
+        {
+        "description": "Green Arrow unloads arrows of fire and ice onto his victim.",
+        "name":"TARGET PRACTICE",
+        "buffs":
+            [
+                "n Damage",
+                "+15% Damage for the duration of the battle"
+            ]
+        }
+},
+{
+    "acronym" : "gl",
+    "name" : "Green Lantern",
+    "passives" :
+        [
+            {
+                "description": "At the start of the match Green Lantern's teammates gain an Absorption Shield.",
+                "name":"GREEN BARRIER",
+                "buffs":
+                    [
+                    "team Absorption sheild (n% of Max Health)"
+                    ]
+            }
+        ],
+    "specials":
+        [
+            {
+                "description": "Hazard Damage: Green Lantern floats back then constructs a trap of spinning blades that can deal hazard damage over time (DoT)",
+                "name":"GRINDER",
+                "buffs":
+                    [
+                    "n Damage",
+                    "n Hazard DoT Damage"
+                    ]
+            },
+            {
+                "description": "Swinging for the bleachers, Hal equips a spiked bat after a trio of warm up strikes to knock back his opponent.",
+                "name": "GRAND SLAM",
+                "buffs":
+                    [
+                        "n Damage"
+                    ]
+            },
+            {
+                "description": "At long distance, Green Lantern creates a minigun that sprays pain onto his opponent.",
+                "name":"MINIGUN",
+                "buffs":
+                    [
+                        "n Damage"
+                    ]
+            }
+        ],
+    "supermove" :
+        {
+        "description": "",
+        "name":"MECHANIZED ASSAULT",
+        "buffs":
+            [
+                "n Damage",
+                "+15% Damage for the duration of the battle"
+            ]
+        }
+},
+{
+    "acronym" : "gr",
+    "name" : "Grid",
+    "passives" :
+        [
+            {
+                "description": "Grid has numerous advantages over Tech opponents, especially Cyborg.",
+                "name":"CIRCUIT BREAKER",
+                "buffs":
+                    [
+                    "Immune to power drain",
+                    "Immune to stun from Tech opponents",
+                    "Disables all CYBORG opponent's passives at battle start",
+                    "+n% Power generation per Tech opponent",
+                    "+n% Damage for Special 1 and Special 2 to CYBORG opponents",
+                    "Losing more than n% health over m second from Basic and Swipe attacks activates a l% current Health Shield for 10 seconds. 3 seconds Cooldown."
+                    ]
+            }
+        ],
+    "specials":
+        [
+            {
+                "description": "Deals additional damage to Tech opponents",
+                "name":"DRONE STRIKE",
+                "buffs":
+                    [
+                    "n Damage",
+                    "+n% Damage for Special 1 to Tech opponents"
+                    ]
+            },
+            {
+                "description": "Targets Tech opponent with highest health, favoring Cyborg, and forces them into battle. Deals additional damage for Tech opponents. Maybe ineffective in Challenge and Raid Boss battles.",
+                "name": "GRAPPLE TECH",
+                "buffs":
+                    [
+                        "n Damage",
+                        "+n% Damage for Special 2 to Tech opponents"
+                    ]
+            },
+            {
+                "description": "Upon knocking out a Cyborg opponent, Grind heals himself and gains a damage boost.",
+                "name":"DATA MINE",
+                "buffs":
+                    [
+                        "n Damage",
+                        "If Special  knocks out any Cyborg opponent, Grid heals himself for n health and gains a n% damage increase to his Basic and Swipe attacks for 5 seconds."
+                    ]
+            }
+        ],
+    "supermove" :
+        {
+        "description": "Grid knocks his opponent into another reality and brings them back for a final blow.",
+        "name":"BOOM TUBE",
+        "buffs":
+            [
+                "n Damage",
+                "+15% Damage for the duration of the battle"
+            ]
+        }
+},
+{
+    "acronym" : "hq",
+    "name" : "Harley Quinn",
+    "passives" :
+        [
+            {
+                "description": "Her Hyenas Bud and Lou, assist Harley in combat and team attack is boosted.",
+                "name":"HYENAS",
+                "buffs":
+                    [
+                    "+n% Damage on Swipe Attacks",
+                    "+n% Attack for team"
+                    ]
+            }
+        ],
+    "specials":
+        [
+            {
+                "description": "Hazard Damage: Harley backs away and plops down a cupcake trap that, upon contact, deals hazard damage and may stun, power drain, or temporarily disable her opponent's Abilities.",
+                "name":"SURPRISE",
+                "buffs":
+                    [
+                    "n Damage",
+                    "n Hazard Damage",
+                    "One random effect:\n\tn second stun\n\tn Power Bars drained\n\tn second disable of opponent Special Abilities"
+                    ]
+            },
+            {
+                "description": "Harley springs into action with a medium distance drop kick followed by multiple dual pistol shots, knocking away her opponent.",
+                "name": "BULLET FRENZY",
+                "buffs":
+                    [
+                        "n Damage"
+                    ]
+            },
+            {
+                "description": "Harley unloads a pair of powerful shots that can strike targets at long distance",
+                "name":"PISTOL FURY",
+                "buffs":
+                    [
+                        "n Damage"
+                    ]
+            }
+        ],
+    "supermove" :
+        {
+        "description": "Harley Quinn gives Bud and Lou a snack and then turns out the lights",
+        "name":"LIGHTS OUT",
+        "buffs":
+            [
+                "n Damage",
+                "+20% Damage for the duration of the battle"
+            ]
+        }
+},
+{
+    "acronym" : "hbhq",
+    "name" : "Heartbreaker Harley Quinn",
+    "passives" :
+        [
+            {
+                "description": "Teammates targeted by stun attacks gain a chance to reflect them, stunning the attacker instead. Harley also increases Hero XP earnings for all combatants within the same Roster.",
+                "name":"IT'S NOT ME, IT'S YOU",
+                "buffs":
+                    [
+                    "n% Chance for team to Reflect stuns",
+                    "+n% XP Bonus"
+                    ]
+            },
+            {
+                "description": "Heartbreaker Harley Quinn reduces the opposing team's stun resistance and DoT resistance.",
+                "name": "LET YOUR GUARD DOWN",
+                "buffs":
+                    [
+                    "-n% opposing team's Stun resistance",
+                    "-n% opposing team's DoT resistance"
+                    ]
+            },
+            {
+                "description": "Until she is knocked out, Heartbreaker Harley Quinn and her teammates deal increased damage on opponents while they are stunned. Critical Hits against Harley and LEague of Anarchy teammates are greatly reduced in damage.",
+                "name": "STRAIGHT TO THE HEART",
+                "buffs":
+                    [
+                    "+n% Damage against stunned opponents",
+                    "+n% Critical Damage multiplier reduction for League of Anarchy teammates"
+                    ]
+            }
+        ],
+    "specials":
+        [
+            {
+                "description": "Harley slides forward a treat that knocks down her opponent, dealing DoT and reducing her opponent's attack.",
+                "name":"SPECIAL DELIVERY",
+                "buffs":
+                    [
+                    "n DoT",
+                    "n Damage",
+                    "n% Opponent damage reduced for m seconds"
+                    ]
+            },
+            {
+                "description": "Harley wields an oversized rose, knocking away her opponent, which may briefly stun them.",
+                "name": "ROSE BLOOD",
+                "buffs":
+                    [
+                        "n Damage",
+                        "m Chance to stun",
+                        "n second stun"
+                    ]
+            },
+            {
+                "description": "Harley fires an armor-piercing shot behind her back, knocking down her opponent and dealing DoT",
+                "name":"PISTOL BLAST",
+                "buffs":
+                    [
+                        "n Damage",
+                        "Armor-pierce",
+                        "n DoT"
+                    ]
+            }
+        ],
+    "supermove" :
+        {
+        "description": "Harley Quinn gives Bud and Lou a snack and then turns out the lights",
+        "name":"LIGHTS OUT",
+        "buffs":
+            [
+                "n Damage",
+                "+20% Damage for the duration of the battle"
+            ]
+        }
+},
+{
+    "acronym" : "hsc",
+    "name" : "Horrific Scarecrow",
+    "passives" :
+        [
+            {
+                "description": "Scarecrow's aura makes his opponents panic. The opposing team has reduced attack and opponent's Abilities require more power.",
+                "name":"FEAR AURA",
+                "buffs":
+                    [
+                    "+2 to opposing team's Power Bar cost for Special Abilities",
+                    "-10% Attack for opposing team"
+                    ]
+            }
+        ],
+    "specials":
+        [
+            {
+                "description": "The doctor wildly swings his chain and hook around at medium distance, inflicting armor-piercing damage while knocking away his opponent.",
+                "name":"CHAIN SPIN",
+                "buffs":
+                    [
+                    "Armor-pierce",
+                    "n Damage"
+                    ]
+            },
+            {
+                "description": "Scarecrow retreats briefly before attacking, releasing a gas hazard that can temporarily disable his opponent's Abilities.",
+                "name": "FEAR GAS",
+                "buffs":
+                    [
+                        "n second hazard that disables Special Abilities",
+                        "n Damage"
+                    ]
+            },
+            {
+                "description": "Scarecrow kicks his chained hook forward, knocking down opponents at distance.",
+                "name":"SUCCUMB TO FEAR",
+                "buffs":
+                    [
+                        "n Damage"
+                    ]
+            }
+        ],
+    "supermove" :
+        {
+        "description": "Scarecrow brings his opponent into a nightmare where he is all powerful.",
+        "name":"OUT OF OFFICE",
+        "buffs":
+            [
+                "19.000 Damage",
+                "+25% Damage for the duration of the battle"
+            ]
+        }
+},
+{
+    "acronym" : "hb",
+    "name" : "Hellboy",
+    "passives" :
+        [
+            {
+                "description": "Incoming DoT will heal Hellboy instead of damaging him. Against Arcane class opponents. Hellboy gains boosts to attack and defense.",
+                "name":"BOX FULL OF EVIL",
+                "buffs":
+                    [
+                    "n% of DoT heals instead. Maximum of m% health per tick",
+                    "n% Damage and defense against Arcane opponents"
+                    ]
+            }
+        ],
+    "specials":
+        [
+            {
+                "description": "Hellboy uses his stone fist to smack down his opponent.",
+                "name":"RIGTH HAND OF DOOM",
+                "buffs":
+                    [
+                    "n Damage"
+                    ]
+            },
+            {
+                "description": "Hellboy rushes forward, knocking down his opponent.",
+                "name": "DEVIL'S SHOULDER",
+                "buffs":
+                    [
+                        "n Damage"
+                    ]
+            },
+            {
+                "description": "Hellboy repeatedly fires armor-piercing shots from his oversized revolver.",
+                "name":"DEVIL'S REVOLVER",
+                "buffs":
+                    [
+                        "n Damage",
+                        "Armor-pierce"
+                    ]
+            }
+        ],
+    "supermove" :
+        {
+        "description": "Hellboy punches his victim as they plummet downwards, landing a final axe blow after they land.",
+        "name":"FINAL RESTING PLACE",
+        "buffs":
+            [
+                "n Damage",
+                "+15% Damage for the duration of the battle"
+            ]
+        }
+},
+{
+    "acronym" : "jlam",
+    "name" : "Justice League Aquaman",
+    "passives" :
+        [
+            {
+                "description": "Aquaman's From the Deep Supermove revives one fallen teammate. All Justice League teammates gain armor-pierce on Basic Attacks.",
+                "name":"PRIMORDIAL POWER",
+                "buffs":
+                    [
+                    "n% Health restored to K0'd hero",
+                    "n% chance to armor-pierce for Justice League teammates on Basic, Tag, and Swipe attacks"
+                    ]
+            }
+        ],
+    "specials":
+        [
+            {
+                "description": "At close distance, Arthur ends a quick combo with a heavy knee, knocking down his opponent.",
+                "name":"AMPED",
+                "buffs":
+                    [
+                    "n Damage"
+                    ]
+            },
+            {
+                "description": "From any distance, Arthur strikes the ground, temporarily slowing the power generation of his opponent.",
+                "name": "KING'S TIDE",
+                "buffs":
+                    [
+                        "n Damage",
+                        "-n% Power generation"
+                    ]
+            },
+            {
+                "description": "From close distance, Aquaman kicks upwards, knocking away his opponent.",
+                "name":"RISING SEAS",
+                "buffs":
+                    [
+                        "n Damage"
+                    ]
+            }
+        ],
+    "supermove" :
+        {
+        "description": "An acquatic ally aids in striking down Aquaman's opponent",
+        "name":"FROM THE DEEP",
+        "buffs":
+            [
+                "n Damage",
+                "+20% Damage for the duration of the battle"
+            ]
+        }
+},
+{
+    "acronym" : "jlbm",
+    "name" : "Justice League Batman",
+    "passives" :
+        [
+            {
+                "description": "Upon use of his Grounded Special Ability, Batman gains armor-pierce on all his Special Abilities for a limited time. All Justice League teammates gain a shield that ignores damage from one Special Ability per battle.",
+                "name":"TACTICAL BATSUIT",
+                "buffs":
+                    [
+                    "Using Special 1 gives Batman armor-pierce on Special Abilities for n seconds",
+                    "Ignore damage from opponent's first Special 1, Special 2, or Special 3 for Justice League teammates"
+                    ]
+            }
+        ],
+    "specials":
+        [
+            {
+                "description": "At close range, Batman brutally smacks down his opponent.",
+                "name":"GROUNDED",
+                "buffs":
+                    [
+                    "n Damage"
+                    ]
+            },
+            {
+                "description": "From medium distance, Wayne flip kicks onto his opponent before tossing out a bomb that deals DoT",
+                "name": "FIERY BOMB",
+                "buffs":
+                    [
+                        "n Damage",
+                        "n DoT"
+                    ]
+            },
+            {
+                "description": "From close range, Bruce drops an elbow, knocking down his opponent.",
+                "name":"ABSOLUTE CERTAINTY",
+                "buffs":
+                    [
+                        "n Damage"
+                    ]
+            }
+        ],
+    "supermove" :
+        {
+        "description": "The Dark Knight brings unyielding vengeance from the skies",
+        "name":"KNIGHT OF THE ECLIPSE",
+        "buffs":
+            [
+                "n Damage",
+                "+20% Damage for the duration of the battle"
+            ]
+        }
+},
+{
+    "acronym" : "jlc",
+    "name" : "Justice League Cyborg",
+    "passives" :
+        [
+            {
+                "description": "Cyborg is immune to stun and gains power from stuns instead. All Justice League teammates gain increased damage on Basic Attacks",
+                "name":"CYBERNETIC BODY",
+                "buffs":
+                    [
+                    "Immune to stun",
+                    "n Power Bars when targeted by stun attack",
+                    "+n% Justice League teammates' Damage for Basic, Tag, and Swipe attacks"
+                    ]
+            }
+        ],
+    "specials":
+        [
+            {
+                "description": "Victor Stone, a former Gotham City University football star, propels himself forward, knocking back his opponent.",
+                "name":"CYBER CHARGE",
+                "buffs":
+                    [
+                    "n Damage"
+                    ]
+            },
+            {
+                "description": "At close distance, Victor follows a quick knee to the gut with a punishing energy blast, draining power from his opponent.",
+                "name": "CYBER STRIKE",
+                "buffs":
+                    [
+                        "n Damage",
+                        "n Power Bars drained"
+                    ]
+            },
+            {
+                "description": "From close distance, Cyborg manipulates his cybernetic limbs, unleashing a trio of quick strikes, knocking away his opponent.",
+                "name":"TRIPLE THREAT",
+                "buffs":
+                    [
+                        "n Damage"
+                    ]
+            }
+        ],
+    "supermove" :
+        {
+        "description": "Cyborg knocks his opponent into another reality and brings them back for a final blow.",
+        "name":"BOOM TUBE",
+        "buffs":
+            [
+                "n Damage",
+                "+15% Damage for the duration of the battle"
+            ]
+        }
+},
+{
+    "acronym" : "jlf",
+    "name" : "Justice League The Flash",
+    "passives" :
+        [
+            {
+                "description": "All teammates' Basic Attacks can hit multiple times (Fast Attack). Justice League teammates gain an unblockable Special Ability, once per match.",
+                "name":"HYPERSPEED ASSAULT",
+                "buffs":
+                    [
+                    "+1 Fast Attack hit for team",
+                    "First Justice League teammates attack for Special 1, Special 2, and Special 3 is unblockable"
+                    ]
+            }
+        ],
+    "specials":
+        [
+            {
+                "description": "Barry runs into a jump punch that smacks down his opponent.",
+                "name":"SPEED RUN",
+                "buffs":
+                    [
+                    "n Damage"
+                    ]
+            },
+            {
+                "description": "The Flash releases a burst of energy that has a chance to stun.",
+                "name": "SONIC SHOCK",
+                "buffs":
+                    [
+                        "n Damage",
+                        "n% chance to stun"
+                    ]
+            },
+            {
+                "description": "The Flash darts forward into an uppercut that knocks back his opponent.",
+                "name":"LIGHTNING UPPERCUT",
+                "buffs":
+                    [
+                        "n Damage"
+                    ]
+            }
+        ],
+    "supermove" :
+        {
+        "description": "No opponent can outrun The Flash's blitz of attacks.",
+        "name":"OUT OF TIME",
+        "buffs":
+            [
+                "n Damage",
+                "+15% Damage for the duration of the battle"
+            ]
+        }
+},
+{
+    "acronym" : "jlsm",
+    "name" : "Justice League Superman",
+    "passives" :
+        [
+            {
+                "description": "Superman gains bonus Attack or Health when Batman or Wonder Woman are on either team during battle. These bonuses stack and also apply to Batman and Wonder Woman teammates.",
+                "name":"BATMAN VERSUS SUPERMAN",
+                "buffs":
+                    [
+                    "n% Attack per Batman teammate or opponent",
+                    "n% Attack per Wonder Woman teammate or opponent"
+                    ]
+            },
+            {
+                "description": "All Legendary and Justice League teammates gain improved Defense, including Justice League Superman.",
+                "name":"DO YOU BLEED?",
+                "buffs":
+                    [
+                    "+n% Defense for Justice League and Legendary teammates"
+                    ]
+            },
+            {
+                "description": "Superman protects his active teammates from opponents' Special Abilities, tagging in and interrupting the Ability with a powerful slam.",
+                "name":"PROTECTOR",
+                "buffs":
+                    [
+                    "n Damage",
+                    "n seconds Cooldown"
+                    ]
+            }
+        ],
+    "specials":
+        [
+            {
+                "description": "Superman neutralizes all negative effects affecting him and charges forward with a powerful blow.",
+                "name":"CHARGE PUNCH",
+                "buffs":
+                    [
+                    "n Damage"
+                    ]
+            },
+            {
+                "description": "A defensive pose that reduces incoming damage and reflects a portion of it (excluding DoT) back onto the attacking opponent. While defending, power is slowly drained from Superman. Part of Max Health is restored if Special Ability was blocked.",
+                "name": "SUPER BLOCK",
+                "buffs":
+                    [
+                        "+n% Incoming damage reflected",
+                        "-n% Incoming damage",
+                        "+n% health restored on Special block"
+                    ]
+            },
+            {
+                "description": "Superman combines speed, heat and flight to knock down his opponent and apply a Burning effect that halves the opponent's current Defense.",
+                "name":"JUSTICE",
+                "buffs":
+                    [
+                        "n Damage",
+                        "n seconds of Burning"
+                    ]
+            }
+        ],
+    "supermove" :
+        {
+        "description": "Superman shows his unparalleled power and gives his foe a pumelling in the skies",
+        "name": "KRYPTONIAN CRUSH",
+        "buffs":
+            [
+                "n Damage",
+                "+15% Damage for the duration of the battle"
+            ]
+        }
+},
+{
+    "acronym" : "jsgl",
+    "name" : "John Stewart Green Lantern",
+    "passives" :
+        [
+            {
+                "description": "All teammate hazards deal increased damage. Teammates take less damage from hazards and are immune to hazard secondary effects (including disabled, stun, and hindrances to power). All Green Lantern teammates gain increased attack.",
+                "name":"REINFORCED CONSTRUCTS",
+                "buffs":
+                    [
+                    "+n% team's Hazard and Hazard DoT Damage",
+                    "-n% Hazard and Hazard DoT incoming damage for team",
+                    "team Immune to hazard secondary effects",
+                    "+n% Attack for Green Lantern teammates"
+                    ]
+            }
+        ],
+    "specials":
+        [
+            {
+                "description": "Hazard Damage: Green Lantern floats back then constructs a trap of spinning blades that can deal hazard damage over time (DoT)",
+                "name":"GRINDER",
+                "buffs":
+                    [
+                    "n Damage",
+                    "n Hazard DoT Damage"
+                    ]
+            },
+            {
+                "description": "John Stewart unloads a rifle construct, knocking back his opponent.",
+                "name": "SOLID SHOTS",
+                "buffs":
+                    [
+                        "n Damage",
+                        "armor-pierce"
+                    ]
+            },
+            {
+                "description": "John swings a morning star construct, knocking down his opponent.",
+                "name":"MORNING STAR",
+                "buffs":
+                    [
+                        "n Damage"
+                    ]
+            }
+        ],
+    "supermove" :
+        {
+        "description": "John Stewart harnesses his willpower into a devastating attack.",
+        "name":"MECHANIZED ASSAULT",
+        "buffs":
+            [
+                "n Damage",
+                "+20% Damage for the duration of the battle"
+            ]
+        }
+},
+{
+    "acronym" : "jk",
+    "name" : "Joker",
+    "passives" :
+        [
+            {
+                "description": "When The Joker is defeated, his team gains power and a poison bomb detonates, leaving the opponent stunned for a brief time.",
+                "name":"JOKE'S ON YOU",
+                "buffs":
+                    [
+                    "n Power Bar",
+                    "n second stun duration"
+                    ]
+            }
+        ],
+    "specials":
+        [
+            {
+                "description": "The Joker tosses a canister forward, full of his toxic gas.",
+                "name":"LAUGHING GAS",
+                "buffs":
+                    [
+                    "n DoT"
+                    ]
+            },
+            {
+                "description": "At close distance, The Joker tosses out a set of explosive chattering teeth.",
+                "name": "CHATTERING TEETH",
+                "buffs":
+                    [
+                        "n Damage"
+                    ]
+            },
+            {
+                "description": "The Joker slices up nearby opponents.",
+                "name":"PUT IT THERE PAL!",
+                "buffs":
+                    [
+                        "n Damage"
+                    ]
+            }
+        ],
+    "supermove" :
+        {
+        "description": "The Joker offers up a seat with shocking results.",
+        "name":"NOT SO FUNNY IS IT?",
+        "buffs":
+            [
+                "n Damage",
+                "+15% Damage for the duration of the battle"
+            ]
+        }
+},
+{
+    "acronym" : "koaam",
+    "name" : "King of Atlantis Aquaman",
+    "passives" :
+        [
+            {
+                "description": "When Aquaman uses a Special Ability, he gaines a damage increasing buff for the rest of the match. Buffs stacks to a maximum of 600%. Only active in Raid mode.",
+                "name":"BUILDING TSUNAMI",
+                "buffs":
+                    [
+                    "50% damage buff on Special 1",
+                    "100% damage buff on Special 2",
+                    "100% damage buff on Special 3"
+                    ]
+            },
+            {
+                "description": "Aquaman's Supermove temporarily disables the opponent's Supermove and also drains Power.",
+                "name":"OCEAN'S RETRIBUTION",
+                "buffs":
+                    [
+                    "Supermove drain 3 Power Bars",
+                    "Supermove Disables opponent's Supermove for 60 seconds"
+                    ]
+            },
+            {
+                "description": "Upon defeat, Aquaman uses all his remaining Power to Revive himself. Aquaman revives with health based on how much Power is available. If less then 1 bar of Power is available, this effect fails. Max once per Battle.",
+                "name":"WATERS OF LIFE",
+                "buffs":
+                    [
+                    "10% Health recovered per Power Bar"
+                    ]
+            }
+        ],
+    "specials":
+        [
+            {
+                "description": "Aquaman launches a multi-hit trident attack.",
+                "name":"SEVEN SEAS STAB",
+                "buffs":
+                    [
+                    "14.350 Damage"
+                    ]
+            },
+            {
+                "description": "Summon a vicious predator from the deep to attack the opponent.",
+                "name": "SHARK SUMMON",
+                "buffs":
+                    [
+                        "21.525 Damage"
+                    ]
+            },
+            {
+                "description": "In addition to standard Special Attack damage, this attack reduces the opponent's health by a percentage (maximum 3 times per battle). Health reduction is not affected by Critical, Lethal, or damage buffs. Health reduction ignores Defense, but can be affected by Blocking or passives.",
+                "name":"WRATH OF KING ATLAN",
+                "buffs":
+                    [
+                        "10% opponent's current's health reduction",
+                        "43.048 Damage"
+                    ]
+            }
+        ],
+    "supermove" :
+        {
+        "description": "An acquatic ally aids in striking down Aquaman's opponent",
+        "name":"FROM THE DEEP",
+        "buffs":
+            [
+                "48.232 Damage",
+                "+35% Damage for the duration of the battle"
+            ]
+        }
+},
+{
+    "acronym" : "llj",
+    "name" : "Last Laugh Joker",
+    "passives" :
+        [
+            {
+                "description": "When anyone is defeated in either team, The Joker gains an increase to damage for the remainder of the battle. When The Joker is defeated, a poison bomb detonates and stuns the opponent for a brief time.",
+                "name":"KILLING JOKER",
+                "buffs":
+                    [
+                    "50% Damage"
+                    ]
+            },
+            {
+                "description": "Last Laugh The Joker and Leauge of Anarchy teammates deal increased DoT",
+                "name":"JOKER VENOM",
+                "buffs":
+                    [
+                    "150% Joker League of Anarchy teammates' DoT"
+                    ]
+            },
+            {
+                "description": "When Last Laugh The Joker is active, any time an opponent tags in, they may be stunned.",
+                "name": "CAUGHT YOU OFF GUARD",
+                "buffs":
+                    [
+                    "50% Chance to stun",
+                    "2.5 Second stun"
+                    ]
+            }
+        ],
+    "specials":
+        [
+            {
+                "description": "The Joker tosses a canister forward, full of his toxic gas.",
+                "name": "LAUGHING GAS",
+                "buffs":
+                    [
+                    "8.017 Damage"
+                    ]
+            },
+            {
+                "description": "From any distance, The Joker fires his revolver, which may inflict Blind and cause the opponent to occasionally miss.",
+                "name": "BANG!",
+                "buffs":
+                    [
+                        "12.026 Damage",
+                        "50% Chance to Blind opponent for 8 seconds"
+                    ]
+            },
+            {
+                "description": "At close range, The Joker slams his crowbar onto his opponent, which may force them to tag-out.",
+                "name":"IMMOBILIZER",
+                "buffs":
+                    [
+                        "n Damage",
+                        "n% Chance to force opponent tag-out"
+                    ]
+            }
+        ],
+    "supermove" :
+        {
+        "description": "The Joker offers up a seat with shocking results.",
+        "name":"NOT SO FUNNY IS IT?",
+        "buffs":
+            [
+                "27.408 Damage",
+                "+35% Damage for the duration of the battle"
+            ]
+        }
+},
+{
+    "acronym" : "kbm",
+    "name" : "Knightmare Batman",
+    "passives" :
+        [
+            {
+                "description": "At battle start, Batman ambushes, granting his team a 3 second advantage to attack. Batman has a chance to reflect 100% of Basic Attack damage back onto his opponent",
+                "name":"KNIGHTMARE AMBUSH",
+                "buffs":
+                    [
+                    "3 second advantage",
+                    "n% Chance to reflect 100% damage of Basic, Tag, and Swipe attacks."
+                    ]
+            }
+        ],
+    "specials":
+        [
+            {
+                "description": "Batman demonstrates his mastery of the martial arts with a powerful kick that knocks down his opponent.",
+                "name":"LUNGE KICK",
+                "buffs":
+                    [
+                    "n Damage"
+                    ]
+            },
+            {
+                "description": "Batman uses a custom riflie to punish his opponent.",
+                "name": "LOST MORALS",
+                "buffs":
+                    [
+                        "n Damage"
+                    ]
+            },
+            {
+                "description": "After a quick trio of close distance attacks, Batman unloads a series of eplosive Batarangs.",
+                "name":"DARKNESS FALLS",
+                "buffs":
+                    [
+                        "n Damage"
+                    ]
+            }
+        ],
+    "supermove" :
+        {
+        "description": "The Dark Knight brings unyielding vengeance from the skies",
+        "name":"KNIGHT OF THE ECLIPSE",
+        "buffs":
+            [
+                "n Damage",
+                "+20% Damage for the duration of the battle"
+            ]
+        }
+},
+{
+    "acronym" : "mtc",
+    "name" : "Master Thief Catwoman",
+    "passives" :
+        [
+            {
+                "description": "Carpe Diem. Catwoman seizes the day and receives more Credits from completing Operations. She also has an increased chance to gain gear.",
+                "name":"FINDERS KEEPERS",
+                "buffs":
+                    [
+                    "n% Bonus Credits in Operations",
+                    "n% Chance for Gear in Operations"
+                    ]
+            }
+        ],
+    "specials":
+        [
+            {
+                "description": "Dashing a medium distance forward with a single claw slash. Catwoman staggers her opponent back, dealing DoT.",
+                "name":"SLASH DASH",
+                "buffs":
+                    [
+                    "n DoT"
+                    ]
+            },
+            {
+                "description": "Hazard Damage: Catwoman scatters back then sets a spiked trap onto the ground that causes hazard DoT.",
+                "name": "CALTROPS",
+                "buffs":
+                    [
+                        "n DoT",
+                        "n Hazard DoT Damage"
+                    ]
+            },
+            {
+                "description": "Catwoman cracks her whip, knocking her opponent away.",
+                "name":"PRETTY KITTY",
+                "buffs":
+                    [
+                        "n Damage"
+                    ]
+            }
+        ],
+    "supermove" :
+        {
+        "description": "Catwoman decides to take her opponent on the ride of their lifes",
+        "name":"RIDE ALONG",
+        "buffs":
+            [
+                "n Damage",
+                "+15% Damage for the duration of the battle"
+            ]
+        }
+},
+{
+    "acronym" : "mvasg",
+    "name" : "Multiverse Armored Supergirl",
+    "passives" :
+        [
+            {
+                "description": "Supergirl's team starts battles with additional Power Bars per Multiverse hero on either team.",
+                "name": "MULTIVERSE POWER",
+                "buffs":
+                    [
+                    "+1 starting Power Bar per Multiverse teammates and Multiverse opponents"
+                    ]
+            },
+            {
+                "description": "Armored Supergirl's Power Generation increases per Might class opponent.",
+                "name": "FUELED BY MIGHT",
+                "buffs":
+                    [
+                    "+25% Power generation per Might opponents"
+                    ]
+            },
+            {
+                "description": "On tag-in from Multiverse teammates, Supergirl lands an unlockable attack that can Interrupt Specials. If she interrupts, she immediately gains Power Bars.",
+                "name": "INTERRUPTION",
+                "buffs":
+                    [
+                    "1.627 Daage tag-in attack",
+                    "4 Power Bars gained"
+                    ]
+            }
+        ],
+    "specials":
+        [
+            {
+                "description": "Applies a Burning effect, having the current Defense of active opponent. Multiverse Crit Attacks cannot be resisted by Burning opponents. Special 1 inflicts bonus damage to Might opponents.",
+                "name":"BURNING VISION",
+                "buffs":
+                    [
+                    "15.364 DoT",
+                    "+40% Damage for Special 1 to Might opponents",
+                    "31 seconds of Burning"
+                    ]
+            },
+            {
+                "description": "Buffs Multiverse teammates with Critical Immunity and increased Defense.",
+                "name": "SUIT UP",
+                "buffs":
+                    [
+                        "n Damage",
+                        "n seconds of Crit Immunity for Multiple teammates. Bonus m seconds per Multiverse teammate",
+                        "+n% Defense buff for Multiverse teammates for m seconds. Bonus k% Defense per Multiverse teammate"
+                    ]
+            },
+            {
+                "description": "Buffs Multiverse teammates with Reflect Immunity. Increased Crit Chance and Increased Crit Damage.",
+                "name": "CRITICAL TACTICS",
+                "buffs":
+                    [
+                        "46.091 Damage",
+                        "+40% Damage for Special 3 to burning opponents",
+                        "39.28 seconds of Reflect Immunity for Multiverse teammates",
+                        "+80% Crit damage buff and 25% Crit Chance buff for 35.2 second for Multiverse teammates. Bonus +2% Crit damage and +1% Crit chance per Combo Meter Hit."
+                    ]
+            }
+        ],
+    "supermove" :
+        {
+        "description": "Supergirl blasts her opponent from space.",
+        "name":"SOLAR SHOWER",
+        "buffs":
+            [
+                "52.080 Damage",
+                "+35% Damage for the duration of the battle"
+            ]
+        }
+},
+{
+    "acronym" : "mvbw",
+    "name" : "Multiverse Batwoman",
+    "passives" :
+        [
+            {
+                "description": "For each active buff from a Multiverse teammate, Kate's Special attack damage is increased, to a maximum of 150%",
+                "name":"TACTICAL STRIKES",
+                "buffs":
+                    [
+                    "30% Special Attack damage per active Multiverse buff"
+                    ]
+            },
+            {
+                "description": "Batwoman extends the duration of all Multiverse buffs applied to her",
+                "name":"TACTICAL PREP",
+                "buffs":
+                    [
+                    "15 seconds added to a Multiverse buff"
+                    ]
+            },
+            {
+                "description": "Kate Kane gives her entire team a chance to keep their combo hit count from resetting when hit",
+                "name":"COMBAT FOCUS",
+                "buffs":
+                    [
+                    "90% Chance for team to ignore combo hit count interruption"
+                    ]
+            }
+        ],
+    "specials":
+        [
+            {
+                "description": "Batwoman performs multiple punches, with a chance to trigger her Special 3 for no power cost. Special 3 will remain free until is used or Batwoman is tagged out.",
+                "name":"WEALTH OF PAIN",
+                "buffs":
+                    [
+                    "n Damage",
+                    "n% Chance for Batwoman's Special 3 to cost no power"
+                    ]
+            },
+            {
+                "description": "With a series of close up strikes, Batwoman brutally smacks down her opponent.",
+                "name": "CLASS ACT",
+                "buffs":
+                    [
+                        "n Damage"
+                    ]
+            },
+            {
+                "description": "Batwoman launches herself into the air, hurling down a set of deadly Batarangs that deal DoT",
+                "name":"BLOOD FROM ABOVE",
+                "buffs":
+                    [
+                        "n DoT"
+                    ]
+            }
+        ],
+    "supermove" :
+        {
+        "description": "",
+        "name":"HIGH-WIRE ACT",
+        "buffs":
+            [
+                "26.848 Damage",
+                "+35% Damage for the duration of the battle"
+            ]
+        }
+},
+{
+    "acronym" : "mvbl",
+    "name" : "Multiverse Black Lightning",
+    "passives" :
+        [
+            {
+                "description": "Teammates who are power drained, regenerate health for each bar of power drained. Power cost of opponent Abilities increases per use against Multiverse teammates.",
+                "name":"OVERLOAD",
+                "buffs":
+                    [
+                    "+n% Health regenerated per Power Bar when power drained for team",
+                    "+n Power cost of opponent Abilities per use against Multiverse teammates"
+                    ]
+            }
+        ],
+    "specials":
+        [
+            {
+                "description": "Pierce pounds the ground, knocking away his opponent.",
+                "name":"WAVE OF THUNDER",
+                "buffs":
+                    [
+                    "n Damage"
+                    ]
+            },
+            {
+                "description": "Hazard Damage: Black Lightning forms a cage of electrical energy around his opponent, hindering attacks while dealing hazard DoT.",
+                "name": "ELECTRIC CAGE",
+                "buffs":
+                    [
+                        "n Damage",
+                        "n Hazard DoT Damage",
+                        "n second hazard that disables Basic and Swipe attacks"
+                    ]
+            },
+            {
+                "description": "Jefferson strikes down his opponent with a bolt of armor-piercing electrical energy.",
+                "name":"PIERCE OF LIGHTNING",
+                "buffs":
+                    [
+                        "n Damage",
+                        "Armor-pierce"
+                    ]
+            }
+        ],
+    "supermove" :
+        {
+        "description": "Black Lightning sends his victim upwards for an electricla smack down",
+        "name":"BLACK LIGHTNING",
+        "buffs":
+            [
+                "n Damage",
+                "+20% Damage for the duration of the battle"
+            ]
+        }
+},
+{
+    "acronym" : "mvcc",
+    "name" : "Multiverse Captain Cold",
+    "passives" :
+        [
+            {
+                "description": "At battle start, Buffs Multiverse teammates with a shield that reduce incoming Basic, Swipe and Tag Attack damage. Captain Cold also gives all Multiverse teammates armor-pierce chance resistance.",
+                "name":"COLD BARRIER",
+                "buffs":
+                    [
+                    "+n% Armor-Pierce chance resistance for Multiverse teammates if this character is in your Roster",
+                    "n second shield that reduces incoming Basic, Swipe and Tag damage by n% per Multiverse teammate",
+                    "Per use Special Ability bonuses stack up to 3 times",
+                    "Immune to freeze"
+                    ]
+            }
+        ],
+    "specials":
+        [
+            {
+                "description": "Buffs Multiverse teammates with a shield that reduces incoming Basic, Swipe and Tag Attack damage. Can be broken by opponent Specials.",
+                "name":"FROST SHIELD",
+                "buffs":
+                    [
+                    "n Damage",
+                    "n second shield that reduces incoming Basic, Swipe and Tag damage by n% per Multiverse teammate",
+                    "Effectiveness increases n% per use"
+                    ]
+            },
+            {
+                "description": "Buffs Multiverse teammates ",
+                "name": "ICE SHIELD",
+                "buffs":
+                    [
+                        "n Damage",
+                        "n second shield that reduces incoming Fast Attack damage by 17% per Multiverse teammate",
+                        "Effectiveness increases 3% per use"
+                    ]
+            },
+            {
+                "description": "Buffs Multiverse teammates with increased Special Ability damage",
+                "name":"OVERCHARGE",
+                "buffs":
+                    [
+                        "n Damage",
+                        "n seconds of a 15% Special Attack Daage boost per Multiverse teammate",
+                        "Effectiveness increases 3% per use"
+                    ]
+            }
+        ],
+    "supermove" :
+        {
+        "description": "Captain Cold unleashes a barrage of icy shots onto his opponent",
+        "name":"ABSOLUTE ZERO",
+        "buffs":
+            [
+                "n Damage",
+                "+15% Damage for the duration of the battle"
+            ]
+        }
+},
+{
+    "acronym" : "mvf",
+    "name" : "Multiverse The Flash",
+    "passives" :
+        [
+            {
+                "description": "Multiverse teammates gain a bonus to critical attack chance. All teammates are granted an increase to critical attack damage.",
+                "name":"MULTIVERSE CRITICAL",
+                "buffs":
+                    [
+                    "52% Multiverse teammates Critical Attack chance",
+                    "45% team Critical Attack damage"
+                    ]
+            },
+            {
+                "description": "Barry Allen's connection to the Speedforce enables all Multiverse teammates to use Special Attacks faster (does not stack with similar passive Ablities)",
+                "name":"MULTIVERSE HASTE",
+                "buffs":
+                    [
+                    "-2 to Multiverse teammates' Power Bar cost for Special 3",
+                    "-2 to Multiverse teammates' Power Bar cost for Special 2",
+                    "-1 to Multiverse teammates' Power Bar cost for Special 1"
+                    ]
+            },
+            {
+                "description": "Barry's contacts within S.T.A.R. Labs gives him an advantage vs Tech",
+                "name": "S.T.A.R. LABS",
+                "buffs":
+                    [
+                        "3 Tech Specials ignored per battle"
+                    ]
+            }
+        ],
+    "specials":
+        [
+            {
+                "description": "Quickly rotating his arms at close range, Barry manipulates the surrounding air to push away his opponent.",
+                "name":"SONIC LIFT",
+                "buffs":
+                    [
+                    "n Damage"
+                    ]
+            },
+            {
+                "description": "The Flash unleashes a flurry of kicks at close distance. Upon use, swipe to increase the number of kicks.",
+                "name": "DUST KICK",
+                "buffs":
+                    [
+                        "n Damage"
+                    ]
+            },
+            {
+                "description": "Using aerokinesis, Barry spins around at super spee creating a traveling vortex that has a chance to stun.",
+                "name":"WHIRLWIND",
+                "buffs":
+                    [
+                        "n Damage",
+                        "n% Chance to stun"
+                    ]
+            }
+        ],
+    "supermove" :
+        {
+        "description": "No opponent can outrun The Flash's blitz of attacks.",
+        "name": "OUT OF TIME",
+        "buffs":
+            [
+                "27.608 Damage",
+                "+35% Damage for the duration of the battle"
+            ]
+        }
+},
+{
+    "acronym" : "mvga",
+    "name" : "Multiverse Green Arrow",
+    "passives" :
+        [
+            {
+                "description": "Multiverse teammates each gain a chance to power drain on Special 1. Team's power drains have a chance to steal power from the opponent.",
+                "name":"MULTIVERSE POWER DRAIN",
+                "buffs":
+                    [
+                    "90% Chance to Special 1 Drain 2 Power Bars for Multiverse teammates",
+                    "51% Chance to Transfer 50% power drained to reserves for team"
+                    ]
+            },
+            {
+                "description": "Multiverse teammates gain a chance to apply a powerful Damage Over Time on Special 3 for 7 seconds",
+                "name":"MULTIVERSE INCENDIARIES",
+                "buffs":
+                    [
+                    "70% DoT chance",
+                    "35% DoT damage"
+                    ]
+            },
+            {
+                "description": "All teammates gain a Health Bonus",
+                "name": "ENDURANCE TRAINING",
+                "buffs":
+                    [
+                        "+16% Health for team"
+                    ]
+            }
+        ],
+    "specials":
+        [
+            {
+                "description": "Green Arrow fires an electric arrow from a crouching stance, draining power from his opponent.",
+                "name":"ELECTRIC ARROW",
+                "buffs":
+                    [
+                    "n Damage",
+                    "n Power Bars drained"
+                    ]
+            },
+            {
+                "description": "At close range, Green Arrow swings his bow, knocking away his opponent.",
+                "name": "BOW POKE",
+                "buffs":
+                    [
+                        "n Damage"
+                    ]
+            },
+            {
+                "description": "Ollie launches his opponent for a mid-air attack from a burning arrow that deals DoT",
+                "name":"FIRE ARROW",
+                "buffs":
+                    [
+                        "n Damage",
+                        "n DoT"
+                    ]
+            }
+        ],
+    "supermove" :
+        {
+        "description": "Green Arrow unloads arrows of fire and ice onto his victim.",
+        "name":"TARGET PRACTICE",
+        "buffs":
+            [
+                "18.104 Damage",
+                "+25% Damage for the duration of the battle"
+            ]
+        }
+},
+{
+    "acronym" : "mvsg",
+    "name" : "Multiverse Super Girl",
+    "passives" :
+        [
+            {
+                "description": "Multiverse teammates receive reduced inccoming damage when at low health. All teammates are granted an increase to defense.",
+                "name":"MULTIVERSE TENACITY",
+                "buffs":
+                    [
+                    "+n% Defense for team",
+                    "-n% Incoming damage for Multiverse team when below 50% health"
+                    ]
+            }
+        ],
+    "specials":
+        [
+            {
+                "description": "With authority, Supergirl maintains a continuous heat vision beam that deals damage over time (DoT) at any distance.",
+                "name":"WALKING LASER",
+                "buffs":
+                    [
+                    "n Damage"
+                    ]
+            },
+            {
+                "description": "Known as Kara Danvers on Earth, Supergirl exhales a powerful stream of breath",
+                "name": "SUPER BREATH",
+                "buffs":
+                    [
+                        "n Damage",
+                        "n second freeze"
+                    ]
+            },
+            {
+                "description": "Supergirl shoulder charges forward, knocking down her opponent.",
+                "name":"KRYPTONIAN FORCE",
+                "buffs":
+                    [
+                        "n Damage"
+                    ]
+            }
+        ],
+    "supermove" :
+        {
+        "description": "Supergirl blasts her opponent from space",
+        "name":"SOLAR SHOWER",
+        "buffs":
+            [
+                "n Damage",
+                "+20% Damage for the duration of the battle"
+            ]
+        }
+},
+{
+    "acronym" : "mvwc",
+    "name" : "Multiverse White Canary",
+    "passives" :
+        [
+            {
+                "description": "All teamates gain an increase to the base effect of their Equipment (5th gear slot). Upon use, Multiverse teammates' Special 1 has a chance to cost no power.",
+                "name":"MULTIVERSE WEAPON MASTER",
+                "buffs":
+                    [
+                    "n% Chance for Multiverse team Special 1 to cost no power",
+                    "+n% base effects of team Equipment/5th gear slot"
+                    ]
+            }
+        ],
+    "specials":
+        [
+            {
+                "description": "From close distance, Sara quickly spins her staff,",
+                "name":"STAFF SPIN",
+                "buffs":
+                    [
+                    "n Damage"
+                    ]
+            },
+            {
+                "description": "A former member of the League of Assassins, White Canary unleashes a barrage of baton strikes, pushing back her opponent.",
+                "name": "BATON FLURRY",
+                "buffs":
+                    [
+                        "n Damage"
+                    ]
+            },
+            {
+                "description": "Sara tosses out a sonic device that can temporarily disable the opposing team's Abilities.",
+                "name":"SONIC DEVICE",
+                "buffs":
+                    [
+                        "n Damage",
+                        "n second disable of opponent Special Abilities"
+                    ]
+            }
+        ],
+    "supermove" :
+        {
+        "description": "White Canary launches her opponent into a violent canary cry.",
+        "name":"SONIC SCREAM",
+        "buffs":
+            [
+                "n Damage",
+                "+20% Damage for the duration of the battle"
+            ]
+        }
+},
+{
+    "acronym" : "mww",
+    "name" : "Mythic Wonder Woman",
+    "passives" :
+        [
+            {
+                "description": "As she defeats her opponents, Wonder Woman absorbs a portion of their attack, dealing increased damage for a limited time.",
+                "name":"GOD KILLER SWORD",
+                "buffs":
+                    [
+                    "n% of opponent's attack absorbed for a m seconds"
+                    ]
+            }
+        ],
+    "specials":
+        [
+            {
+                "description": "At medium distance, Diana slices while sliding forward, knocking down her opponent.",
+                "name":"CHOP SLIDE",
+                "buffs":
+                    [
+                    "n Damage",
+                    "Armor-pierce"
+                    ]
+            },
+            {
+                "description": "A defensive pose that reflects a portion of incoming damage (excluding DoT) back onto the attacking opponent. While defending, power is slowly drained from Wonder Woman.",
+                "name": "BRACELET BLOCK",
+                "buffs":
+                    [
+                        "+n% Incoming damage reflected",
+                        "-n% Incoming damage"
+                    ]
+            },
+            {
+                "description": "From a medium distance, Wonder Woman uses her arsenal to smack down her opponent.",
+                "name":"FOR THEMYSCIRA",
+                "buffs":
+                    [
+                        "n Damage"
+                    ]
+            }
+        ],
+    "supermove" :
+        {
+        "description": "Wonder Woman smites her opponent with her Amazonian strength and unmatched martial prowess",
+        "name":"AMAZON ARSENAL",
+        "buffs":
+            [
+                "n Damage",
+                "+15% Damage for the duration of the battle"
+            ]
+        }
+},
+{
+    "acronym" : "nw",
+    "name" : "Nightwing",
+    "passives" :
+        [
+            {
+                "description": "Nightwing gains power when he blocks attacks. When he uses any Special Ability, his Basic and Swipe Attacks are temporarily enhanced with various effects. Only 1 effect active at a time.",
+                "name":"STAFF OF GRAYSON",
+                "buffs":
+                    [
+                    "Generate n power on Damage while blocking"
+                    ]
+            }
+        ],
+    "specials":
+        [
+            {
+                "description": "Activates a temporarily power draining effect on Nightwing's Basic and Swipe Attacks, reducing his opponent's power.",
+                "name":"GROUND BLAST",
+                "buffs":
+                    [
+                    "n Damage",
+                    "n Power drain on Basic and Swipe Attacks for m seconds"
+                    ]
+            },
+            {
+                "description": "Activates a temporarily critical chance boost on Nightwing's Basic and Swipe Attacks.",
+                "name": "STAFF SPIN",
+                "buffs":
+                    [
+                        "n Damage",
+                        "n% Critical chance boost on Basic and Swipe Attacks for m seconds"
+                    ]
+            },
+            {
+                "description": "Activates a temprarily stun chance on Nightwing's Basic and Swipe Attacks.",
+                "name":"FLYING KICK",
+                "buffs":
+                    [
+                        "n Damage",
+                        "n% Chance to stun on Basic and Swipe Attacks for m seconds"
+                    ]
+            }
+        ],
+    "supermove" :
+        {
+        "description": "While mounted on his motorcycle, Nightwing repeatedly slashes the opponent.",
+        "name":"DARK AS NIGHT",
+        "buffs":
+            [
+                "n Damage",
+                "+20% Damage for the duration of the battle"
+            ]
+        }
+},
+{
+    "acronym" : "rdn",
+    "name" : "Raiden",
+    "passives" :
+        [
+            {
+                "description": "Team starts with additional power per Arcane teammate. Elder Shock Special Ability will strike tagged out opponents, dealing variable amounts of damage.",
+                "name":"CHAIN LIGHTNING",
+                "buffs":
+                    [
+                    "Elder Shock Special damage jumps to tagged out opponents:\nn Damage on 1st strike\nm Damage on 2nd strike",
+                    "+n starting Power Bar per Arcane teammates"
+                    ]
+            }
+        ],
+    "specials":
+        [
+            {
+                "description": "The God of Thunder flies forward, pushing his opponent further back.",
+                "name":"FLYING THUNDER GOD",
+                "buffs":
+                    [
+                    "n Damage"
+                    ]
+            },
+            {
+                "description": "Raiden emits a large blast of electricity, knocking down his opponent.",
+                "name": "DIVINE BLAST",
+                "buffs":
+                    [
+                        "n Damage",
+                        "n Power Bars drained"
+                    ]
+            },
+            {
+                "description": "At close range, Raiden unleashes a bundle of lightning, knocking away his opponent.",
+                "name":"ELDER SHOCK",
+                "buffs":
+                    [
+                        "n Damage"
+                    ]
+            }
+        ],
+    "supermove" :
+        {
+        "description": "Raiden transforms, knocking down his opponent.",
+        "name":"GOD OF THUNDER",
+        "buffs":
+            [
+                "n Damage",
+                "+15% Damage for the duration of the battle"
+            ]
+        }
+},
+{
+    "acronym" : "psg",
+    "name" : "Powered Supergirl",
+    "passives" :
+        [
+            {
+                "description": "Critical hits on non-Ability attacks have the chance of allowing Kara to perform her Walking Laser Ability for 0 cost.",
+                "name":"POWERED HEAT VISION",
+                "buffs":
+                    [
+                    "n% Chance for Special 1 to cost no power on Basic and Swipe critical attacks"
+                    ]
+            }
+        ],
+    "specials":
+        [
+            {
+                "description": "With authority, Supergirl maintains a continuous heat vision beam that deals damage over time (DoT) at any distance.",
+                "name":"WALKING LASER",
+                "buffs":
+                    [
+                    "n DoT"
+                    ]
+            },
+            {
+                "description": "Over medium distance, Kara performs a swift set of strikes that knocks down her opponent.",
+                "name": "LAST DAUGHTER OF KRYPTON",
+                "buffs":
+                    [
+                        "n Damage"
+                    ]
+            },
+            {
+                "description": "Supergirl unleashes a flurry of alternating punches at close distance.",
+                "name":"R'E'L",
+                "buffs":
+                    [
+                        "n Damage"
+                    ]
+            }
+        ],
+    "supermove" :
+        {
+        "description": "Supergirl blasts her opponent from space",
+        "name":"SOLAR SHOWER",
+        "buffs":
+            [
+                "n Damage",
+                "+20% Damage for the duration of the battle"
+            ]
+        }
+},
+{
+    "acronym" : "pg",
+    "name" : "Power Girl",
+    "passives" :
+        [
+            {
+                "description": "All teammates' Abilitiles require less power (does not stack with similar passive Abilities). In addition, Power Girl's attack slowly increases duringa battle, even if tagged out.",
+                "name":"SOLAR ENERGY ABSORPTION",
+                "buffs":
+                    [
+                    "-2 to team's Power Bar cost for Special Abilities",
+                    "+1% damage every 10 seconds to a maximum of 36%"
+                    ]
+            }
+        ],
+    "specials":
+        [
+            {
+                "description": "With authority, Supergirl maintains a continuous heat vision beam that deals damage over time (DoT) at any distance.",
+                "name":"WALKING LASER",
+                "buffs":
+                    [
+                    "n DoT"
+                    ]
+            },
+            {
+                "description": "Power Girl spins, releasing a whirlwind that knocks her opponent upwards.",
+                "name": "SUPER WHIRL",
+                "buffs":
+                    [
+                        "n Damage"
+                    ]
+            },
+            {
+                "description": "Power Girl quickly stomps, knocking down her opponent.",
+                "name":"SUPER STOMP",
+                "buffs":
+                    [
+                        "n Damage"
+                    ]
+            }
+        ],
+    "supermove" :
+        {
+        "description": "Power Girl blasts her opponent from space.",
+        "name":"SOLAR SHOWER",
+        "buffs":
+            [
+                "21.592 Damage",
+                "+35% Damage for the duration of the battle"
+            ]
+        }
+},
+{
+    "acronym" : "pbm",
+    "name" : "Predator Batman",
+    "passives" :
+        [
+            {
+                "description": "On tag-in, the Batwing strafes all opponents with a barrage of cannon fire. May be ineffective in Raid Boss battles.",
+                "name":"BATWING AIRSTRIKE",
+                "buffs":
+                    [
+                    "15% Health reduction"
+                    ]
+            }
+        ],
+    "specials":
+        [
+            {
+                "description": "Kryptonian tech provides Wayne with an aesome punch that temporarily disables his opponent's Abilities",
+                "name":"KRYPTONIAN STRIKES",
+                "buffs":
+                    [
+                    "6 second disable of opponent Special Abilities",
+                    "7 000 Damage",
+                    "Armor-pierce"
+                    ]
+            },
+            {
+                "description": "Hazard Damage: Batman deploys a smoke bomb on the ground. Opponents caught in its blast are briefly stunned and suffer hazard damage.",
+                "name": "STUN BOMB",
+                "buffs":
+                    [
+                        "n second stun",
+                        "n Hazard Damage",
+                        "n Damage"
+                    ]
+            },
+            {
+                "description": "Batman fires his grapple hook to pull himself towards his opponent, delivering a powerful kick.",
+                "name":"GRAPPLE KICK",
+                "buffs":
+                    [
+                        "n Damage"
+                    ]
+            }
+        ],
+    "supermove" :
+        {
+        "description": "The Dark Knight brings unyielding vengeance from the skies",
+        "name":"",
+        "buffs":
+            [
+                "24.568 Damage",
+                "+35% Damage for the duration of the battle"
+            ]
+        }
+},
+{
+    "acronym" : "pst",
+    "name" : "Primal Swamp Thing",
+    "passives" :
+        [
+            {
+                "description": "When knocked out, a cloned body emerges from the ground in which Swamp Thing may continue to fight. Max once per battle.",
+                "name":"FORCE OF NATURE",
+                "buffs":
+                    [
+                    "n Health regenerated on revival"
+                    ]
+            }
+        ],
+    "specials":
+        [
+            {
+                "description": "Swamp Thing foot stomps before sending out a log that may knock down opponents at distance.",
+                "name":"MARSH MARCH",
+                "buffs":
+                    [
+                    "n Damage"
+                    ]
+            },
+            {
+                "description": "A quick clone assist brings the opponent closer in for an earthy treat.",
+                "name": "BIO-FISSION",
+                "buffs":
+                    [
+                        "n Damage"
+                    ]
+            },
+            {
+                "description": "Swamp Thing and a clone combine their efforts to knock down the opponent.",
+                "name":"EARTH TO EARTH",
+                "buffs":
+                    [
+                        "n Damage"
+                    ]
+            }
+        ],
+    "supermove" :
+        {
+        "description": "An underground beatdown.",
+        "name":"GREEN KINGDOM",
+        "buffs":
+            [
+                "n Damage",
+                "+20% Damage for the duration of the battle"
+            ]
+        }
+},
+{
+    "acronym" : "rh",
+    "name" : "Red Hood",
+    "passives" :
+        [
+            {
+                "description": "Back from the dead via the Lazarus Pit. Red Hood can add time back to a battle's timer and boosts his team's resistances by perfoming his Gotham's Outlaw Supermove.",
+                "name":"TIME EXTENSION",
+                "buffs":
+                    [
+                    "30 seconds added to battle's timer",
+                    "40% Boost to team's resistances"
+                    ]
+            }
+        ],
+    "specials":
+        [
+            {
+                "description": "Red Hood fires a series of low shots at his opponent.",
+                "name":"UNDER THE HOOD",
+                "buffs":
+                    [
+                    "n Damage"
+                    ]
+            },
+            {
+                "description": "Hazard Damage: Red Hood tosses out an explosive mine.",
+                "name": "EXPLOSivE MINE",
+                "buffs":
+                    [
+                        "n Damage",
+                        "n Hazard Damage"
+                    ]
+            },
+            {
+                "description": "Red Hood demonstrates his knife skills",
+                "name":"KNIFE FLURRY",
+                "buffs":
+                    [
+                        "n Damage"
+                    ]
+            }
+        ],
+    "supermove" :
+        {
+        "description": "Red Hood unloads his arsenal onto his opponent.",
+        "name":"GOTHAM'S OUTLAW",
+        "buffs":
+            [
+                "16.152 Damage",
+                "+25% Damage for the duration of the battle"
+            ]
+        }
+},
+{
+    "acronym" : "rf",
+    "name" : "Reverse Flash",
+    "passives" :
+        [
+            {
+                "description": "On tag-in, The Reverse Flash has a chance to swap power wth his opponent. Max three times per battle.",
+                "name":"REVERSE TIME",
+                "buffs":
+                    [
+                    "70% Chance to swap power with opponent on tag-in"
+                    ]
+            }
+        ],
+    "specials":
+        [
+            {
+                "description": "Eobard Thawne phase attacks from multiple directions, knocking back his opponent.",
+                "name":"PHASING STRIKES",
+                "buffs":
+                    [
+                    "n Damage"
+                    ]
+            },
+            {
+                "description": "The Reverse Flash unleashes a flurry of kicks at close distance. Upon use, swipe to increase the number of kicks.",
+                "name": "DUST KICK",
+                "buffs":
+                    [
+                        "n Damage"
+                    ]
+            },
+            {
+                "description": "The Reverse Flash performs a sonic jump punch, knocking down his opponent.",
+                "name":"FUTURE FAN",
+                "buffs":
+                    [
+                        "n Damage"
+                    ]
+            }
+        ],
+    "supermove" :
+        {
+        "description": "No opponent can outrun The Reverse Flash's blitz of attacks.",
+        "name":"OUT OF TIME",
+        "buffs":
+            [
+                "28.784 Damage",
+                "+35% Damage for the duration of the battle"
+            ]
+        }
+},
+{
+    "acronym" : "robin",
+    "name" : "Robin",
+    "passives" :
+        [
+            {
+                "description": "Robin has a chance for his non-Ability attacks to count twice towards the Combo Meter, increasing the potential damage bonus received upon activating Abilities.",
+                "name":"COMBO MASTER",
+                "buffs":
+                    [
+                    "n% Chance for Basic Attacks to count as 2 Combo Meter hits."
+                    ]
+            }
+        ],
+    "specials":
+        [
+            {
+                "description": "Damian darts forward for a quick short-range slice.",
+                "name":"ASSASSIN STRIKE",
+                "buffs":
+                    [
+                    "n Damage"
+                    ]
+            },
+            {
+                "description": "Damian spins into a quick series of sword strikes, knocking down his opponent.",
+                "name": "BORN TO KILL",
+                "buffs":
+                    [
+                        "n Damage"
+                    ]
+            },
+            {
+                "description": "A quick sword thrust forward starts a trio of heavy strikes",
+                "name":"NEVER LOSE",
+                "buffs":
+                    [
+                        "n Damage"
+                    ]
+            }
+        ],
+    "supermove" :
+        {
+        "description": "Combines sword and gadgets into a high damage sequence",
+        "name":"HOLDING BACK",
+        "buffs":
+            [
+                "n Damage",
+                "+15% Damage for the duration of the battle"
+            ]
+        }
+},
+{
+    "acronym" : "sc",
+    "name" : "Scarecrow",
+    "passives" :
+        [
+            {
+                "description": "If an opponent tries to tag-out, there is a chance Scarecrow hooks the opponent and stuns them.",
+                "name":"HOOK AND CHAIN",
+                "buffs":
+                    [
+                    "60% Chance Scarecrow stops tag-out, stunning opponent for 2.5 seconds"
+                    ]
+            }
+        ],
+    "specials":
+        [
+            {
+                "description": "Scarecrow awkwardly strikes with the edge of his hook, knocking back his opponent.",
+                "name":"MALPRACTICE",
+                "buffs":
+                    [
+                    "n Damage"
+                    ]
+            },
+            {
+                "description": "Scarecrow retreats briefly before attacking, releasing a gas hazard that can temporarily disable his opponent's Abilities.",
+                "name": "FEAR GAS",
+                "buffs":
+                    [
+                        "n second hazard that disables Special Abilities",
+                        "n Damage"
+                    ]
+            },
+            {
+                "description": "Scarecrow dives forward  a medium distance prior to smacking down his opponent with a heavy hooked chain combo.",
+                "name":"DELUSIONAL EPISODES",
+                "buffs":
+                    [
+                        "n Damage"
+                    ]
+            }
+        ],
+    "supermove" :
+        {
+        "description": "Scarecrow brings his opponent into a nightmare where he is all powerful.",
+        "name":"OUT OF OFFICE",
+        "buffs":
+            [
+                "n Damage",
+                "+20% Damage for the duration of the battle"
+            ]
+        }
+},
+{
+    "acronym" : "shz",
+    "name" : "Shazam",
+    "passives" :
+        [
+            {
+                "description": "Arcane and Might heroes on Shazam's team gain increased Attack for the entire battle",
+                "name":"COURAGE OF ACHILLES",
+                "buffs":
+                    [
+                    "100% Attack for Arcane and Might teammates"
+                    ]
+            },
+            {
+                "description": "If Shazam successfully blocks a Special Attack, Shazam may disable that Special Attack and mayactivate his own Special, Roaring Strike.",
+                "name":"RETRIBUTION OF ZEUS",
+                "buffs":
+                    [
+                    "60% Chance to disable",
+                    "16 second disable duration",
+                    "20% Chance to activate Roaring Strike"
+                    ]
+            },
+            {
+                "description": "Critical Hits against Shazam amd his entire team are greatly reduced in damage.",
+                "name":"STAMINA OF ATLAS",
+                "buffs":
+                    [
+                    "100% Critical Damage Multiplier reduction for team"
+                    ]
+            }
+        ],
+    "specials":
+        [
+            {
+                "description": "Shazam combos into a lightning bolt toss.",
+                "name":"BOLT OF ZEUS",
+                "buffs":
+                    [
+                    "n Damage"
+                    ]
+            },
+            {
+                "description": "Shazam attacks with the will of Atlas, also healing the teammate with the lowest health.",
+                "name": "ATLAS TORPEDO",
+                "buffs":
+                    [
+                        "n Damage",
+                        "n% o lowest teammate's health regenerated"
+                    ]
+            },
+            {
+                "description": "Shazam summons a lightning strike onto his opponent, also healing his entire team.",
+                "name":"ROARING STRIKE",
+                "buffs":
+                    [
+                        "n Damage",
+                        "n% of team's maximum health regenerated"
+                    ]
+            }
+        ],
+    "supermove" :
+        {
+        "description": "Shazam sends his into the sky for a few hits, before spin tossing them downwards.",
+        "name":"THE POWER OF SHAZAM",
+        "buffs":
+            [
+                "n Damage",
+                "+20% Damage for the duration of the battle"
+            ]
+        }
+},
+{
+    "acronym" : "sb",
+    "name" : "Silver Banshee",
+    "passives" :
+        [
+            {
+                "description": "When Silver Banshee's Special Abilities damage an opponent affected by Tornment, they deal increased damage and have a chance to Disable their highest upgraded Special Ability for a duration. If an opponent's highest upgraded Special Ability is already Disaled, this Passive chooses the next highest to become Disabled instead. All Arcane teammates' Special 2 and Special 3 benefit from Tornment's Grasp",
+                "name":"TORNMENT'S GRASP",
+                "buffs":
+                    [
+                    "90% Chance to Disable",
+                    "10% Chance to ignore incoming DoT"
+                    ]
+            }
+        ],
+    "specials":
+        [
+            {
+                "description": "Her voice is the collected screams of nightmares the world over.",
+                "name":"CURSED TOUCH",
+                "buffs":
+                    [
+                    "10k Damage",
+                    "40% Chance to inflict Tornment on Basic and Swipe Attacks for 15 seconds"
+                    ]
+            },
+            {
+                "description": "Silver Banshee's unnatural scream unnerves her enemies, putting even her most stalwart foes to fight",
+                "name": "TERRIFYING WAIL",
+                "buffs":
+                    [
+                        "n Damage",
+                        "Applies Torment to the current and forces them to tag-out. Opponents tagged-out in this way cannot be tagged-in for n seconds. If there is only one non-Boss opponent remaining, all of that opponent's Special Abilities are Disabled for m seconds instead."
+                    ]
+            },
+            {
+                "description": "Disabled Specials on the victim of this attack are no longer Disabled after damage from this attack is dealt.",
+                "name":"SONIC bOOM",
+                "buffs":
+                    [
+                        "31k Damage",
+                        "If an opponent is currently affected by Tornment or is Disabled in any way, Sonic Boom deals 90% more damage per disabled Special and is Armor-Piercing. The victim of this attack also takes increased damage from Tornment."
+                    ]
+            }
+        ],
+    "supermove" :
+        {
+        "description": "The spirit of a cursed soul bathes in the screams of thousands: their voice the very echo of pain and tornment.",
+        "name":"CACOPHONY",
+        "buffs":
+            [
+                "35.064 Damage",
+                "+35% Damage for the duration of the battle"
+            ]
+        }
+},
+{
+    "acronym" : "sbc",
+    "name" : "Sonic Black Canary",
+    "passives" :
+        [
+            {
+                "description": "Canary's Sonic Blast Special Ability disables the opponent's block for a limited time.",
+                "name":"SONIC ATTACK",
+                "buffs":
+                    [
+                    "100% Chance to disable the opponent's block for n seconds after perfoming Special 1"
+                    ]
+            }
+        ],
+    "specials":
+        [
+            {
+                "description": "Black Canary unleashes an ultrasonic blast from medium distance, staggering her opponent.",
+                "name":"SONIC BLAST",
+                "buffs":
+                    [
+                    "n Damage"
+                    ]
+            },
+            {
+                "description": "Black Canary springs forward a medium distance into a thrust kick, knocking down her opponent.",
+                "name": "THRUST KICK",
+                "buffs":
+                    [
+                        "n Damage"
+                    ]
+            },
+            {
+                "description": "Canary leaps forward knocking her opponent away.",
+                "name":"SOARING KNEE",
+                "buffs":
+                    [
+                        "n Damage"
+                    ]
+            }
+        ],
+    "supermove" :
+        {
+        "description": "Black Canary launches her opponent into a violent canary cry",
+        "name":"SONIC SCREAM",
+        "buffs":
+            [
+                "n Damage",
+                "+20% Damage for the duration of the battle"
+            ]
+        }
+},
+{
+    "acronym" : "ssdf",
+    "name" : "Soulstealer Doctor Fate",
+    "passives" :
+        [
+            {
+                "description": "Upon activating his Amulet of Anubis Supermove, Doctor Fate has a chance to swap his health with his opponent. May be ineffective in Challenge and Raid Boss battles.",
+                "name":"REVERSAL OF FATE",
+                "buffs":
+                    [
+                    "95% Chance to swap health with opponent"
+                    ]
+            }
+        ],
+    "specials":
+        [
+            {
+                "description": "Fate pops up his victim into a sustained energy shock that may hit opponents at a distance.",
+                "name":"BLOOD PRICE",
+                "buffs":
+                    [
+                    "n Damage"
+                    ]
+            },
+            {
+                "description": "Fate places an ankh in the world that may heal nearby teammates over time.",
+                "name": "BREAK OF LIFE",
+                "buffs":
+                    [
+                        "n Damage",
+                        "n Healing"
+                    ]
+            },
+            {
+                "description": "Doctor Fate drops down from above.",
+                "name":"TIME IMMEMORIAL",
+                "buffs":
+                    [
+                        "n Damage"
+                    ]
+            }
+        ],
+    "supermove" :
+        {
+        "description": "Doctor Fate transports his victim into a group beatdown.",
+        "name":"THE AMULET OF ANUBIS",
+        "buffs":
+            [
+                "n Damage",
+                "+20% Damage for the duration of the battle"
+            ]
+        }
+},
+{
+    "acronym" : "sff",
+    "name" : "Speed Force The Flash",
+    "passives" :
+        [
+            {
+                "description": "The Flash's incredible speed allows him to ignore damage during Rush Attacks and Evade. He also increases the chance o Fast Attacks for his teammates.",
+                "name":"LIGHTNING REFLEXES",
+                "buffs":
+                    [
+                    "Ignore damage while attacking with Rush Attacks and Evade",
+                    "+30% Fast Attack Chance for team"
+                    ]
+            }
+        ],
+    "specials":
+        [
+            {
+                "description": "The Flash darts around quickly a medium distance into a final jump kick that has a chance to stun.",
+                "name":"FASTEST MAN ALIVE",
+                "buffs":
+                    [
+                    "n% Chance to stun",
+                    "n Damage"
+                    ]
+            },
+            {
+                "description": "The Flash unleashes a flurry of kicks at close distance. Upon use, swipe to increase the number of kicks.",
+                "name": "DUST KICK",
+                "buffs":
+                    [
+                        "n Damage"
+                    ]
+            },
+            {
+                "description": "The Flash unloads a dozen close distance punches, knocking back his opponent.",
+                "name":"FISTS OF FURY",
+                "buffs":
+                    [
+                        "n Damage"
+                    ]
+            }
+        ],
+    "supermove" :
+        {
+        "description": "No opponent can outrun The Flash's blitz of attacks.",
+        "name":"OUT OF TIME",
+        "buffs":
+            [
+                "n Damage",
+                "+20% Damage for the duration of the battle"
+            ]
+        }
+},
+{
+    "acronym" : "sz",
+    "name" : "Sub-Zero",
+    "passives" :
+        [
+            {
+                "description": "Upon the use of Sub-Zero's third Special Ability, Klone Toss, a clone of his current opponent is created to fight for him in battle, that has no Supermove or Passive. May be ineffective in Raid Boss battles.",
+                "name":"KLONE KOMBATANT",
+                "buffs":
+                    [
+                    "n% Ice clone Health",
+                    "n% Ice clone Attack"
+                    ]
+            }
+        ],
+    "specials":
+        [
+            {
+                "description": "Sub-Zero slams down an ice hammer, knocking away his opponent.",
+                "name":"FROST HAMMER",
+                "buffs":
+                    [
+                    "n Damage"
+                    ]
+            },
+            {
+                "description": "From any distance, Sub-Zero tosses an ice ball forward, freezing his opponent for a brief moment while slowing the victim's power generation.",
+                "name": "ICE BALL",
+                "buffs":
+                    [
+                        "n Damage",
+                        "n second freeze"
+                    ]
+            },
+            {
+                "description": "Sub-Zero throws an ice clone forward, knocking down his opponent.",
+                "name":"KLONE TOSS",
+                "buffs":
+                    [
+                        "100% unblockable",
+                        "n Damage"
+                    ]
+            }
+        ],
+    "supermove" :
+        {
+        "description": "Sub-Zero combines his Lin Kuei techniques to deliver a chilling beatdown.",
+        "name":"FREEZING FINISH",
+        "buffs":
+            [
+                "n Damage",
+                "+15% Damage for the duration of the battle"
+            ]
+        }
+},
+{
+    "acronym" : "ssds",
+    "name" : "Suicide Squad Deadshot",
+    "passives" :
+        [
+            {
+                "description": "Deadshot deals extra damage with a high chance for lethal hits based on his opponent's distance.",
+                "name":"SNIPER",
+                "buffs":
+                    [
+                    "+n% Damage based on opponents distance",
+                    "+n% Lethal Attack chance based on opponent distance"
+                    ]
+            },
+            {
+                "description": "Deadshot's Ranged Attack has a chance to temporarily disable his opponent's movement. Also, his Specials may disable the corresponding Specials of the active opponent for a limited time.",
+                "name":"SUPPRESSIVE FIRE",
+                "buffs":
+                    [
+                    "+50% chance to disable opponent's movement for 3 seconds",
+                    "+70% chance to disable opponent's Special for 7 seconds"
+                    ]
+            },
+            {
+                "description": "Each time Suicide Squad teammates perform a Special Ability. Deadshot fires his weapon from off screen.",
+                "name": "ASSASSIN",
+                "buffs":
+                    [
+                        "+25% of Special 1 Damage"
+                    ]
+            }
+        ],
+    "specials":
+        [
+            {
+                "description": "Deadshot fires a trio of shots down low, tripping up his opponent. This Special has a chance to armor-pierce.",
+                "name":"ON THE LOW",
+                "buffs":
+                    [
+                    "n Damage",
+                    "+n% chance to armor-pierce"
+                    ]
+            },
+            {
+                "description": "Deadshot shows off his skills with ricochet shots. If this attack is blocked, it ricochets off of the blocker and deals part of its damage to a random tagged-out opponent that is not K0'ed.",
+                "name": "TRICK SHOT",
+                "buffs":
+                    [
+                        "n Damage",
+                        "n% of Special Ability Damage to random tagged-out opponent if the Special is blocked"
+                    ]
+            },
+            {
+                "description": "Deadshot unloads his rocket launcher and if this attack is unblocked, part of the Special Ability damage is dealt to each tagged out opponent.",
+                "name":"ROCKET MAN",
+                "buffs":
+                    [
+                        "n Damage",
+                        "n% of Special Ability Damage to tagged-out opponents if the Special is unblocked"
+                    ]
+            }
+        ],
+    "supermove" :
+        {
+        "description": "The ultimate assassin shows why he is THE true professional.",
+        "name":"FACE TIME",
+        "buffs":
+            [
+                "18.256 Damage",
+                "+35% Damage for the duration of the battle"
+            ]
+        }
+},
+{
+    "acronym" : "sshq",
+    "name" : "Suicide Squad Harley Quinn",
+    "passives" :
+        [
+            {
+                "description": "",
+                "name":"",
+                "buffs":
+                    [
+                    ""
+                    ]
+            }
+        ],
+    "specials":
+        [
+            {
+                "description": "",
+                "name":"",
+                "buffs":
+                    [
+                    ""
+                    ]
+            },
+            {
+                "description": "",
+                "name": "",
+                "buffs":
+                    [
+                        ""
+                    ]
+            },
+            {
+                "description": "",
+                "name":"",
+                "buffs":
+                    [
+                        ""
+                    ]
+            }
+        ],
+    "supermove" :
+        {
+        "description": "",
+        "name":"",
+        "buffs":
+            [
+                "n Damage",
+                "+20% Damage for the duration of the battle"
+            ]
+        }
+},
+{
+    "acronym" : "sm",
+    "name" : "Superman",
+    "passives" :
+        [
+            {
+                "description": "Superman has a chance to ignore Basic and Ranged attacks. He also promotes team defense.",
+                "name":"INVULNERABLE",
+                "buffs":
+                    [
+                    "n% Chance to ignore damage for Basic and Ranged attacks",
+                    "+n% Defense for team"
+                    ]
+            }
+        ],
+    "specials":
+        [
+            {
+                "description": "Clark extends his famous medium distance charging punch with additional hand strikes, knocking down his opponent.",
+                "name":"FLYING PUNCH",
+                "buffs":
+                    [
+                    "n Damage"
+                    ]
+            },
+            {
+                "description": "A defensive pose that reflects a portion of incoming damage (excluding damage over time) back onto the attacking opponent. While defending, power is slowly drained from Superman.",
+                "name": "SUPER BLOCK",
+                "buffs":
+                    [
+                        "+n% Incoming damage reflected",
+                        "-n% Incoming damage"
+                    ]
+            },
+            {
+                "description": "Superman flies upwards, firing from above.",
+                "name":"AIR HEAT VISION",
+                "buffs":
+                    [
+                        "n Damage"
+                    ]
+            }
+        ],
+    "supermove" :
+        {
+        "description": "Superman shows his unparalleled power and gives his foe a pumelling in the skies",
+        "name":"KRYPTONIAN CRUSH",
+        "buffs":
+            [
+                "n Damage",
+                "+20% Damage for the duration of the battle"
+            ]
+        }
+},
+{
+    "acronym" : "st",
+    "name" : "Swamp Thing",
+    "passives" :
+        [
+            {
+                "description": "After each Ability use, Swamp Thing creates wild growths from which he can heal himself.",
+                "name":"WILD GROWTH",
+                "buffs":
+                    [
+                    "n Healing over time"
+                    ]
+            }
+        ],
+    "specials":
+        [
+            {
+                "description": "Swamp Thing stomps, sprouting trees that knock down opponents within medium distance.",
+                "name":"REFOLIATION",
+                "buffs":
+                    [
+                    "n Damage"
+                    ]
+            },
+            {
+                "description": "A spiked shoulder charge at close distance ends with a smack of wood.",
+                "name": "THE ROT",
+                "buffs":
+                    [
+                        "n Damage"
+                    ]
+            },
+            {
+                "description": "At medium distance, Swamp Thing wields a branch with shattering results.",
+                "name":"KILLING FIELD",
+                "buffs":
+                    [
+                        "n Damage"
+                    ]
+            }
+        ],
+    "supermove" :
+        {
+        "description": "An underground beatdown.",
+        "name":"GREEN KINGDOM",
+        "buffs":
+            [
+                "n Damage",
+                "+20% Damage for the duration of the battle"
+            ]
+        }
+},
+{
+    "acronym" : "tf",
+    "name" : "The Flash",
+    "passives" :
+        [
+            {
+                "description": "On tag-in, The Flash taps into the Speed Force and speed boosts his attacks. He also boosts team Fast Attack.",
+                "name":"BLUR",
+                "buffs":
+                    [
+                    "+n Fast Attack chance for m seconds on tag-in",
+                    "+n% Fast Attack chance for team"
+                    ]
+            }
+        ],
+    "specials":
+        [
+            {
+                "description": "Barry Allen quickly combines fist, foot and finesse into a medium distance speedy string of six strikes.",
+                "name":"BLINK",
+                "buffs":
+                    [
+                    "n Damage",
+                    "n Damage to opponent teammates"
+                    ]
+            },
+            {
+                "description": "The Flash unleashes a flurry of kicks at close distance. Upon use, swipe to increase the number of kicks.",
+                "name": "DUST KICK",
+                "buffs":
+                    [
+                        "n Damage"
+                    ]
+            },
+            {
+                "description": "The Flash chops multiple times, knocking his opponents away.",
+                "name":"ROLLER COASTER",
+                "buffs":
+                    [
+                        "n Damage"
+                    ]
+            }
+        ],
+    "supermove" :
+        {
+        "description": "No opponent can outrun The Flash's blitz of attacks.",
+        "name":"OUT OF TIME",
+        "buffs":
+            [
+                "n Damage",
+                "+15% Damage for the duration of the battle"
+            ]
+        }
+},
+{
+    "acronym" : "ubc",
+    "name" : "Unbreakable Cyborg",
+    "passives" :
+        [
+            {
+                "description": "Cyborg's auxiliary systems boot up when he is about to be knocked out, restoring a portion of his health. Occurs once per battle.",
+                "name":"RESSURRECTION",
+                "buffs":
+                    [
+                    "25% Health regenerated on revival"
+                    ]
+            }
+        ],
+    "specials":
+        [
+            {
+                "description": "Cyborg sprints back and summons an electromagnetic hazard that periodically drains power of nearly opponents.",
+                "name":"EMP",
+                "buffs":
+                    [
+                    "n Power Bars drained",
+                    "n Damage"
+                    ]
+            },
+            {
+                "description": "Cyborg's cybernetics harness the power ofsound by producing a sonic blast that has a chance to stun.",
+                "name": "SONIC BLAST",
+                "buffs":
+                    [
+                        "n% Chance to stun",
+                        "n Damage"
+                    ]
+            },
+            {
+                "description": "At close distance, Cyborg punch combos into a missile blast, knocking back his opponent.",
+                "name":"TOTAL MELTDOWN",
+                "buffs":
+                    [
+                        "n Damage"
+                    ]
+            }
+        ],
+    "supermove" :
+        {
+        "description": "Cyborg knocks his opponent into another reality and brings them back for a final blow.",
+        "name":"BOOM TUBE",
+        "buffs":
+            [
+                "18.536 Damage",
+                "+35% Damage for the duration of the battle"
+            ]
+        }
+},
+{
+    "acronym" : "uhq",
+    "name" : "Unhinged Harley Quinn",
+    "passives" :
+        [
+            {
+                "description": "When Harley K0's an opponent, that opponent fights for Harley's team. Occurs once per battle. May be ineffective in Challenge and Raid Boss battles.",
+                "name":"PSYCHOTIC CHARM",
+                "buffs":
+                    [
+                    "Opponent joins Harley's team with 25% health"
+                    ]
+            }
+        ],
+    "specials":
+        [
+            {
+                "description": "Hazard Damage: Harley backs away and plops down a cupcake trap that, upon contact, deals hazard damage and may stun, power drain, or temporarily disable her opponent's Abilities.",
+                "name":"SURPRISE",
+                "buffs":
+                    [
+                    "n Damage",
+                    "n Hazard Damage",
+                    "One random effect:\n\tn second stun\n\tn Power Bars drained\n\tn second disable of opponent Special Abilities"
+                    ]
+            },
+            {
+                "description": "Harley Quinn swiftly swings her bat with a chance to stun.",
+                "name": "BATTER UP",
+                "buffs":
+                    [
+                        "n% Chance to stun",
+                        "n Damage"
+                    ]
+            },
+            {
+                "description": "At close distance, Harley bashes her bat repeatedly upon her opponent.",
+                "name":"GO NIGHT NIGHT",
+                "buffs":
+                    [
+                        "n Damage"
+                    ]
+            }
+        ],
+    "supermove" :
+        {
+        "description": "Harley Quinn gives Bud and Lou a snack and then turns out the lights",
+        "name":"LIGHTS OUT",
+        "buffs":
+            [
+                "n Damage",
+                "+20% Damage for the duration of the battle"
+            ]
+        }
+},
+{
+    "acronym" : "wqww",
+    "name" : "War Queen Wonder Woman",
+    "passives" :
+        [
+            {
+                "description": "If a teammate is lost an Amazon Warrior will replace them. Max once per Battle.",
+                "name":"AMAZON WARRIORS",
+                "buffs":
+                    [
+                    "n Attack Amazon Warrior"
+                    ]
+            }
+        ],
+    "specials":
+        [
+            {
+                "description": "Princess Diana strikes fiercelly at close distance with her sword, inflicting armor-piercing damage onto her opponent.",
+                "name":"PIERCING STRIKES",
+                "buffs":
+                    [
+                    "Armor-pierce",
+                    "n Damage"
+                    ]
+            },
+            {
+                "description": "A defensive pose that reflects a portion of incoming damage (excluding damage over time) back onto the attacking opponent. While defending, power is slowly drained from Wonder Woman.",
+                "name": "SHIELD BLOCK",
+                "buffs":
+                    [
+                        "+n% incoming damage reflected",
+                        "-n% Incoming damage"
+                    ]
+            },
+            {
+                "description": "Wonder Woman smacks her opponent with her blessed lasso.",
+                "name":"CHALLENGE OF THE GODS",
+                "buffs":
+                    [
+                        "n Damage"
+                    ]
+            }
+        ],
+    "supermove" :
+        {
+        "description": "Wonder Woman smites her opponent with her Amazonian strength and unmatched martial prowess",
+        "name":"AMAZON ARSENAL",
+        "buffs":
+            [
+                "n Damage",
+                "+20% Damage for the duration of the battle"
+            ]
+        }
+},
+{
+    "acronym" : "ww",
+    "name" : "Wonder Woman",
+    "passives" :
+        [
+            {
+                "description": "Wonder Woman gains Fury when facing male opponents and boosts team attack.",
+                "name":"AMAZON",
+                "buffs":
+                    [
+                    "+n% Damage when facing a male opponent",
+                    "+n% Attack for team"
+                    ]
+            }
+        ],
+    "specials":
+        [
+            {
+                "description": "Wonder Woman combines her sword and shield for a couple of close distance vertical strikes that smack down her opponent.",
+                "name":"DOWN THRUST",
+                "buffs":
+                    [
+                    "n Damage"
+                    ]
+            },
+            {
+                "description": "A defensive pose that reflects a portion of incoming damage (excluding damage over time) back onto the attacking opponent. While defending, power is slowly drained from Wonder Woman.",
+                "name": "SHIELD BLOCK",
+                "buffs":
+                    [
+                        "+n% Incoming damage reflected",
+                        "-n% Incoming damage"
+                    ]
+            },
+            {
+                "description": "Wonder Woman rushes forward into a shield knockdown attack.",
+                "name":"AMALTHEA BASH",
+                "buffs":
+                    [
+                        "n Damage"
+                    ]
+            }
+        ],
+    "supermove" :
+        {
+        "description": "Wonder Woman smites her opponent with her Amazonian strength and unmatched martial prowess",
+        "name":"AMAZON ARSENAL",
+        "buffs":
+            [
+                "n Damage",
+                "+15% Damage for the duration of the battle"
+            ]
+        }
+}
+]
