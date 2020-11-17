@@ -1595,7 +1595,7 @@
         }
 },
 {
-    "acronym" : "dks",
+    "acronym" : "ds",
     "name" : "Darkseid",
     "passives" :
         [
@@ -1671,7 +1671,7 @@
         }
 },
 {
-    "acronym" : "ds",
+    "acronym" : "sds",
     "name" : "Deadshot",
     "passives" :
         [
