@@ -1,14 +1,25 @@
 import datetime
+
+from discord import user
 import utils
 import discord
 from discord.ext import commands
-from constants import BUILDS_JSON_PATH, BUILD_NOT_EXISTS, CHARACTERS_JSON_PATH, JOIN_MESSAGE, PREDATORS, STARS, TIME, NEW_PLAYER, TOKEN, VIPERS
+from constants import *
+import logging
+
+logger = logging.getLogger('discord')
+logger.setLevel(logging.ERROR)
+handler = logging.FileHandler(filename='discord.log', encoding='utf-8', mode='w')
+handler.setFormatter(logging.Formatter('%(asctime)s:%(levelname)s:%(name)s: %(message)s'))
+logger.addHandler(handler)
 
 CHARACTERS = utils.load_dict(CHARACTERS_JSON_PATH)
 BUILDS = utils.load_dict(BUILDS_JSON_PATH)
 
+intents = discord.Intents.default()
+intents.members = True
 
-bot = commands.Bot(command_prefix='-')
+bot = commands.Bot(command_prefix='-', intents=intents)
 
 
 @bot.event
@@ -84,6 +95,18 @@ async def predators(ctx):
     await ctx.send(PREDATORS)
 
 @bot.command()
+async def tower(ctx):
+    await ctx.send(TOWER)
+
+@bot.command()
+async def knights(ctx):
+    await ctx.send(KNIGHTS)
+
+@bot.command()
+async def reverse(ctx):
+    await ctx.send(REVERSE)
+
+@bot.command()
 async def vipers(ctx):
     await ctx.send(VIPERS)
 
@@ -92,8 +115,12 @@ async def stars(ctx):
     await ctx.send(STARS)
 
 @bot.command()
-async def batmanson(ctx):
-    await ctx.send("**Who is your daddy ?**", file=discord.File("gif/batmanson.gif"))
+async def batman(ctx):
+    await ctx.send("**Who am i ?**", file=discord.File("gif/batmanson2.gif"))
+
+@bot.command()
+async def lasteris(ctx):
+    await ctx.send(file=discord.File("gif/lasteris.gif"))
 
 @bot.command()
 async def kirito(ctx):
@@ -105,7 +132,7 @@ async def imqrx(ctx):
 
 @bot.command()
 async def blackwolf(ctx):
-    await ctx.send("**King's knight**")
+    await ctx.send("**King's knight**", file=discord.File("gif/blackwolf.gif"))
 
 @bot.command()
 async def thera(ctx):
@@ -128,12 +155,16 @@ async def ramza(ctx):
     await ctx.send("**It was me, Barry!**", file=discord.File("gif/ramza.gif"))
 
 @bot.command()
+async def misty(ctx):
+    await ctx.send("I am the night!", file=discord.File("gif/misty.gif"))
+
+@bot.command()
 async def nyryon(ctx):
     await ctx.send("**South Italy Nyry-Don**", file=discord.File("emoji/4407.png"))
 
 @bot.command()
-async def speedy(ctx):
-    await ctx.send("**do ur work properly ss boy ? or no salary for u**", file=discord.File("emoji/c3po.png"))
+async def spyeedy(ctx):
+    await ctx.send("**do ur work properly ss boy ? or no salary for u**", file=discord.File("gif/spyeedy.gif"))
 
 @bot.command()
 async def tony(ctx):
@@ -144,10 +175,7 @@ async def tony(ctx):
 
 @bot.command()
 async def haitodo(ctx):
-    haitodo_member = await ctx.guild.fetch_member(355445149393879040)
-    await ctx.send("Relax Alex {0.mention}".format(
-        haitodo_member
-        ))
+    await ctx.send("Relax Alex", file=discord.File("gif/haitodo.gif"))
 
 @bot.command()
 async def newplayer(ctx):
@@ -156,5 +184,75 @@ async def newplayer(ctx):
     await ctx.send(NEW_PLAYER.format(
     choose_league_channel,
     fast_improve_channel))
+
+@bot.command()
+async def join(ctx, *args):
+    role_predator = ctx.guild.get_role(717029499463794718)
+    role_star = ctx.guild.get_role(717029493088452688)
+    role_viper = ctx.guild.get_role(717029489124573224)
+
+    joined = False
+
+    if len(args) == 1:
+        league = args[0].lower()
+        if league in ["predators", "vipers", "stars"]:
+            if league == "predators":
+                if role_predator in ctx.author.roles:
+                    joined = True
+                else:
+                    await ctx.author.add_roles(role_predator)
+            elif league == "vipers":
+                if role_viper in ctx.author.roles:
+                    joined = True
+                else:
+                    await ctx.author.add_roles(role_viper)
+            elif league == "stars":
+                if role_star in ctx.author.roles:
+                    joined = True
+                else:
+                    await ctx.author.add_roles(role_star)
+            if joined:
+                await ctx.send("{0}, you have already joined in {1}!".format(ctx.author.name, args[0]))
+            else:
+                await ctx.send("role {0} is added to {1}".format(args[0], ctx.author.mention))
+        else:
+            await ctx.send("You can interact only with those roles:\npredators, vipers, stars")
+    else:
+        await ctx.send("you can not change role of other member. It is not implemented yet.")
+
+@bot.command()
+async def remove(ctx, *args):
+    role_predator = ctx.guild.get_role(717029499463794718)
+    role_star = ctx.guild.get_role(717029493088452688)
+    role_viper = ctx.guild.get_role(717029489124573224)
+
+    removed = False
+
+    if len(args) == 1:
+        league = args[0].lower()
+        if league in ["predators", "vipers", "stars"]:
+            if league == "predators":
+                if role_predator not in ctx.author.roles:
+                    removed = True
+                else:
+                    await ctx.author.remove_roles(role_predator)
+            elif league == "vipers":
+                if role_viper in ctx.author.roles:
+                    removed = True
+                else:
+                    await ctx.author.remove_roles(role_viper)
+            elif league == "stars":
+                if role_star not in ctx.author.roles:
+                    removed = True
+                else:
+                    await ctx.author.remove_roles(role_star)
+            if removed:
+                await ctx.send("{0}, you have already removed from {1}!".format(ctx.author.name, args[0]))
+            else:
+                await ctx.send("role {0} is removed from {1}".format(args[0], ctx.author.mention))
+        else:
+            await ctx.send("You can interact only with those roles:\npredators, vipers, stars")
+    else:
+        await ctx.send("you can not change role of other member. It is not implemented yet.")
 
 bot.run(TOKEN)

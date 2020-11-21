@@ -12,13 +12,24 @@ JOIN_MESSAGE = """Hey {0.mention}, welcome to **The Academy!**
 Before entering a league keep in mind that raids are:
 In vipers around 1-2AM GMT.
 In stars around 2-3 PM GMT.
-In predators around 5-6 PM GMT"""
+In predators around 5-6 PM GMT.
+To see code of chosen league in the game just type:
+    -predators
+    -stars
+    -vipers
+To see chats of chosen league just type:
+    -join predators
+    -join vipers
+    -join stars"""
 
 TIME = '{0}\n***This is Academy time (GMT)***'
 
 PREDATORS = '*2EH9EW*'
 VIPERS = '*GKETR1*'
 STARS = '*P87X95*'
+TOWER = '**AP1BS1**'
+KNIGHTS = '**8R5QGE**'
+REVERSE = '**EFQGZ2**'
 
 CHARACTERS_JSON_PATH = "characters.json"
 BUILDS_JSON_PATH = "builds/builds.json"
