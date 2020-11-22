@@ -35,3 +35,54 @@ CHARACTERS_JSON_PATH = "characters.json"
 BUILDS_JSON_PATH = "builds/builds.json"
 
 BUILD_NOT_EXISTS = "No build has been added for this character yet. Wait a bit."
+
+HELP = """**List of Academy bot commands**
+*commands to see some league codes(to find them in game):*
+\t*major league codes:*
+```
+-predators (Academy Predator)
+-vipers (Academy Vipers)
+-stars (Academy Stars)
+```
+\t*additional league codes (for jumps):*
+```
+-tower (Academy Tower)
+-reverse (Reverse Academy)
+-knights (Academy Knights)
+```
+*command to see current time by Academy timezone (GMT):*
+```
+-time
+```
+*commands to add/remove on yourself a role to see chats, corresponding to a specific league*:
+```
+-join
+-remove
+```*parameters:*
+```
+predators/stars/vipers
+```*usage:*
+```
+-join predators
+```*result output from bot:*
+\trole **stars** added to **@user**
+
+*command for new players:*
+```
+-newplayer
+```
+*commands for getting some useful info about characters:*
+```
+-name (full name of character from abbreviation)
+-passives (passives retyped from game)
+-specials (specials retyped from game)
+-supermove (supermoves retyped from game)
+-build (assemblies selected for better character development)
+```*parameters:*
+\tThe character\'s abbreviation is used as a parameter.
+*usage:*
+```
+-name koaam
+```*result output from bot:*
+\tKing of Atlantis Aquaman
+"""

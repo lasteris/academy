@@ -20,7 +20,7 @@ intents = discord.Intents.default()
 intents.members = True
 
 bot = commands.Bot(command_prefix='-', intents=intents)
-
+bot.remove_command('help')
 
 @bot.event
 async def on_ready():
@@ -254,5 +254,9 @@ async def remove(ctx, *args):
             await ctx.send("You can interact only with those roles:\npredators, vipers, stars")
     else:
         await ctx.send("you can not change role of other member. It is not implemented yet.")
+
+@bot.command()
+async def help(ctx):
+    await ctx.send(HELP)
 
 bot.run(TOKEN)
