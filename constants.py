@@ -24,12 +24,12 @@ To see chats of chosen league just type:
 
 TIME = '{0}\n***This is Academy time (GMT)***'
 
-PREDATORS = '*2EH9EW*'
-VIPERS = '*GKETR1*'
-STARS = '*P87X95*'
-TOWER = '**AP1BS1**'
-KNIGHTS = '**8R5QGE**'
-REVERSE = '**EFQGZ2**'
+PREDATORS = '2EH9EW'
+VIPERS = 'GKETR1'
+STARS = 'P87X95'
+TOWER = 'AP1BS1'
+KNIGHTS = '8R5QGE'
+REVERSE = 'EFQGZ2'
 
 CHARACTERS_JSON_PATH = "characters.json"
 BUILDS_JSON_PATH = "builds/builds.json"

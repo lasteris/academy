@@ -5245,5 +5245,67 @@
                 "+15% Damage for the duration of the battle"
             ]
         }
+},
+{
+    "acronym" : "ba",
+    "name" : "Black Adam",
+    "passives" :
+        [
+            {
+                "description": "Black Adam's Specials can manipulate power.",
+                "name":"POWER OF ATOM",
+                "buffs":
+                    [
+                    "75% Chance to stun on tag-in",
+                    "10% Power boost on Special 1, per use of Special 3. Stacks up to 5 times.",
+                    "7 Power Bars may be stolen on use of Special 3"
+                    ]
+            }
+        ],
+    "specials":
+        [
+            {
+                "description": "Increases power generation and grants a chance to reduce power costs for team's Abilities.",
+                "name":"LIGHTNING CAGE",
+                "buffs":
+                    [
+                    "13,152 Damage",
+                    "25% Power generation for 15 seconds.",
+                    "69.5% Chance to reduce team's power cost of Abilities by 3 for 15 seconds."
+                    ],
+                "level": 70
+            },
+            {
+                "description": "Decreases Basic and Swipe damage of opponent and grants a chance to increase power cost of opponent's Abilities.",
+                "name": "STORM CLOUD",
+                "buffs":
+                    [
+                        "11.771 Damage",
+                        "50.5% Chance to increase power cost of current opponent's Abilities by 3 for 25 seconds",
+                        "Reduces current opponent's Basic and Swipe damage by 50.5% for 25 seconds."
+                    ],
+                "level": 22
+            },
+            {
+                "description": "Grants a chance to steal Power Bars.",
+                "name":"ELECTRIC BURST",
+                "buffs":
+                    [
+                        "39,456 Damage",
+                        "59.5% Chance to steal Power Bars."
+                    ],
+                "level": 70
+            }
+        ],
+    "supermove" :
+        {
+        "description": "Black Adam flings his opponent into Egypt for a devastating lightning strike.",
+        "name":"SHAZAM!",
+        "buffs":
+            [
+                "44,208 Damage",
+                "+35% Damage for the duration of the battle"
+            ]
+        }
 }
 ]
