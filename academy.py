@@ -3,7 +3,6 @@ import pymongo
 
 from datetime import timedelta
 
-import utils
 import discord
 from discord.ext import commands
 from constants import *
@@ -15,15 +14,11 @@ handler = logging.FileHandler(filename='discord.log', encoding='utf-8', mode='w'
 handler.setFormatter(logging.Formatter('%(asctime)s:%(levelname)s:%(name)s: %(message)s'))
 logger.addHandler(handler)
 
-
-BUILDS = utils.load_dict(BUILDS_JSON_PATH)
-
 intents = discord.Intents.default()
 intents.members = True
 
 client = pymongo.MongoClient('localhost', 27017)
 database = client['academy']
-characters = database['characters']
 
 bot = commands.Bot(command_prefix='-', intents=intents)
 bot.remove_command('help')
@@ -48,15 +43,18 @@ async def time(ctx):
 
 @bot.command()
 async def build(ctx, arg):
-    build = BUILDS[arg]
-    if build:
-        await ctx.send(build)
+    builds = database['builds']
+    search = builds.find_one({"name": arg})
+    if search:
+        await ctx.send(search["value"])
     else:
         await ctx.send(BUILD_NOT_EXISTS)
 
 
 @bot.command()
 async def passives(ctx, arg):
+    characters = database['characters']
+
     character = characters.find_one(
         {'acronym': arg},
         {'passives': 3})
@@ -72,6 +70,8 @@ async def passives(ctx, arg):
 
 @bot.command()
 async def specials(ctx, arg):
+    characters = database['characters']
+
     character = characters.find_one(
         {'acronym': arg},
         {'specials': 3})
@@ -87,6 +87,8 @@ async def specials(ctx, arg):
 
 @bot.command()
 async def supermove(ctx, arg):
+    characters = database['characters']
+
     character = characters.find_one(
         {'acronym': arg},
         {'supermove': 1})
@@ -100,6 +102,8 @@ async def supermove(ctx, arg):
 
 @bot.command()
 async def name(ctx, arg):
+    characters = database['characters']
+
     character = characters.find_one(
         {'acronym': arg},
         {'name': 1})
@@ -225,12 +229,13 @@ async def join(ctx, *args):
     role_predator = ctx.guild.get_role(717029499463794718)
     role_star = ctx.guild.get_role(717029493088452688)
     role_viper = ctx.guild.get_role(717029489124573224)
+    role_jumpers = ctx.guild.get_role(775433895020855326)
 
     joined = False
 
     if len(args) == 1:
         league = args[0].lower()
-        if league in ["predators", "vipers", "stars"]:
+        if league in ["predators", "vipers", "stars", "jumpers"]:
             if league == "predators":
                 if role_predator in ctx.author.roles:
                     joined = True
@@ -246,14 +251,19 @@ async def join(ctx, *args):
                     joined = True
                 else:
                     await ctx.author.add_roles(role_star)
+            elif league == "jumpers":
+                if role_jumpers in ctx.author.roles:
+                    joined = True
+                else:
+                    await ctx.author.add_roles(role_jumpers)
             if joined:
-                await ctx.send("{0}, you have already joined in {1}!".format(ctx.author.name, args[0]))
+                await ctx.send("{0.mention}, you have already joined in {1}!".format(ctx.author, args[0]))
             else:
                 await ctx.send("role {0} is added to {1}".format(args[0], ctx.author.mention))
         else:
             await ctx.send("You can interact only with those roles:\npredators, vipers, stars")
     else:
-        await ctx.send("you can not change role of other member. It is not implemented yet.")
+        await ctx.send("you can not change role of other member.")
 
 
 @bot.command()
@@ -261,12 +271,13 @@ async def remove(ctx, *args):
     role_predator = ctx.guild.get_role(717029499463794718)
     role_star = ctx.guild.get_role(717029493088452688)
     role_viper = ctx.guild.get_role(717029489124573224)
+    role_jumpers = ctx.guild.get_role(775433895020855326)
 
     removed = False
 
     if len(args) == 1:
         league = args[0].lower()
-        if league in ["predators", "vipers", "stars"]:
+        if league in ["predators", "vipers", "stars", "jumpers"]:
             if league == "predators":
                 if role_predator not in ctx.author.roles:
                     removed = True
@@ -281,7 +292,12 @@ async def remove(ctx, *args):
                 if role_star not in ctx.author.roles:
                     removed = True
                 else:
-                    await ctx.author.remove_roles(role_star)
+                    await ctx.author.remove_roles(role_star),
+            elif league == "jumpers":
+                if role_jumpers not in ctx.author.roles:
+                    removed = True
+                else:
+                    await ctx.author.remove_roles(role_jumpers)
             if removed:
                 await ctx.send("{0}, you have already removed from {1}!".format(ctx.author.name, args[0]))
             else:
@@ -339,4 +355,6 @@ async def cooldown(ctx, *args):
                 await ctx.send(CD_EXPIRED.format(ctx.author))
 
 
-bot.run(TOKEN)
+token_src = database["authorization"].find_one({"current": True})
+
+bot.run(token_src["token"])

@@ -1,5 +1,3 @@
-TOKEN = 'NzAxNTIxNTk5MDU2MDUyMjc2.Xpys5g.Inyxd1y0XaDLJhhMIt24JV8pn-U'
-
 NEW_PLAYER = """1. Select your league in {0.mention}.
 2. Buy only heroes from the league store, that are described in {1.mention}.
 3. From arena store buy only JSGL for start.
@@ -34,7 +32,7 @@ REVERSE = 'EFQGZ2'
 CHARACTERS_JSON_PATH = "characters.json"
 BUILDS_JSON_PATH = "characters/builds.json"
 
-BUILD_NOT_EXISTS = "No build has been added for this character yet. Wait a bit."
+BUILD_NOT_EXISTS = "No build has been added for character yet or character not recognized."
 
 HELP = """**List of Academy bot commands**
 *commands to see some league codes(to find them in game):*
