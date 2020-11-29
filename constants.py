@@ -86,3 +86,9 @@ predators/stars/vipers
 ```*result output from bot:*
 \tKing of Atlantis Aquaman
 """
+
+CD_START_MESSAGE = """**cooldown** started for {0.mention} at {1} AT.
+**It** will end on {2} AT.
+**You** *will recieve a warning*.
+"""
+DATE_TIME_FORMAT = "%d %B %Y %I:%M %p"

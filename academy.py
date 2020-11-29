@@ -1,6 +1,6 @@
 import datetime
+from datetime import timedelta
 
-from discord import user
 import utils
 import discord
 from discord.ext import commands
@@ -258,5 +258,14 @@ async def remove(ctx, *args):
 @bot.command()
 async def help(ctx):
     await ctx.send(HELP)
+
+@bot.command(name='jump-cd')
+async def cooldown(ctx, *args):
+    cur_time = datetime.datetime.now(datetime.timezone.utc)
+    end_time = cur_time + timedelta(days=21)
+    await ctx.send(CD_START_MESSAGE.format(
+        ctx.author,
+        cur_time.strftime(DATE_TIME_FORMAT),
+        end_time.strftime(DATE_TIME_FORMAT)))
 
 bot.run(TOKEN)
