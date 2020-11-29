@@ -1,7 +1,9 @@
 import datetime
+from logging import debug
 import pymongo
 
 from datetime import timedelta
+from discord.ext.commands import CommandNotFound
 
 import discord
 from discord.ext import commands
@@ -9,7 +11,7 @@ from constants import *
 import logging
 
 logger = logging.getLogger('discord')
-logger.setLevel(logging.INFO)
+logger.setLevel(logging.DEBUG)
 handler = logging.FileHandler(filename='discord.log', encoding='utf-8', mode='w')
 handler.setFormatter(logging.Formatter('%(asctime)s:%(levelname)s:%(name)s: %(message)s'))
 logger.addHandler(handler)
@@ -22,6 +24,19 @@ database = client['academy']
 
 bot = commands.Bot(command_prefix='-', intents=intents)
 bot.remove_command('help')
+
+@bot.event
+async def on_command_error(ctx, error):
+    debug_channel = bot.get_channel(782610775096164373)
+    if isinstance(error, CommandNotFound):
+        debug_msg = "{0} sent message '{1}' to {2.mention}.".format(
+            ctx.author.display_name,
+            ctx.message.content,
+            ctx.message.channel)
+        logger.debug(debug_msg)
+        await debug_channel.send(debug_msg)
+        return
+    raise error
 
 @bot.event
 async def on_ready():
