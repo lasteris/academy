@@ -32,7 +32,7 @@ KNIGHTS = '8R5QGE'
 REVERSE = 'EFQGZ2'
 
 CHARACTERS_JSON_PATH = "characters.json"
-BUILDS_JSON_PATH = "builds/builds.json"
+BUILDS_JSON_PATH = "characters/builds.json"
 
 BUILD_NOT_EXISTS = "No build has been added for this character yet. Wait a bit."
 
@@ -85,10 +85,24 @@ predators/stars/vipers
 -name koaam
 ```*result output from bot:*
 \tKing of Atlantis Aquaman
+
+*command for cooldown tracking:*
+```
+-jump-cd
+```*parameters:*
+```status```optional parameter for getting current state of cooldown expiration.
+*usage:*
+```
+-jump-cd status
+```*result output from bot:*
+\t**@user**, 10 days before your cooldown expires.
 """
 
-CD_START_MESSAGE = """**cooldown** started for {0.mention} at {1} AT.
+CD_START_MESSAGE = """**cooldown** (re)started for {0.mention} at {1} AT.
 **It** will end on {2} AT.
 **You** *will recieve a warning*.
 """
 DATE_TIME_FORMAT = "%d %B %Y %I:%M %p"
+
+CD_STATUS = '{0.mention}, {1} days before your cooldown expires.'
+CD_EXPIRED = '{0.mention}, cooldown expired.'
