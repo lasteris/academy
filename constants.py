@@ -28,11 +28,13 @@ STARS = 'P87X95'
 TOWER = 'AP1BS1'
 KNIGHTS = '8R5QGE'
 REVERSE = 'EFQGZ2'
+HENTAI = 'R66C8M'
 
 CHARACTERS_JSON_PATH = "characters.json"
 BUILDS_JSON_PATH = "characters/builds.json"
 
-BUILD_NOT_EXISTS = "No build has been added for character yet or character not recognized."
+BUILD_NOT_EXISTS = "No build has been added for character."
+CHARACTER_NOT_RECOGNIZED = " Character not recognized."
 
 HELP = """**List of Academy bot commands**
 *commands to see some league codes(to find them in game):*
@@ -58,7 +60,7 @@ HELP = """**List of Academy bot commands**
 -remove
 ```*parameters:*
 ```
-predators/stars/vipers
+predators/stars/vipers/jumpers
 ```*usage:*
 ```
 -join predators

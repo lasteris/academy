@@ -1,14 +1,14 @@
 import datetime
-from logging import debug
+import logging
+import discord
 import pymongo
 
+from logging import debug
 from datetime import timedelta
 from discord.ext.commands import CommandNotFound
-
-import discord
 from discord.ext import commands
 from constants import *
-import logging
+
 
 logger = logging.getLogger('discord')
 logger.setLevel(logging.DEBUG)
@@ -61,9 +61,12 @@ async def build(ctx, arg):
     builds = database['builds']
     search = builds.find_one({"name": arg})
     if search:
-        await ctx.send(search["value"])
+        if search["value"]:
+            await ctx.send(search["value"])
+        else:
+            await ctx.send(BUILD_NOT_EXISTS)
     else:
-        await ctx.send(BUILD_NOT_EXISTS)
+        await ctx.send(CHARACTER_NOT_RECOGNIZED)
 
 
 @bot.command()
@@ -105,11 +108,12 @@ async def supermove(ctx, arg):
     characters = database['characters']
 
     character = characters.find_one(
-        {'acronym': arg},
+        {'acronym':  arg},
         {'supermove': 1})
 
-    supermove_text =  "**" + character['name'] + "**\n" + character["description"] + "\n"
-    for buff in character['buffs']:
+    sm = character['supermove']
+    supermove_text =  "**" + sm['name'] + "**\n" + sm["description"] + "\n"
+    for buff in sm['buffs']:
         supermove_text += "*" + buff + "*\n"
     supermove_text += '\n'
     await ctx.send(supermove_text)
@@ -128,6 +132,11 @@ async def name(ctx, arg):
 @bot.command()
 async def predators(ctx):
     await ctx.send(PREDATORS)
+
+
+@bot.command()
+async def hentai(ctx):
+    await ctx.send(HENTAI)
 
 
 @bot.command()
@@ -196,7 +205,7 @@ async def dx2(ctx):
 
 @bot.command()
 async def makslays(ctx):
-    await ctx.send(file=discord.File("emoji/mac.jpeg"))
+    await ctx.send("**No mortal can phase me.**", file=discord.File("gif/macslays.gif"))
 
 
 @bot.command()
@@ -228,6 +237,11 @@ async def tony(ctx):
 @bot.command()
 async def haitodo(ctx):
     await ctx.send("Relax Alex", file=discord.File("gif/haitodo.gif"))
+
+
+@bot.command()
+async def sensei(ctx):
+    await ctx.send("**I have arrived.**", file=discord.File("gif/sensei.gif"))
 
 
 @bot.command()
@@ -360,10 +374,9 @@ async def cooldown(ctx, *args):
     elif args[0] == 'status':
         jumper = cds.find_one({'memberId': jumper_id_str})
         if jumper:
-            days_left = (
-                datetime.datetime.strptime(jumper['end'], DATE_TIME_FORMAT) -
-                datetime.datetime.strptime(jumper['start'], DATE_TIME_FORMAT)
-                ).days
+            end_time = datetime.datetime.strptime(jumper['end'], DATE_TIME_FORMAT)
+            now_time = datetime.datetime.now(datetime.timezone.utc).replace(tzinfo=None)
+            days_left = (end_time - now_time).days
             if days_left > 0:
                 await ctx.send(CD_STATUS.format(ctx.author, days_left))
             else:
