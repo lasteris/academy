@@ -19,7 +19,7 @@ logger.addHandler(handler)
 intents = discord.Intents.default()
 intents.members = True
 
-client = pymongo.MongoClient('localhost', 27017)
+client = pymongo.MongoClient('mongodb://academy:academy@10.3.0.38:27017/academy')
 database = client['academy']
 
 bot = commands.Bot(command_prefix='-', intents=intents)
