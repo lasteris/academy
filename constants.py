@@ -106,3 +106,6 @@ DATE_TIME_FORMAT = "%d %B %Y %I:%M %p"
 
 CD_STATUS = '{0.mention}, {1} days before your cooldown expires.'
 CD_EXPIRED = '{0.mention}, cooldown expired.'
+
+ERROR_ON_ROLES_INTERACTION = 'You can interact only with these roles:\npredators, vipers, stars, jumpers'
+LITTLE_BOY = 'you can not change anything except your role, little boy.'

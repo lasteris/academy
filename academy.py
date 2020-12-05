@@ -11,13 +11,14 @@ from constants import *
 
 
 logger = logging.getLogger('discord')
-logger.setLevel(logging.DEBUG)
+logger.setLevel(logging.INFO)
 handler = logging.FileHandler(filename='discord.log', encoding='utf-8', mode='w')
 handler.setFormatter(logging.Formatter('%(asctime)s:%(levelname)s:%(name)s: %(message)s'))
 logger.addHandler(handler)
 
 intents = discord.Intents.default()
 intents.members = True
+intents.dm_messages = True
 
 client = pymongo.MongoClient('mongodb://academy:academy@10.3.0.38:27017/academy')
 database = client['academy']
@@ -33,7 +34,7 @@ async def on_command_error(ctx, error):
             ctx.author.display_name,
             ctx.message.content,
             ctx.message.channel)
-        logger.debug(debug_msg)
+        logger.info(debug_msg)
         await debug_channel.send(debug_msg)
         return
     raise error
@@ -290,9 +291,9 @@ async def join(ctx, *args):
             else:
                 await ctx.send("role {0} is added to {1}".format(args[0], ctx.author.mention))
         else:
-            await ctx.send("You can interact only with those roles:\npredators, vipers, stars")
+            await ctx.send(ERROR_ON_ROLES_INTERACTION)
     else:
-        await ctx.send("you can not change role of other member.")
+        await ctx.send(LITTLE_BOY)
 
 
 @bot.command()
@@ -332,9 +333,9 @@ async def remove(ctx, *args):
             else:
                 await ctx.send("role {0} is removed from {1}".format(args[0], ctx.author.mention))
         else:
-            await ctx.send("You can interact only with those roles:\npredators, vipers, stars")
+            await ctx.send(ERROR_ON_ROLES_INTERACTION)
     else:
-        await ctx.send("you can not change role of other member. It is not implemented yet.")
+        await ctx.send(LITTLE_BOY)
 
 
 @bot.command()
@@ -381,6 +382,19 @@ async def cooldown(ctx, *args):
                 await ctx.send(CD_STATUS.format(ctx.author, days_left))
             else:
                 await ctx.send(CD_EXPIRED.format(ctx.author))
+
+@bot.command()
+async def dm(ctx, role: discord.Role, *, message):
+    knights_role = ctx.guild.get_role(717032401456332801)
+
+    if knights_role in ctx.author.roles:
+        for m in role.members:
+            try:
+                await m.send(message)
+            except discord.Forbidden as exception:
+                logger.info('{0}\n{1}'.format(m.display_name, exception))
+    else:
+        await ctx.send('sorry, {0.mention}, but you have no access to that feature.'.format(ctx.author))
 
 
 token_src = database["authorization"].find_one({"current": True})
