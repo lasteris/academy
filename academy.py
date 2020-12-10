@@ -177,7 +177,7 @@ async def lasteris(ctx):
 
 @bot.command()
 async def kirito(ctx):
-    await ctx.send("**All hail to The King**")
+    await ctx.send("**All hail to The King**", file=discord.File("gif/kirito.gif"))
 
 
 @bot.command()
@@ -212,6 +212,10 @@ async def makslays(ctx):
 @bot.command()
 async def ramza(ctx):
     await ctx.send("**It was me, Barry!**", file=discord.File("gif/ramza.gif"))
+
+@bot.command()
+async def akpro(ctx):
+    await ctx.send("**I am ready**", file=discord.File("gif/akpro.gif"))
 
 
 @bot.command()
