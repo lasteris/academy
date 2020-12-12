@@ -2,6 +2,7 @@ import datetime
 import logging
 import discord
 import pymongo
+import asyncio
 
 from logging import debug
 from datetime import timedelta
@@ -206,7 +207,11 @@ async def dx2(ctx):
 
 @bot.command()
 async def makslays(ctx):
-    await ctx.send("**No mortal can phase me.**", file=discord.File("gif/macslays.gif"))
+    await ctx.send("**The power of the everyone tag**", file=discord.File("gif/macslays.gif"))
+
+@bot.command()
+async def chrisdroid(ctx):
+    await ctx.send(file=discord.File("gif/chris.gif"))
 
 
 @bot.command()
@@ -366,7 +371,8 @@ async def cooldown(ctx, *args):
                     'memberId': jumper_id_str,
                     'start': cur_str,
                     'end': end_str,
-                    'name': ctx.author.display_name
+                    'name': ctx.author.display_name,
+                    'warned': False
                     }
                 },
                 upsert= True)
@@ -399,6 +405,33 @@ async def dm(ctx, role: discord.Role, *, message):
                 logger.info('{0}\n{1}'.format(m.display_name, exception))
     else:
         await ctx.send('sorry, {0.mention}, but you have no access to that feature.'.format(ctx.author))
+
+
+@bot.command(name='jump-cd-stalker')
+async def jump_cd_stalker(ctx, *args):
+    if ctx.author.id != 532975564642975746:
+        await ctx.send("sorry, but you are not developer.")
+    else:
+        bot.loop.create_task(countdown_cooldown(ctx))
+
+
+async def countdown_cooldown(ctx):
+    cds = database["cooldowns"]
+    await ctx.send("stalker placed succesfully.")
+    now_time = datetime.datetime.now(datetime.timezone.utc).replace(tzinfo=None)
+    while True:
+        for jumper in cds.find({'warned': False}):
+            member = await ctx.guild.fetch_member(int(jumper["memberId"]))
+            end_time = datetime.datetime.strptime(jumper['end'], DATE_TIME_FORMAT)
+            if end_time <= now_time:
+                await member.send("Your jump cooldown has expired.\n**Have fun!**")
+                cds.update_one(
+                    filter= jumper,
+                    update= {
+                        "$set": {
+                            'warned': True
+                            }})
+        await asyncio.sleep(86400)
 
 
 token_src = database["authorization"].find_one({"current": True})
