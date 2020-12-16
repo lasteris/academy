@@ -6,19 +6,16 @@ NEW_PLAYER = """1. Select your league in {0.mention}.
 **Have fun**"""
 
 JOIN_MESSAGE = """Hey {0.mention}, welcome to **The Academy!**
-
-Before entering a league keep in mind that raids are:
-In vipers around 1-2 AM GMT.
-In stars around 12:30 AM - 2 PM GMT.
-In predators around 5-6 PM GMT.
-To see code of chosen league in the game just type:
-    -predators
-    -stars
-    -vipers
-To see chats of chosen league just type:
-    -join predators
-    -join vipers
-    -join stars"""
+Just visiting? Feel free to cruise with us at the Academy!
+Or maybe you are looking for a league.
+In our arsenal, we have three, depends on your raid preference time:
+Vipers raid around 1-2 AM GMT.
+Stars raid around 12:30 PM-2 PM GMT.
+Predators raid around 5-7 PM GMT.
+To see in-game code of chosen league, please type one of these commands:
+    -predators, -stars, -vipers
+To see chats of chosen league, you need to have corresponding role.
+So, type: -join <league name here> (-join stars)"""
 
 TIME = '{0}\n***This is Academy time (GMT)***'
 
