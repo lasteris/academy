@@ -323,7 +323,7 @@ async def remove(ctx, *args):
                 else:
                     await ctx.author.remove_roles(role_predator)
             elif league == "vipers":
-                if role_viper in ctx.author.roles:
+                if role_viper not in ctx.author.roles:
                     removed = True
                 else:
                     await ctx.author.remove_roles(role_viper)
