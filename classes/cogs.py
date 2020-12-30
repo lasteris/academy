@@ -382,10 +382,10 @@ class UpgradesCog(commands.Cog):
     def get_cost(self, *levels):
         total_cost = 0
         if len(levels) == 1:
-            for level in range(1, levels[0]):
+            for level in range(1, levels[0]):  # end number - we don't include the level number, since the cost retrieved is for the next level
                 total_cost += self.upgrade_data[str(level)]  # adding on the cost to total_cost
         else:
-            for level in range(levels[0]-1, levels[1]):  # end number is not inclusive, so increment 1
+            for level in range(levels[0]-1, levels[1]):  # start number - we start from the previous number, since the cost retrieved is for the next level
                 if level == 0:
                     continue
                 cost = self.upgrade_data[str(level)]
