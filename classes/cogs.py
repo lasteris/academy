@@ -17,7 +17,7 @@ class LeaguesCog(commands.Cog):
         await ctx.send(PREDATORS)
 
     @commands.command()
-    async def hentai(self, ctx):
+    async def eternal(self, ctx):
         await ctx.send(HENTAI)
 
     @commands.command()
@@ -277,7 +277,6 @@ class RolesCog(commands.Cog):
         else:
             await ctx.send('sorry, {0.mention}, but you have no access to that feature.'.format(ctx.author))
 
-
 class JumpCog(commands.Cog):
     def __init__(self, bot, db_service):
         self.bot = bot
@@ -382,10 +381,10 @@ class UpgradesCog(commands.Cog):
     def get_cost(self, *levels):
         total_cost = 0
         if len(levels) == 1:
-            for level in range(1, levels[0]+1):  # end number - not inclusive, so increment by 1
+            for level in range(1, levels[0]):
                 total_cost += self.upgrade_data[str(level)]  # adding on the cost to total_cost
         else:
-            for level in range(levels[0], levels[1]+1):
+            for level in range(levels[0], levels[1]):
                 if level == 0:
                     continue
                 cost = self.upgrade_data[str(level)]
