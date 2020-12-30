@@ -3,7 +3,7 @@ import datetime
 import logging
 import discord
 
-from classes.cogs import CharactersCog, JumpCog, NamedCog, LeaguesCog, RolesCog
+from classes.cogs import *
 from discord.ext.commands import CommandNotFound
 from discord.ext import commands
 from classes.config import get_config
@@ -30,6 +30,7 @@ bot.add_cog(LeaguesCog(bot))
 bot.add_cog(CharactersCog(bot, db_service))
 bot.add_cog(RolesCog(bot))
 bot.add_cog(JumpCog(bot, db_service))
+bot.add_cog(UpgradesCog())
 
 @bot.event
 async def on_command_error(ctx, error):
