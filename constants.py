@@ -93,6 +93,18 @@ predators/stars/vipers/jumpers
 -jump-cd status
 ```*result output from bot:*
 \t**@user**, 10 days before your cooldown expires.
+
+*command to calculate gear material cost:*
+```
+-gear-cost
+```*parameters:*
+As parameters you can pass one **number** (to get cost from **1** to this **number**) or range
+(to get cost from **left** to **right** boundary).
+*usage:*
+```
+-gear-cost 1 2
+```*result output from bot:*
+\tFor levels 1 to 2, it costs 20 gear materials.
 """
 
 CD_START_MESSAGE = """**cooldown** (re)started for {0.mention} at {1} AT.
