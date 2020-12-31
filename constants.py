@@ -25,7 +25,7 @@ STARS = 'P87X95'
 TOWER = 'AP1BS1'
 KNIGHTS = '8R5QGE'
 REVERSE = 'EFQGZ2'
-HENTAI = 'R66C8M'
+ETERNAL = 'R66C8M'
 
 CHARACTERS_JSON_PATH = "characters.json"
 BUILDS_JSON_PATH = "characters/builds.json"
@@ -118,3 +118,11 @@ CD_EXPIRED = '{0.mention}, cooldown expired.'
 
 ERROR_ON_ROLES_INTERACTION = 'You can interact only with these roles:\npredators, vipers, stars, jumpers'
 LITTLE_BOY = 'you can not change anything except your role, little boy.'
+
+GEAR_COST = """Up to {0}, a single gear costs {1} gear materials.
+Full set costs {2} gear materials"""
+GEAR_COST_MULTI = """For levels {0} to {1}, it costs {2} gear materials.
+Full set costs {3} gear materials
+"""
+GEAR_COST_OUT_RANGE = "Gear level out of range, only from 1 to 70"
+GEAR_COST_WHOLE_NUM = "Must be a whole number"

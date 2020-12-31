@@ -18,7 +18,7 @@ class LeaguesCog(commands.Cog):
 
     @commands.command()
     async def eternal(self, ctx):
-        await ctx.send(HENTAI)
+        await ctx.send(ETERNAL)
 
     @commands.command()
     async def tower(self, ctx):
@@ -191,12 +191,13 @@ class RolesCog(commands.Cog):
         role_star = ctx.guild.get_role(717029493088452688)
         role_viper = ctx.guild.get_role(717029489124573224)
         role_jumpers = ctx.guild.get_role(775433895020855326)
+        role_eternal = ctx.guild.get_role(792405449160261672)
 
         joined = False
 
         if len(args) == 1:
             league = args[0].lower()
-            if league in ["predators", "vipers", "stars", "jumpers"]:
+            if league in ["predators", "vipers", "stars", "jumpers", "eternals"]:
                 if league == "predators":
                     if role_predator in ctx.author.roles:
                         joined = True
@@ -217,6 +218,11 @@ class RolesCog(commands.Cog):
                         joined = True
                     else:
                         await ctx.author.add_roles(role_jumpers)
+                elif league == "eternals":
+                    if role_eternal in ctx.author.roles:
+                        joined = True
+                    else:
+                        await ctx.author.add_roles(role_eternal)
                 if joined:
                     await ctx.send("{0.mention}, you have already joined in {1}!".format(ctx.author, args[0]))
                 else:
@@ -276,6 +282,7 @@ class RolesCog(commands.Cog):
                 await m.send(message)
         else:
             await ctx.send('sorry, {0.mention}, but you have no access to that feature.'.format(ctx.author))
+
 
 class JumpCog(commands.Cog):
     def __init__(self, bot, db_service):
@@ -342,18 +349,17 @@ class UpgradesCog(commands.Cog):
 
     @commands.command(name='gear-cost')
     async def gear_cost(self, ctx, *args):
-        print(args)
         if len(args) == 1:
             try:
                 gear_number = int(args[0])
 
                 if 70 >= gear_number >= 1:
                     cost = self.get_cost(gear_number)
-                    await ctx.send("Up to {}, it costs {} gear materials.".format(gear_number, cost))
+                    await ctx.send(GEAR_COST.format(gear_number, cost, cost*5))
                 else:
-                    await ctx.send("Gear level out of range, only from 1 to 70")
+                    await ctx.send(GEAR_COST_OUT_RANGE)
             except ValueError:
-                await ctx.send("Must be a whole number")
+                await ctx.send(GEAR_COST_WHOLE_NUM)
         elif len(args) == 2:
             try:
                 lower_num = int(args[0])
@@ -362,13 +368,13 @@ class UpgradesCog(commands.Cog):
                 if 70 >= lower_num >= 1 and 70 >= upper_num >= 1:
                     if lower_num < upper_num:
                         cost = self.get_cost(lower_num, upper_num)
-                        await ctx.send("For levels {} to {}, it costs {} gear materials.".format(lower_num, upper_num, cost))
+                        await ctx.send(GEAR_COST_MULTI.format(lower_num, upper_num, cost, cost*5))
                     else:
                         await ctx.send("First number ({}) cannot be more than or equal to second number ({})".format(lower_num, upper_num))
                 else:
-                    await ctx.send("Gear level out of range, only from 1 to 70")
+                    await ctx.send(GEAR_COST_OUT_RANGE)
             except ValueError:
-                await ctx.send("Must be a whole number")
+                await ctx.send(GEAR_COST_WHOLE_NUM)
         else:
             await ctx.send("Invalid number of arguments.")
 
@@ -387,7 +393,5 @@ class UpgradesCog(commands.Cog):
             for level in range(levels[0], levels[1]):
                 if level == 0:
                     continue
-                cost = self.upgrade_data[str(level)]
-                print("{}: {}".format(level, cost))
                 total_cost += self.upgrade_data[str(level)]
         return total_cost
