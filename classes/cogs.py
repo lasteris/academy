@@ -191,12 +191,13 @@ class RolesCog(commands.Cog):
         role_star = ctx.guild.get_role(717029493088452688)
         role_viper = ctx.guild.get_role(717029489124573224)
         role_jumpers = ctx.guild.get_role(775433895020855326)
+        role_eternal = ctx.guild.get_role(792405449160261672)
 
         joined = False
 
         if len(args) == 1:
             league = args[0].lower()
-            if league in ["predators", "vipers", "stars", "jumpers"]:
+            if league in ["predators", "vipers", "stars", "jumpers", "eternals"]:
                 if league == "predators":
                     if role_predator in ctx.author.roles:
                         joined = True
@@ -217,6 +218,11 @@ class RolesCog(commands.Cog):
                         joined = True
                     else:
                         await ctx.author.add_roles(role_jumpers)
+                elif league == "eternals":
+                    if role_eternal in ctx.author.roles:
+                        joined = True
+                    else:
+                        await ctx.author.add_roles(role_eternal)
                 if joined:
                     await ctx.send("{0.mention}, you have already joined in {1}!".format(ctx.author, args[0]))
                 else:
