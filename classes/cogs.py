@@ -238,12 +238,13 @@ class RolesCog(commands.Cog):
         role_star = ctx.guild.get_role(717029493088452688)
         role_viper = ctx.guild.get_role(717029489124573224)
         role_jumpers = ctx.guild.get_role(775433895020855326)
+        role_eternal = ctx.guild.get_role(792405449160261672)
 
         removed = False
 
         if len(args) == 1:
             league = args[0].lower()
-            if league in ["predators", "vipers", "stars", "jumpers"]:
+            if league in ["predators", "vipers", "stars", "jumpers", "eternals"]:
                 if league == "predators":
                     if role_predator not in ctx.author.roles:
                         removed = True
@@ -264,6 +265,11 @@ class RolesCog(commands.Cog):
                         removed = True
                     else:
                         await ctx.author.remove_roles(role_jumpers)
+                elif league == "eternals":
+                    if role_eternal not in ctx.author.roles:
+                        removed = True
+                    else:
+                        await ctx.author.remove_roles(role_eternal)
                 if removed:
                     await ctx.send("{0}, you have already removed from {1}!".format(ctx.author.name, args[0]))
                 else:
