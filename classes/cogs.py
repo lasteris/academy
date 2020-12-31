@@ -18,7 +18,7 @@ class LeaguesCog(commands.Cog):
 
     @commands.command()
     async def eternal(self, ctx):
-        await ctx.send(HENTAI)
+        await ctx.send(ETERNAL)
 
     @commands.command()
     async def tower(self, ctx):
@@ -276,6 +276,7 @@ class RolesCog(commands.Cog):
                 await m.send(message)
         else:
             await ctx.send('sorry, {0.mention}, but you have no access to that feature.'.format(ctx.author))
+
 
 class JumpCog(commands.Cog):
     def __init__(self, bot, db_service):
