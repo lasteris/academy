@@ -298,6 +298,28 @@ class JumpCog(commands.Cog):
         self.db_service = db_service
         self.countdown.start()
 
+    @commands.command(name='jump-watch')
+    async def start_watching(self, ctx, *args):
+        if not args or len(args) > 1:
+            await ctx.send(JUMP_WATCH_USAGE)
+            return
+
+        if(args[0] == "status"):
+            if(self.countdown.is_running()):
+                await ctx.send(NEXT_WATCH_CHECK_AT
+                .format(self.countdown.next_iteration.strftime("%d %B %Y %H:%M:%S")))
+            else:
+                await ctx.send(WATCH_INACTIVE)
+        elif(args[0] == "start"):
+            self.countdown.start()
+            await ctx.send(WATCH_STARTED)
+        elif(args[0] == "stop"):
+            self.countdown.cancel()
+            await ctx.send(WATCH_CANCELLED)
+        else:
+            await ctx.send(PARAMETER_NOT_RECOGNIZED)
+
+
     @commands.command(name='jump-cd')
     async def cooldown(self, ctx, *args):
         cur_time = datetime.datetime.now(datetime.timezone.utc)

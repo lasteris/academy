@@ -130,3 +130,13 @@ Full set costs {3} gear materials
 """
 GEAR_COST_OUT_RANGE = "Gear level out of range, only from 1 to 70"
 GEAR_COST_WHOLE_NUM = "Must be a whole number"
+
+JUMP_WATCH_USAGE = """
+            Wrong usage of command.
+            For managing of process youi should use of these parameters:
+            \start, status, stop"""
+NEXT_WATCH_CHECK_AT = "Watching is **active**.\nNext expiration check occurs at **{0}**"
+WATCH_INACTIVE = "Watching is **inactive**."
+WATCH_STARTED = "Watching **started**."
+WATCH_CANCELLED = "Watching **cancelled**."
+PARAMETER_NOT_RECOGNIZED = "Parameter not recognized."
