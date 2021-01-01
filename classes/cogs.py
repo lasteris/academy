@@ -373,9 +373,8 @@ class JumpCog(commands.Cog):
 
 
 class UpgradesCog(commands.Cog):
-    def __init__(self):
-        # self.db_service = db_service
-        self.upgrade_data = self.load_data()
+    def __init__(self, db_service):
+        self.db_service = db_service
 
     @commands.command(name='gear-cost')
     async def gear_cost(self, ctx, *args):
@@ -408,20 +407,18 @@ class UpgradesCog(commands.Cog):
         else:
             await ctx.send("Invalid number of arguments.")
 
-    def load_data(self):
-        text = ''
-        with open('./resources/gear_costs.json', 'r') as f:
-            text = json.load(f)
-        return text
 
     def get_cost(self, *levels):
+        dict_gc = self.db_service.get_collection("dict_gc")
         total_cost = 0
         if len(levels) == 1:
-            for level in range(1, levels[0]):
-                total_cost += self.upgrade_data[str(level)]  # adding on the cost to total_cost
+            rows = dict_gc.find(
+                {"level": {"$lt": levels[0]}})
+            for row in rows:
+                total_cost += row['cost']  # adding on the cost to total_cost
         else:
-            for level in range(levels[0], levels[1]):
-                if level == 0:
-                    continue
-                total_cost += self.upgrade_data[str(level)]
+            rows = dict_gc.find(
+                {"level": {"$gte": levels[0], "$lt": levels[1]}})
+            for row in rows:
+                total_cost += row['cost']
         return total_cost
