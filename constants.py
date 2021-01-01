@@ -116,6 +116,10 @@ DATE_TIME_FORMAT = "%d %B %Y %I:%M %p"
 CD_STATUS = '{0.mention}, {1} days before your cooldown expires.'
 CD_EXPIRED = '{0.mention}, cooldown expired.'
 
+ROLE_ALREADY_ADDED = "{0.mention}, you have already joined in {1}!"
+ROLE_ADDED_SUCCESSFULLY = "role {0} is added to {1}"
+ROLE_ALREADY_REMOVED = "{0}, you have already removed from {1}!"
+ROLE_REMOVED_SUCCESSFULLY = "role {0} is removed from {1}"
 ERROR_ON_ROLES_INTERACTION = 'You can interact only with these roles:\npredators, vipers, stars, jumpers'
 LITTLE_BOY = 'you can not change anything except your role, little boy.'
 

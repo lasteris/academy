@@ -187,11 +187,12 @@ class RolesCog(commands.Cog):
 
     @commands.command()
     async def join(self, ctx, *args):
-        role_predator = ctx.guild.get_role(717029499463794718)
-        role_star = ctx.guild.get_role(717029493088452688)
-        role_viper = ctx.guild.get_role(717029489124573224)
-        role_jumpers = ctx.guild.get_role(775433895020855326)
-        role_eternal = ctx.guild.get_role(792405449160261672)
+         #lookup roles by names to male it workable in Any Server with these Roles
+        role_predator = discord.utils.get(ctx.guild.roles, name = "Predators")
+        role_star = discord.utils.get(ctx.guild.roles, name = "Stars")
+        role_viper = discord.utils.get(ctx.guild.roles, name = "Vipers")
+        role_jumpers = discord.utils.get(ctx.guild.roles, name = "Jumpers")
+        role_eternal = discord.utils.get(ctx.guild.roles, name = "Eternals")
 
         joined = False
 
@@ -224,9 +225,9 @@ class RolesCog(commands.Cog):
                     else:
                         await ctx.author.add_roles(role_eternal)
                 if joined:
-                    await ctx.send("{0.mention}, you have already joined in {1}!".format(ctx.author, args[0]))
+                    await ctx.send(ROLE_ALREADY_ADDED.format(ctx.author, args[0]))
                 else:
-                    await ctx.send("role {0} is added to {1}".format(args[0], ctx.author.mention))
+                    await ctx.send(ROLE_ADDED_SUCCESSFULLY.format(args[0], ctx.author.mention))
             else:
                 await ctx.send(ERROR_ON_ROLES_INTERACTION)
         else:
@@ -234,11 +235,12 @@ class RolesCog(commands.Cog):
 
     @commands.command()
     async def remove(self, ctx, *args):
-        role_predator = ctx.guild.get_role(717029499463794718)
-        role_star = ctx.guild.get_role(717029493088452688)
-        role_viper = ctx.guild.get_role(717029489124573224)
-        role_jumpers = ctx.guild.get_role(775433895020855326)
-        role_eternal = ctx.guild.get_role(792405449160261672)
+        #lookup roles by names to male it workable in Any Server with these Roles
+        role_predator = discord.utils.get(ctx.guild.roles, name = "Predators")
+        role_star = discord.utils.get(ctx.guild.roles, name = "Stars")
+        role_viper = discord.utils.get(ctx.guild.roles, name = "Vipers")
+        role_jumpers = discord.utils.get(ctx.guild.roles, name = "Jumpers")
+        role_eternal = discord.utils.get(ctx.guild.roles, name = "Eternals")
 
         removed = False
 
@@ -271,9 +273,9 @@ class RolesCog(commands.Cog):
                     else:
                         await ctx.author.remove_roles(role_eternal)
                 if removed:
-                    await ctx.send("{0}, you have already removed from {1}!".format(ctx.author.name, args[0]))
+                    await ctx.send(ROLE_ALREADY_REMOVED.format(ctx.author.name, args[0]))
                 else:
-                    await ctx.send("role {0} is removed from {1}".format(args[0], ctx.author.mention))
+                    await ctx.send(ROLE_REMOVED_SUCCESSFULLY.format(args[0], ctx.author.mention))
             else:
                 await ctx.send(ERROR_ON_ROLES_INTERACTION)
         else:
