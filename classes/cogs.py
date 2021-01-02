@@ -40,6 +40,9 @@ class LeaguesCog(commands.Cog):
     async def stars(self, ctx):
         await ctx.send(STARS)
 
+    @commands.command()
+    async def leagues(self, ctx):
+        await ctx.send(LEAGUES)
 
 class NamedCog(commands.Cog):
     def __init__(self, bot):
@@ -298,6 +301,28 @@ class JumpCog(commands.Cog):
         self.db_service = db_service
         self.countdown.start()
 
+    @commands.command(name='jump-watch')
+    async def start_watching(self, ctx, *args):
+        if not args or len(args) > 1:
+            await ctx.send(JUMP_WATCH_USAGE)
+            return
+
+        if(args[0] == "status"):
+            if(self.countdown.is_running()):
+                await ctx.send(NEXT_WATCH_CHECK_AT
+                .format(self.countdown.next_iteration.strftime("%d %B %Y %H:%M:%S")))
+            else:
+                await ctx.send(WATCH_INACTIVE)
+        elif(args[0] == "start"):
+            self.countdown.start()
+            await ctx.send(WATCH_STARTED)
+        elif(args[0] == "stop"):
+            self.countdown.cancel()
+            await ctx.send(WATCH_CANCELLED)
+        else:
+            await ctx.send(PARAMETER_NOT_RECOGNIZED)
+
+
     @commands.command(name='jump-cd')
     async def cooldown(self, ctx, *args):
         cur_time = datetime.datetime.now(datetime.timezone.utc)
@@ -351,9 +376,8 @@ class JumpCog(commands.Cog):
 
 
 class UpgradesCog(commands.Cog):
-    def __init__(self):
-        # self.db_service = db_service
-        self.upgrade_data = self.load_data()
+    def __init__(self, db_service):
+        self.db_service = db_service
 
     @commands.command(name='gear-cost')
     async def gear_cost(self, ctx, *args):
@@ -386,20 +410,18 @@ class UpgradesCog(commands.Cog):
         else:
             await ctx.send("Invalid number of arguments.")
 
-    def load_data(self):
-        text = ''
-        with open('./resources/gear_costs.json', 'r') as f:
-            text = json.load(f)
-        return text
 
     def get_cost(self, *levels):
+        dict_gc = self.db_service.get_collection("dict_gc")
         total_cost = 0
         if len(levels) == 1:
-            for level in range(1, levels[0]):
-                total_cost += self.upgrade_data[str(level)]  # adding on the cost to total_cost
+            rows = dict_gc.find(
+                {"level": {"$lt": levels[0]}})
+            for row in rows:
+                total_cost += row['cost']  # adding on the cost to total_cost
         else:
-            for level in range(levels[0], levels[1]):
-                if level == 0:
-                    continue
-                total_cost += self.upgrade_data[str(level)]
+            rows = dict_gc.find(
+                {"level": {"$gte": levels[0], "$lt": levels[1]}})
+            for row in rows:
+                total_cost += row['cost']
         return total_cost
