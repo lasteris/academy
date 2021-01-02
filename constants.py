@@ -145,18 +145,18 @@ PARAMETER_NOT_RECOGNIZED = "Parameter not recognized."
 LEAGUES = """
 ```
 Academy Vipers
-GKETR1/Raid 7/1-2 AM GMT
+GKETR1 /Raid 7/1-2 AM GMT
 ```
 ```
 Academy Predator
-2EH9EW/Raid 6-7/5-7 PM GMT
+2EH9EW /Raid 6-7/5-7 PM GMT
 ```
 ```
 Academy Eternals
-R66C8M/Raid 6/2-3 PM GMT
+R66C8M /Raid 6/2-3 PM GMT
 ```
 ```
 Academy Stars
-P87X95/Raid 6/12:30 PM-2 PM GMT
+P87X95 /Raid 6/1-2 PM GMT
 ```
 """
