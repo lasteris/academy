@@ -40,6 +40,9 @@ class LeaguesCog(commands.Cog):
     async def stars(self, ctx):
         await ctx.send(STARS)
 
+    @commands.command()
+    async def leagues(self, ctx):
+        await ctx.send(LEAGUES)
 
 class NamedCog(commands.Cog):
     def __init__(self, bot):
