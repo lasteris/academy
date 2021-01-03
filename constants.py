@@ -160,3 +160,4 @@ Academy Stars
 P87X95 | Raid 6 | 1-2 PM GMT
 ```
 """
+NO_ACCESS = "sorry, {0.mention}, but you have no access to that feature."

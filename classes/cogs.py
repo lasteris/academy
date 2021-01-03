@@ -1,12 +1,8 @@
-from classes.database import DatabaseService
 import discord
 from constants import *
 from discord.ext import commands, tasks
-import asyncio
 from datetime import timedelta
 import datetime
-import json
-
 
 class LeaguesCog(commands.Cog):
     def __init__(self, bot):
@@ -284,16 +280,6 @@ class RolesCog(commands.Cog):
         else:
             await ctx.send(LITTLE_BOY)
 
-    @commands.command()
-    async def dm(self, ctx, role: discord.Role, *, message):
-        knights_role = ctx.guild.get_role(717032401456332801)
-
-        if knights_role in ctx.author.roles:
-            for m in role.members:
-                await m.send(message)
-        else:
-            await ctx.send('sorry, {0.mention}, but you have no access to that feature.'.format(ctx.author))
-
 
 class JumpCog(commands.Cog):
     def __init__(self, bot, db_service):
@@ -425,3 +411,72 @@ class UpgradesCog(commands.Cog):
             for row in rows:
                 total_cost += row['cost']
         return total_cost
+
+
+class MessagingCog(commands.Cog):
+    def __init__(self, bot):
+        self.bot = bot
+        self.func_dict = {}
+
+    @commands.command()
+    async def dm(self, ctx, role: discord.Role, *, message):
+        knights_role = discord.utils.get(ctx.guild.roles, "Knights")
+
+        if knights_role in ctx.author.roles:
+            for m in role.members:
+                await m.send(message)
+        else:
+            await ctx.send(NO_ACCESS.format(ctx.author))
+
+    @commands.command()
+    async def repeat(self, ctx, *, arg):
+        if not arg:
+            await ctx.send("something went wrong!")
+            return
+
+        parts = arg.split(' ', 2)
+
+        if arg.startswith("stop"):
+            if arg.endswith("all"):
+                for key, task in self.func_dict:
+                    task.stop()
+                    await ctx.send("{} stopped.".format(key))
+                    await ctx.send("all tasks stopped.")
+                return
+
+            parts = arg.split(' ', 1)
+            marker = parts[1]
+            self.func_dict[marker].stop()
+            await ctx.send("{}: stopped !".format(marker))
+        else:
+            marker =  parts[0]
+            message = "{}: {}".format(marker, parts[2])
+            minutes = float(parts[1])
+            self.func_dict[marker] = Sender(channel=ctx.channel, message=message, interval=minutes)
+            self.func_dict[marker].start()
+
+    @tasks.loop()
+    async def repeat_msg(self):
+        await self.channel.send(self.repeatable)
+
+
+class Sender(object):
+    def __init__(self, channel, message, interval):
+        self.message = message
+        self.channel = channel
+        self.send.change_interval(minutes=interval)
+
+    @tasks.loop(count=10)
+    async def send(self):
+        await self.channel.send(self.message)
+
+    def stop(self):
+        self.send.cancel()
+
+    def start(self):
+        self.send.start()
+
+    @send.before_loop
+    async def before_starting(self):
+        print('waiting...')
+        await self.bot.wait_until_ready()

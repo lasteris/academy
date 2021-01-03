@@ -31,6 +31,7 @@ bot.add_cog(CharactersCog(bot, db_service))
 bot.add_cog(RolesCog(bot))
 bot.add_cog(JumpCog(bot, db_service))
 bot.add_cog(UpgradesCog(db_service))
+bot.add_cog(MessagingCog(bot))
 
 @bot.event
 async def on_command_error(ctx, error):
