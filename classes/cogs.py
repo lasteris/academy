@@ -438,10 +438,10 @@ class MessagingCog(commands.Cog):
 
         if arg.startswith("stop"):
             if arg.endswith("all"):
-                for key, task in self.func_dict:
-                    task.stop()
+                for key, value in self.func_dict.items():
+                    value.stop()
                     await ctx.send("{} stopped.".format(key))
-                    await ctx.send("all tasks stopped.")
+                await ctx.send("all tasks stopped.")
                 return
 
             parts = arg.split(' ', 1)
@@ -475,8 +475,3 @@ class Sender(object):
 
     def start(self):
         self.send.start()
-
-    @send.before_loop
-    async def before_starting(self):
-        print('waiting...')
-        await self.bot.wait_until_ready()
