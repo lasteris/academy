@@ -420,11 +420,20 @@ class MessagingCog(commands.Cog):
 
     @commands.command()
     async def dm(self, ctx, role: discord.Role, *, message):
-        knights_role = discord.utils.get(ctx.guild.roles, "Knights")
+        knights_role = discord.utils.get(ctx.guild.roles, name = "Knights")
 
         if knights_role in ctx.author.roles:
             for m in role.members:
                 await m.send(message)
+        else:
+            await ctx.send(NO_ACCESS.format(ctx.author))
+
+    @commands.command()
+    async def dm(self, ctx, member: discord.Member, message):
+        knights_role = discord.utils.get(ctx.guild.roles, name = "Knights")
+
+        if knights_role in ctx.author.roles:
+            await member.send(message)
         else:
             await ctx.send(NO_ACCESS.format(ctx.author))
 
