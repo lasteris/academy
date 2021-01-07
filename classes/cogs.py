@@ -12,7 +12,7 @@ class LeaguesCog(commands.Cog):
     async def predators(self, ctx):
         await ctx.send(PREDATORS)
 
-    @commands.command()
+    @commands.command(aliases=["eternals"])
     async def eternal(self, ctx):
         await ctx.send(ETERNAL)
 
@@ -414,9 +414,11 @@ class UpgradesCog(commands.Cog):
 
 
 class MessagingCog(commands.Cog):
-    def __init__(self, bot):
+    def __init__(self, bot, db_service):
         self.bot = bot
-        self.func_dict = {}
+        self.db_service = db_service
+        self.create_func_dict()
+
 
     @commands.command()
     async def dmr(self, ctx, role: discord.Role, *, message):
@@ -440,34 +442,70 @@ class MessagingCog(commands.Cog):
     @commands.command()
     async def repeat(self, ctx, *, arg):
         if not arg:
-            await ctx.send("something went wrong!")
+            await ctx.send(WRONG_BEHAVIOUR)
             return
 
-        parts = arg.split(' ', 2)
-
         if arg.startswith("stop"):
-            if arg.endswith("all"):
-                for key, value in self.func_dict.items():
-                    value.stop()
-                    await ctx.send("{} stopped.".format(key))
-                await ctx.send("all tasks stopped.")
-                return
-
-            parts = arg.split(' ', 1)
-            marker = parts[1]
-            self.func_dict[marker].stop()
-            await ctx.send("{}: stopped !".format(marker))
+            await self.stop_some(ctx, arg)
         else:
-            marker =  parts[0]
-            message = "{}: {}".format(marker, parts[2])
-            minutes = float(parts[1])
-            self.func_dict[marker] = Sender(channel=ctx.channel, message=message, interval=minutes)
-            self.func_dict[marker].start()
+            await self.start_some(ctx, arg)
 
-    @tasks.loop()
-    async def repeat_msg(self):
-        await self.channel.send(self.repeatable)
+    def create_func_dict(self):
+        self.func_dict = {}
+        for warn in self.db_service.get_collection("repeatable_warnings").find():
+            channel_id = warn["channel"]
+            for guild in self.bot.guilds:
+                for channel in guild.channels:
+                    if channel.id == channel_id:
+                        message = MSG_FORMAT.format(warn["name"], warn["message"])
+                        self.func_dict[warn["name"]] = Sender(channel, message, warn["interval"])
+                        self.func_dict[warn["name"]].start()
+                        break
 
+    async def start_some(self, ctx, arg):
+        parts = arg.split(' ', 2)
+        marker =  parts[0]
+        if marker in self.func_dict:
+            await ctx.send(MSG_ALREADY_IN.format(marker))
+            return
+
+        minutes = float(parts[1])
+        message = MSG_FORMAT.format(marker, parts[2])
+        self.func_dict[marker] = Sender(channel=ctx.channel, message=message, interval=minutes)
+        self.func_dict[marker].start()
+
+        self.db_service.get_collection("repeatable_warnings").insert_one(
+            {
+            "channel": ctx.channel.id,
+            "interval": minutes,
+            "message": parts[2],
+            "name": marker
+            })
+
+    async def stop_some(self, ctx, arg):
+        if arg.endswith("all"):
+            for value in self.func_dict.values():
+                value.stop()
+
+            #clear collection in database and reload from it in next 2 lines
+            self.db_service.get_collection("repeatable_warnings").remove({})
+            self.create_func_dict()
+
+            await ctx.send(ALL_REPEAT_STOP)
+            return
+
+        #try stop particular msg
+        parts = arg.split(' ', 1)
+        marker = parts[1]
+        if marker in self.func_dict:
+            #remove warn-task from local dict and database
+            self.func_dict[marker].stop()
+            del self.func_dict[marker]
+            self.db_service.get_collection("repeatable_warnings").remove({"name": marker})
+
+            await ctx.send(MSG_REPEAT_STOP.format(marker))
+        else:
+            await ctx.send(MSG_NOT_FOUND)
 
 class Sender(object):
     def __init__(self, channel, message, interval):

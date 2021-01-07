@@ -25,13 +25,6 @@ db_service = DatabaseService(config['url'], config['database'])
 
 bot = commands.Bot(command_prefix='-', intents=intents)
 bot.remove_command('help')
-bot.add_cog(NamedCog(bot))
-bot.add_cog(LeaguesCog(bot))
-bot.add_cog(CharactersCog(bot, db_service))
-bot.add_cog(RolesCog(bot))
-bot.add_cog(JumpCog(bot, db_service))
-bot.add_cog(UpgradesCog(db_service))
-bot.add_cog(MessagingCog(bot))
 
 @bot.event
 async def on_command_error(ctx, error):
@@ -51,10 +44,19 @@ async def on_ready():
     print('Logged in as')
     print(bot.user.name)
     print(bot.user.id)
+    bot.add_cog(NamedCog(bot))
+    bot.add_cog(LeaguesCog(bot))
+    bot.add_cog(CharactersCog(bot, db_service))
+    bot.add_cog(RolesCog(bot))
+    bot.add_cog(JumpCog(bot, db_service))
+    bot.add_cog(UpgradesCog(db_service))
+    bot.add_cog(MessagingCog(bot, db_service))
 
 
 @bot.event
 async def on_member_join(member):
+    if member.guild.id != 717021950387421225: #Academy Main Server
+        return
     welcome = discord.utils.get(member.guild.channels, name='welcome')
     await welcome.send(JOIN_MESSAGE.format(member))
 

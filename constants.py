@@ -161,3 +161,10 @@ P87X95 | Raid 6 | 1-2 PM GMT
 ```
 """
 NO_ACCESS = "sorry, {0.mention}, but you have no access to that feature."
+ALL_REPEAT_STOP = "Repeating of all messages stopped."
+MSG_REPEAT_STOP = "Repeating of {} stopped !"
+MSG_REPEAT_RESTART = "Repeating of {} restarted !"
+MSG_ALREADY_IN = "Message with given name already exists.\nGive it other name or use -repeat *restart* {}"
+MSG_NOT_FOUND = "Message with given name not found."
+MSG_FORMAT = "{}: {}"
+WRONG_BEHAVIOUR = "something went wrong!"
