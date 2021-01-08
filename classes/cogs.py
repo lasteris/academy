@@ -184,101 +184,51 @@ class RolesCog(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
 
-    @commands.command()
-    async def join(self, ctx, *args):
-         #lookup roles by names to male it workable in Any Server with these Roles
-        role_predator = discord.utils.get(ctx.guild.roles, name = "Predators")
-        role_star = discord.utils.get(ctx.guild.roles, name = "Stars")
-        role_viper = discord.utils.get(ctx.guild.roles, name = "Vipers")
-        role_jumpers = discord.utils.get(ctx.guild.roles, name = "Jumpers")
-        role_eternal = discord.utils.get(ctx.guild.roles, name = "Eternals")
+    def lookup_role(self, ctx, name):
+        return discord.utils.get(ctx.guild.roles, name = name)
 
-        joined = False
-
-        if len(args) == 1:
-            league = args[0].lower()
-            if league in ["predators", "vipers", "stars", "jumpers", "eternals"]:
-                if league == "predators":
-                    if role_predator in ctx.author.roles:
-                        joined = True
-                    else:
-                        await ctx.author.add_roles(role_predator)
-                elif league == "vipers":
-                    if role_viper in ctx.author.roles:
-                        joined = True
-                    else:
-                        await ctx.author.add_roles(role_viper)
-                elif league == "stars":
-                    if role_star in ctx.author.roles:
-                        joined = True
-                    else:
-                        await ctx.author.add_roles(role_star)
-                elif league == "jumpers":
-                    if role_jumpers in ctx.author.roles:
-                        joined = True
-                    else:
-                        await ctx.author.add_roles(role_jumpers)
-                elif league == "eternals":
-                    if role_eternal in ctx.author.roles:
-                        joined = True
-                    else:
-                        await ctx.author.add_roles(role_eternal)
-                if joined:
-                    await ctx.send(ROLE_ALREADY_ADDED.format(ctx.author, args[0]))
-                else:
-                    await ctx.send(ROLE_ADDED_SUCCESSFULLY.format(args[0], ctx.author.mention))
-            else:
-                await ctx.send(ERROR_ON_ROLES_INTERACTION)
-        else:
-            await ctx.send(LITTLE_BOY)
+    def lookup_predefined_roles(self, ctx):
+       return [role for role in [self.lookup_role(ctx, name) for name in ["Predators", "Stars", "Vipers", "Jumpers", "Eternals", "Among"]] if role]
 
     @commands.command()
-    async def remove(self, ctx, *args):
-        #lookup roles by names to male it workable in Any Server with these Roles
-        role_predator = discord.utils.get(ctx.guild.roles, name = "Predators")
-        role_star = discord.utils.get(ctx.guild.roles, name = "Stars")
-        role_viper = discord.utils.get(ctx.guild.roles, name = "Vipers")
-        role_jumpers = discord.utils.get(ctx.guild.roles, name = "Jumpers")
-        role_eternal = discord.utils.get(ctx.guild.roles, name = "Eternals")
+    async def join(self, ctx, *, arg):
+        roles = self.lookup_predefined_roles(ctx)
 
-        removed = False
+        found = False
 
-        if len(args) == 1:
-            league = args[0].lower()
-            if league in ["predators", "vipers", "stars", "jumpers", "eternals"]:
-                if league == "predators":
-                    if role_predator not in ctx.author.roles:
-                        removed = True
-                    else:
-                        await ctx.author.remove_roles(role_predator)
-                elif league == "vipers":
-                    if role_viper not in ctx.author.roles:
-                        removed = True
-                    else:
-                        await ctx.author.remove_roles(role_viper)
-                elif league == "stars":
-                    if role_star not in ctx.author.roles:
-                        removed = True
-                    else:
-                        await ctx.author.remove_roles(role_star),
-                elif league == "jumpers":
-                    if role_jumpers not in ctx.author.roles:
-                        removed = True
-                    else:
-                        await ctx.author.remove_roles(role_jumpers)
-                elif league == "eternals":
-                    if role_eternal not in ctx.author.roles:
-                        removed = True
-                    else:
-                        await ctx.author.remove_roles(role_eternal)
-                if removed:
-                    await ctx.send(ROLE_ALREADY_REMOVED.format(ctx.author.name, args[0]))
+        league = arg.lower()
+
+        for role in roles:
+            if role.name.lower() in league:
+                found = True
+                if role not in ctx.author.roles:
+                    await ctx.author.add_roles(role)
+                    await ctx.send(ROLE_ADDED_SUCCESSFULLY.format(ctx.author, role))
                 else:
-                    await ctx.send(ROLE_REMOVED_SUCCESSFULLY.format(args[0], ctx.author.mention))
-            else:
-                await ctx.send(ERROR_ON_ROLES_INTERACTION)
-        else:
-            await ctx.send(LITTLE_BOY)
+                    await ctx.send(ROLE_ALREADY_ADDED.format(ctx.author, role))
+
+        if not found:
+            await ctx.send(ERROR_ON_ROLES_INTERACTION)
+
+    @commands.command()
+    async def remove(self, ctx, *, arg):
+        roles = self.lookup_predefined_roles(ctx)
+
+        found = False
+
+        league = arg.lower()
+
+        for role in roles:
+            if role.name.lower() in league:
+                found = True
+                if role in ctx.author.roles:
+                    await ctx.author.remove_roles(role)
+                    await ctx.send(ROLE_REMOVED_SUCCESSFULLY.format(ctx.author, role))
+                else:
+                    await ctx.send(ROLE_ALREADY_REMOVED.format(ctx.author, role))
+
+        if not found:
+            await ctx.send(ERROR_ON_ROLES_INTERACTION)
 
 
 class JumpCog(commands.Cog):
@@ -452,7 +402,7 @@ class MessagingCog(commands.Cog):
 
     def create_func_dict(self):
         self.func_dict = {}
-        for warn in self.db_service.get_collection("repeatable_warnings").find():
+        for warn in self.db_service.get_collection("repeatable_warnings").find({"enabled": True}):
             channel_id = warn["channel"]
             for guild in self.bot.guilds:
                 for channel in guild.channels:

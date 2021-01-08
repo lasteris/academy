@@ -118,15 +118,15 @@ DATE_TIME_FORMAT = "%d %B %Y %I:%M %p"
 CD_STATUS = '{0.mention}, {1} days before your cooldown expires.'
 CD_EXPIRED = '{0.mention}, cooldown expired.'
 
-ROLE_ALREADY_ADDED = "{0.mention}, you have already joined in {1}!"
-ROLE_ADDED_SUCCESSFULLY = "role {0} is added to {1}"
-ROLE_ALREADY_REMOVED = "{0}, you have already removed from {1}!"
-ROLE_REMOVED_SUCCESSFULLY = "role {0} is removed from {1}"
-ERROR_ON_ROLES_INTERACTION = 'You can interact only with these roles:\npredators, vipers, stars, eternals, jumpers'
-LITTLE_BOY = 'you can not change anything except your role, little boy.'
-LEAGUE_RAID_WARNING = """Hello, {0}
+ROLE_ALREADY_ADDED = "{0.mention}, you have already promoted to {1.name} earlier!"
+ROLE_ADDED_SUCCESSFULLY = "Congratulations, {0.mention}, you have been promoted to the {1.name}. :thumbsup:"
+ROLE_ALREADY_REMOVED = "{0.mention}, you have already demoted from {1.name} earlier!"
+ROLE_REMOVED_SUCCESSFULLY = "Congratulations, {0.mention}, you have been demoted from {1.name}. :thumbsup:"
+ERROR_ON_ROLES_INTERACTION = '**Warning!**\nYou should interact only with these roles:\npredators, vipers, stars, eternals, jumpers, among us!'
 
-Since you joined {1}, you need to know how we attack raids.
+LEAGUE_RAID_WARNING = """Hello, {0.name}
+
+Since you joined {1.name}, you need to know how we attack raids.
 
 We __**coordinate**__ our attacks. (**always read raid-plan**, we can add instructions before each raid)
 
@@ -142,7 +142,7 @@ You are supposed to make your teams and say "ready" when done.
 
 Next, we conduct either one day or two day raids. (check the raid plan)
 
-One day raid means we finish the entire raid in 3 pips, so we must plan our teams wisely for maximum damage wherever needed, 
+One day raid means we finish the entire raid in 3 pips, so we must plan our teams wisely for maximum damage wherever needed,
 Two day raid means we finish the raid in 6 pips, over 2 days."""
 
 GEAR_COST = """Up to {0}, a single gear costs {1} gear materials.
