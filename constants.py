@@ -8,12 +8,13 @@ NEW_PLAYER = """1. Select your league in {0.mention}.
 JOIN_MESSAGE = """Hey {0.mention}, welcome to **The Academy!**
 Just visiting? Feel free to cruise with us at the Academy!
 Or maybe you are looking for a league.
-In our arsenal, we have three, depends on your raid preference time:
+In our arsenal, we have four, depends on your raid preference time:
 Vipers raid around 1-2 AM GMT.
 Stars raid around 12:30 PM-2 PM GMT.
 Predators raid around 5-7 PM GMT.
+Eternals raid around 2-3 PM GMT.
 To see in-game code of chosen league, please type one of these commands:
-    -predators, -stars, -vipers
+    -predators, -stars, -vipers, eternals
 To see chats of chosen league, you need to have corresponding role.
 So, type: -join <league name here> (-join stars)"""
 
@@ -40,6 +41,7 @@ HELP = """**List of Academy bot commands**
 -predators (Academy Predator)
 -vipers (Academy Vipers)
 -stars (Academy Stars)
+-eternal (Academy Eternals)
 ```
 \t*additional league codes (for jumps):*
 ```
@@ -57,7 +59,7 @@ HELP = """**List of Academy bot commands**
 -remove
 ```*parameters:*
 ```
-predators/stars/vipers/jumpers
+predators/stars/vipers/eternals/jumpers
 ```*usage:*
 ```
 -join predators
@@ -116,7 +118,11 @@ DATE_TIME_FORMAT = "%d %B %Y %I:%M %p"
 CD_STATUS = '{0.mention}, {1} days before your cooldown expires.'
 CD_EXPIRED = '{0.mention}, cooldown expired.'
 
-ERROR_ON_ROLES_INTERACTION = 'You can interact only with these roles:\npredators, vipers, stars, jumpers'
+ROLE_ALREADY_ADDED = "{0.mention}, you have already joined in {1}!"
+ROLE_ADDED_SUCCESSFULLY = "role {0} is added to {1}"
+ROLE_ALREADY_REMOVED = "{0}, you have already removed from {1}!"
+ROLE_REMOVED_SUCCESSFULLY = "role {0} is removed from {1}"
+ERROR_ON_ROLES_INTERACTION = 'You can interact only with these roles:\npredators, vipers, stars, eternals, jumpers'
 LITTLE_BOY = 'you can not change anything except your role, little boy.'
 
 GEAR_COST = """Up to {0}, a single gear costs {1} gear materials.
@@ -126,3 +132,39 @@ Full set costs {3} gear materials
 """
 GEAR_COST_OUT_RANGE = "Gear level out of range, only from 1 to 70"
 GEAR_COST_WHOLE_NUM = "Must be a whole number"
+
+JUMP_WATCH_USAGE = """
+            Wrong usage of command.
+            For managing of process youi should use of these parameters:
+            \start, status, stop"""
+NEXT_WATCH_CHECK_AT = "Watching is **active**.\nNext expiration check occurs at **{0}**"
+WATCH_INACTIVE = "Watching is **inactive**."
+WATCH_STARTED = "Watching **started**."
+WATCH_CANCELLED = "Watching **cancelled**."
+PARAMETER_NOT_RECOGNIZED = "Parameter not recognized."
+LEAGUES = """
+```yaml
+Academy Vipers
+GKETR1 | Raid 7 | 1-2 AM GMT
+```
+```yaml
+Academy Predator
+2EH9EW | Raid 6-7| 5-7 PM GMT
+```
+```yaml
+Academy Eternals
+R66C8M | Raid 6 | 2-3 PM GMT
+```
+```yaml
+Academy Stars
+P87X95 | Raid 6 | 1-2 PM GMT
+```
+"""
+NO_ACCESS = "sorry, {0.mention}, but you have no access to that feature."
+ALL_REPEAT_STOP = "Repeating of all messages stopped."
+MSG_REPEAT_STOP = "Repeating of {} stopped !"
+MSG_REPEAT_RESTART = "Repeating of {} restarted !"
+MSG_ALREADY_IN = "Message with given name already exists.\nGive it other name or use -repeat *restart* {}"
+MSG_NOT_FOUND = "Message with given name not found."
+MSG_FORMAT = "{}: {}"
+WRONG_BEHAVIOUR = "something went wrong!"

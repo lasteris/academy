@@ -1,12 +1,8 @@
-from classes.database import DatabaseService
 import discord
 from constants import *
 from discord.ext import commands, tasks
-import asyncio
 from datetime import timedelta
 import datetime
-import json
-
 
 class LeaguesCog(commands.Cog):
     def __init__(self, bot):
@@ -16,7 +12,7 @@ class LeaguesCog(commands.Cog):
     async def predators(self, ctx):
         await ctx.send(PREDATORS)
 
-    @commands.command()
+    @commands.command(aliases=["eternals"])
     async def eternal(self, ctx):
         await ctx.send(ETERNAL)
 
@@ -40,6 +36,9 @@ class LeaguesCog(commands.Cog):
     async def stars(self, ctx):
         await ctx.send(STARS)
 
+    @commands.command()
+    async def leagues(self, ctx):
+        await ctx.send(LEAGUES)
 
 class NamedCog(commands.Cog):
     def __init__(self, bot):
@@ -187,11 +186,12 @@ class RolesCog(commands.Cog):
 
     @commands.command()
     async def join(self, ctx, *args):
-        role_predator = ctx.guild.get_role(717029499463794718)
-        role_star = ctx.guild.get_role(717029493088452688)
-        role_viper = ctx.guild.get_role(717029489124573224)
-        role_jumpers = ctx.guild.get_role(775433895020855326)
-        role_eternal = ctx.guild.get_role(792405449160261672)
+         #lookup roles by names to male it workable in Any Server with these Roles
+        role_predator = discord.utils.get(ctx.guild.roles, name = "Predators")
+        role_star = discord.utils.get(ctx.guild.roles, name = "Stars")
+        role_viper = discord.utils.get(ctx.guild.roles, name = "Vipers")
+        role_jumpers = discord.utils.get(ctx.guild.roles, name = "Jumpers")
+        role_eternal = discord.utils.get(ctx.guild.roles, name = "Eternals")
 
         joined = False
 
@@ -224,9 +224,9 @@ class RolesCog(commands.Cog):
                     else:
                         await ctx.author.add_roles(role_eternal)
                 if joined:
-                    await ctx.send("{0.mention}, you have already joined in {1}!".format(ctx.author, args[0]))
+                    await ctx.send(ROLE_ALREADY_ADDED.format(ctx.author, args[0]))
                 else:
-                    await ctx.send("role {0} is added to {1}".format(args[0], ctx.author.mention))
+                    await ctx.send(ROLE_ADDED_SUCCESSFULLY.format(args[0], ctx.author.mention))
             else:
                 await ctx.send(ERROR_ON_ROLES_INTERACTION)
         else:
@@ -234,16 +234,18 @@ class RolesCog(commands.Cog):
 
     @commands.command()
     async def remove(self, ctx, *args):
-        role_predator = ctx.guild.get_role(717029499463794718)
-        role_star = ctx.guild.get_role(717029493088452688)
-        role_viper = ctx.guild.get_role(717029489124573224)
-        role_jumpers = ctx.guild.get_role(775433895020855326)
+        #lookup roles by names to male it workable in Any Server with these Roles
+        role_predator = discord.utils.get(ctx.guild.roles, name = "Predators")
+        role_star = discord.utils.get(ctx.guild.roles, name = "Stars")
+        role_viper = discord.utils.get(ctx.guild.roles, name = "Vipers")
+        role_jumpers = discord.utils.get(ctx.guild.roles, name = "Jumpers")
+        role_eternal = discord.utils.get(ctx.guild.roles, name = "Eternals")
 
         removed = False
 
         if len(args) == 1:
             league = args[0].lower()
-            if league in ["predators", "vipers", "stars", "jumpers"]:
+            if league in ["predators", "vipers", "stars", "jumpers", "eternals"]:
                 if league == "predators":
                     if role_predator not in ctx.author.roles:
                         removed = True
@@ -264,24 +266,19 @@ class RolesCog(commands.Cog):
                         removed = True
                     else:
                         await ctx.author.remove_roles(role_jumpers)
+                elif league == "eternals":
+                    if role_eternal not in ctx.author.roles:
+                        removed = True
+                    else:
+                        await ctx.author.remove_roles(role_eternal)
                 if removed:
-                    await ctx.send("{0}, you have already removed from {1}!".format(ctx.author.name, args[0]))
+                    await ctx.send(ROLE_ALREADY_REMOVED.format(ctx.author.name, args[0]))
                 else:
-                    await ctx.send("role {0} is removed from {1}".format(args[0], ctx.author.mention))
+                    await ctx.send(ROLE_REMOVED_SUCCESSFULLY.format(args[0], ctx.author.mention))
             else:
                 await ctx.send(ERROR_ON_ROLES_INTERACTION)
         else:
             await ctx.send(LITTLE_BOY)
-
-    @commands.command()
-    async def dm(self, ctx, role: discord.Role, *, message):
-        knights_role = ctx.guild.get_role(717032401456332801)
-
-        if knights_role in ctx.author.roles:
-            for m in role.members:
-                await m.send(message)
-        else:
-            await ctx.send('sorry, {0.mention}, but you have no access to that feature.'.format(ctx.author))
 
 
 class JumpCog(commands.Cog):
@@ -289,6 +286,28 @@ class JumpCog(commands.Cog):
         self.bot = bot
         self.db_service = db_service
         self.countdown.start()
+
+    @commands.command(name='jump-watch')
+    async def start_watching(self, ctx, *args):
+        if not args or len(args) > 1:
+            await ctx.send(JUMP_WATCH_USAGE)
+            return
+
+        if(args[0] == "status"):
+            if(self.countdown.is_running()):
+                await ctx.send(NEXT_WATCH_CHECK_AT
+                .format(self.countdown.next_iteration.strftime("%d %B %Y %H:%M:%S")))
+            else:
+                await ctx.send(WATCH_INACTIVE)
+        elif(args[0] == "start"):
+            self.countdown.start()
+            await ctx.send(WATCH_STARTED)
+        elif(args[0] == "stop"):
+            self.countdown.cancel()
+            await ctx.send(WATCH_CANCELLED)
+        else:
+            await ctx.send(PARAMETER_NOT_RECOGNIZED)
+
 
     @commands.command(name='jump-cd')
     async def cooldown(self, ctx, *args):
@@ -343,9 +362,8 @@ class JumpCog(commands.Cog):
 
 
 class UpgradesCog(commands.Cog):
-    def __init__(self):
-        # self.db_service = db_service
-        self.upgrade_data = self.load_data()
+    def __init__(self, db_service):
+        self.db_service = db_service
 
     @commands.command(name='gear-cost')
     async def gear_cost(self, ctx, *args):
@@ -378,20 +396,129 @@ class UpgradesCog(commands.Cog):
         else:
             await ctx.send("Invalid number of arguments.")
 
-    def load_data(self):
-        text = ''
-        with open('./resources/gear_costs.json', 'r') as f:
-            text = json.load(f)
-        return text
 
     def get_cost(self, *levels):
+        dict_gc = self.db_service.get_collection("dict_gc")
         total_cost = 0
         if len(levels) == 1:
-            for level in range(1, levels[0]):
-                total_cost += self.upgrade_data[str(level)]  # adding on the cost to total_cost
+            rows = dict_gc.find(
+                {"level": {"$lt": levels[0]}})
+            for row in rows:
+                total_cost += row['cost']  # adding on the cost to total_cost
         else:
-            for level in range(levels[0], levels[1]):
-                if level == 0:
-                    continue
-                total_cost += self.upgrade_data[str(level)]
+            rows = dict_gc.find(
+                {"level": {"$gte": levels[0], "$lt": levels[1]}})
+            for row in rows:
+                total_cost += row['cost']
         return total_cost
+
+
+class MessagingCog(commands.Cog):
+    def __init__(self, bot, db_service):
+        self.bot = bot
+        self.db_service = db_service
+        self.create_func_dict()
+
+
+    @commands.command()
+    async def dmr(self, ctx, role: discord.Role, *, message):
+        knights_role = discord.utils.get(ctx.guild.roles, name = "Knights")
+
+        if knights_role in ctx.author.roles:
+            for m in role.members:
+                await m.send(message)
+        else:
+            await ctx.send(NO_ACCESS.format(ctx.author))
+
+    @commands.command()
+    async def dmp(self, ctx, member: discord.Member, *, message):
+        knights_role = discord.utils.get(ctx.guild.roles, name = "Knights")
+
+        if knights_role in ctx.author.roles:
+            await member.send(message)
+        else:
+            await ctx.send(NO_ACCESS.format(ctx.author))
+
+    @commands.command()
+    async def repeat(self, ctx, *, arg):
+        if not arg:
+            await ctx.send(WRONG_BEHAVIOUR)
+            return
+
+        if arg.startswith("stop"):
+            await self.stop_some(ctx, arg)
+        else:
+            await self.start_some(ctx, arg)
+
+    def create_func_dict(self):
+        self.func_dict = {}
+        for warn in self.db_service.get_collection("repeatable_warnings").find():
+            channel_id = warn["channel"]
+            for guild in self.bot.guilds:
+                for channel in guild.channels:
+                    if channel.id == channel_id:
+                        message = MSG_FORMAT.format(warn["name"], warn["message"])
+                        self.func_dict[warn["name"]] = Sender(channel, message, warn["interval"])
+                        self.func_dict[warn["name"]].start()
+                        break
+
+    async def start_some(self, ctx, arg):
+        parts = arg.split(' ', 2)
+        marker =  parts[0]
+        if marker in self.func_dict:
+            await ctx.send(MSG_ALREADY_IN.format(marker))
+            return
+
+        minutes = float(parts[1])
+        message = MSG_FORMAT.format(marker, parts[2])
+        self.func_dict[marker] = Sender(channel=ctx.channel, message=message, interval=minutes)
+        self.func_dict[marker].start()
+
+        self.db_service.get_collection("repeatable_warnings").insert_one(
+            {
+            "channel": ctx.channel.id,
+            "interval": minutes,
+            "message": parts[2],
+            "name": marker
+            })
+
+    async def stop_some(self, ctx, arg):
+        if arg.endswith("all"):
+            for value in self.func_dict.values():
+                value.stop()
+
+            #clear collection in database and reload from it in next 2 lines
+            self.db_service.get_collection("repeatable_warnings").remove({})
+            self.create_func_dict()
+
+            await ctx.send(ALL_REPEAT_STOP)
+            return
+
+        #try stop particular msg
+        parts = arg.split(' ', 1)
+        marker = parts[1]
+        if marker in self.func_dict:
+            #remove warn-task from local dict and database
+            self.func_dict[marker].stop()
+            del self.func_dict[marker]
+            self.db_service.get_collection("repeatable_warnings").remove({"name": marker})
+
+            await ctx.send(MSG_REPEAT_STOP.format(marker))
+        else:
+            await ctx.send(MSG_NOT_FOUND)
+
+class Sender(object):
+    def __init__(self, channel, message, interval):
+        self.message = message
+        self.channel = channel
+        self.send.change_interval(minutes=interval)
+
+    @tasks.loop(count=10)
+    async def send(self):
+        await self.channel.send(self.message)
+
+    def stop(self):
+        self.send.cancel()
+
+    def start(self):
+        self.send.start()
