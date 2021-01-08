@@ -124,6 +124,26 @@ ROLE_ALREADY_REMOVED = "{0}, you have already removed from {1}!"
 ROLE_REMOVED_SUCCESSFULLY = "role {0} is removed from {1}"
 ERROR_ON_ROLES_INTERACTION = 'You can interact only with these roles:\npredators, vipers, stars, eternals, jumpers'
 LITTLE_BOY = 'you can not change anything except your role, little boy.'
+LEAGUE_RAID_WARNING = """Hello, {0}
+
+Since you joined {1}, you need to know how we attack raids.
+
+We __**coordinate**__ our attacks. (**always read raid-plan**, we can add instructions before each raid)
+
+1. When a **raid captain** says to prepare for a boss
+    - Captain Cold (CC)
+    - Gorilla Grodd (GG)
+    - Scarecrow (HSC)
+    - Doctor Fate (DF)
+    - Brainiac (Brainy or Brnc)
+You are supposed to make your teams and say "ready" when done.
+2. The captain will ask for "ready check" or "final call", everyone will respond with "ready" to show they are attentive and not away from the game.
+3. Finally, the captain will say "Go", then you can attack the boss.
+
+Next, we conduct either one day or two day raids. (check the raid plan)
+
+One day raid means we finish the entire raid in 3 pips, so we must plan our teams wisely for maximum damage wherever needed, 
+Two day raid means we finish the raid in 6 pips, over 2 days."""
 
 GEAR_COST = """Up to {0}, a single gear costs {1} gear materials.
 Full set costs {2} gear materials"""
