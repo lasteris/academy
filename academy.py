@@ -61,6 +61,18 @@ async def on_member_join(member):
     await welcome.send(JOIN_MESSAGE.format(member))
 
 
+@bot.event
+async def on_member_update(oldUserInfo, newUserInfo):
+    league_roles = [717029499463794718, 717029493088452688, 717029489124573224, 775433895020855326, 792405449160261672]
+    old_roles = [role.id for role in oldUserInfo.roles]
+    new_roles = [role.id for role in newUserInfo.roles]
+
+    for role in league_roles:
+        if role not in old_roles and role in new_roles:
+            await newUserInfo.send(LEAGUE_RAID_WARNING.format(newUserInfo.name, newUserInfo.guild.get_role(role).name))
+            break
+
+
 @bot.command()
 async def time(ctx):
     await ctx.send(TIME.format(datetime.datetime.now(datetime.timezone.utc).strftime("%H:%M:%S")))
