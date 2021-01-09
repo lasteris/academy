@@ -122,6 +122,12 @@ class CharactersCog(commands.Cog):
         self.bot = bot
         self.db_service = db_service
 
+    def formatstr(self, str, type):
+        return type.format(str)
+
+    def formatarray(self, arr, type):
+        return [type.format(val) for val in arr]
+
     @commands.command()
     async def build(self, ctx, arg):
         search = self.db_service.get_collection('builds').find_one({"name": arg})
@@ -133,51 +139,73 @@ class CharactersCog(commands.Cog):
         else:
             await ctx.send(CHARACTER_NOT_RECOGNIZED)
 
-    @commands.command()
+    @commands.command(aliases=["p"])
     async def passives(self, ctx, arg):
         character = self.db_service.get_collection('characters').find_one(
             {'acronym': arg}, {'passives': 3})
 
-        passives_text = ''
-        for p in character["passives"]:
-            passives_text += "**" + p['name'] + "**\n" + p["description"] + "\n"
-            for buff in p['buffs']:
-                passives_text += "*" + buff + "*\n"
-            passives_text += '\n'
-        await ctx.send(passives_text)
+        if character:
+            out_list = []
+            for sp in character["passives"]:
+                out_list.append(self.formatstr(sp['name'], BOLD))
+                out_list.append(self.formatstr(sp['description'], ITALIC))
+                out_list.extend(self.formatarray(sp['buffs'], ITALIC))
 
-    @commands.command()
+            out = '\n'
+            await ctx.send(out.join(out_list))
+        else:
+            await ctx.send(ABBR_NOT_RECOGNIZED)
+
+    @commands.command(aliases=["sp"])
     async def specials(self, ctx, arg):
         character = self.db_service.get_collection('characters').find_one(
             {'acronym': arg}, {'specials': 3})
 
-        specials_text = ''
-        for sp in character["specials"]:
-            specials_text += "**" + sp['name'] + "**\n" + sp["description"] + "\n"
-            for buff in sp['buffs']:
-                specials_text += "*" + buff + "*\n"
-            specials_text += '\n'
-        await ctx.send(specials_text)
+        if character:
+            out_list = []
+            for sp in character["specials"]:
+                out_list.append(self.formatstr(sp['name'], BOLD))
+                out_list.append(self.formatstr(sp['description'], ITALIC))
+                out_list.extend(self.formatarray(sp['buffs'], ITALIC))
 
-    @commands.command()
+            out = '\n'
+            await ctx.send(out.join(out_list))
+        else:
+            await ctx.send(ABBR_NOT_RECOGNIZED)
+
+    @commands.command(aliases=["sm", "ult", "ultimate"])
     async def supermove(self, ctx, arg):
         character = self.db_service.get_collection('characters').find_one(
             {'acronym': arg}, {'supermove': 1})
 
-        sm = character['supermove']
-        supermove_text = "**" + sm['name'] + "**\n" + sm["description"] + "\n"
-        for buff in sm['buffs']:
-            supermove_text += "*" + buff + "*\n"
-        supermove_text += '\n'
-        await ctx.send(supermove_text)
+        if character:
+            out_list = []
+            out_list.append(self.formatstr(character['supermove']['name'], BOLD))
+            out_list.append(self.formatstr(character['supermove']['description'], ITALIC))
+            out_list.extend(self.formatarray(character['supermove']['buffs'], ITALIC))
+
+            out = "\n"
+            await ctx.send(out.join(out_list))
+        else:
+            await ctx.send(ABBR_NOT_RECOGNIZED)
 
     @commands.command()
     async def name(self, ctx, arg):
-        character = self.db_service.get_collection('characters').find_one({'acronym': arg}, {'name': 1})
-        if character:
-            await ctx.send(character["name"])
+        characters = self.db_service.get_collection('characters')
+        lines = []
+        out = '\n'
+        if "list" == arg:
+            for character in characters.find():
+                lines.append(LINE_FORMAT.format(character["acronym"], character["name"]))
+
+            for lines_splitted in [lines[i:i + 50] for i in range(0, len(lines), 50)]:
+                await ctx.send(self.formatstr(out.join(lines_splitted), CHUNKED))
         else:
-            await ctx.send("Abbreviation not recognized.")
+            character = characters.find_one({'acronym': arg}, {'name': 1})
+            if character:
+                await ctx.send(character["name"])
+            else:
+                await ctx.send(ABBR_NOT_RECOGNIZED)
 
 
 class RolesCog(commands.Cog):
@@ -229,7 +257,6 @@ class RolesCog(commands.Cog):
 
         if not found:
             await ctx.send(ERROR_ON_ROLES_INTERACTION)
-
 
 class JumpCog(commands.Cog):
     def __init__(self, bot, db_service):
