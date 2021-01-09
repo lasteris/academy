@@ -456,7 +456,8 @@ class MessagingCog(commands.Cog):
             "channel": ctx.channel.id,
             "interval": minutes,
             "message": parts[2],
-            "name": marker
+            "name": marker,
+            "enabled": True
             })
 
     async def stop_some(self, ctx, arg):
