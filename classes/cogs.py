@@ -403,7 +403,10 @@ class MessagingCog(commands.Cog):
 
         if knights_role in ctx.author.roles:
             for m in role.members:
-                await m.send(message)
+                try:
+                    await m.send(message)
+                except Exception:
+                    pass
         else:
             await ctx.send(NO_ACCESS.format(ctx.author))
 
@@ -412,7 +415,10 @@ class MessagingCog(commands.Cog):
         knights_role = discord.utils.get(ctx.guild.roles, name = "Knights")
 
         if knights_role in ctx.author.roles:
-            await member.send(message)
+            try:
+                await member.send(message)
+            except Exception:
+                pass
         else:
             await ctx.send(NO_ACCESS.format(ctx.author))
 

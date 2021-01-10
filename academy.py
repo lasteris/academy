@@ -1,3 +1,4 @@
+import asyncio
 from classes.database import DatabaseService
 import datetime
 import logging
@@ -72,8 +73,12 @@ async def on_member_update(old_user_info, new_user_info):
 
     for role in league_roles:
         if role not in old_roles and role in new_roles:
-            await new_user_info.send(LEAGUE_RAID_WARNING.format(new_user_info, new_user_info.guild.get_role(role)))
-            break
+            try:
+                await new_user_info.send(LEAGUE_RAID_WARNING.format(new_user_info, new_user_info.guild.get_role(role)))
+                break
+            except Exception:
+                pass
+
 
 
 @bot.command()
@@ -91,6 +96,24 @@ async def newplayer(ctx):
     await ctx.send(NEW_PLAYER.format(
     choose_league_channel,
     fast_improve_channel))
+
+@bot.command(aliases=["cd", "till-raid"])
+async def countdown(ctx,role: discord.Role, *, arg):
+    """-cd @Predators 10(mins|hrs|hours) """
+    message = await ctx.send("{0.mention} hello".format(role))
+
+    parts = arg.split(' ', 1)
+    digits = ''.join([c for c in parts[0] if c.isdigit()])
+    letters = ''.join([c for c in parts[0] if c.isalpha()])
+    print("'{}'".format(letters))
+    if letters in ["hours", "h", "hrs"]:
+        print(letters)
+        await asyncio.sleep(10)
+        await message.edit(content="no no no {} hours".format(digits))
+    elif letters in ["mins", "m"]:
+        print(letters)
+        await asyncio.sleep(10)
+        await message.edit(content="no no no {} minutes".format(digits))
 
 
 @bot.command()
