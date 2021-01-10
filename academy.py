@@ -83,6 +83,9 @@ async def time(ctx):
 
 @bot.command()
 async def newplayer(ctx):
+    if ctx.author.guild.id != 717021950387421225: #Academy Main Server
+        return
+
     choose_league_channel = ctx.guild.get_channel(717026493557112963)
     fast_improve_channel = ctx.guild.get_channel(753734930583781437)
     await ctx.send(NEW_PLAYER.format(
