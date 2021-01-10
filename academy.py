@@ -3,6 +3,7 @@ from classes.database import DatabaseService
 import datetime
 import logging
 import discord
+import time
 
 from classes.cogs import *
 from discord.ext.commands import CommandNotFound
@@ -98,23 +99,30 @@ async def newplayer(ctx):
     fast_improve_channel))
 
 @bot.command(aliases=["cd", "till-raid"])
-async def countdown(ctx,role: discord.Role, *, arg):
+async def countdown(ctx, *, arg):
     """-cd @Predators 10(mins|hrs|hours) """
-    message = await ctx.send("{0.mention} hello".format(role))
 
     parts = arg.split(' ', 1)
+
+    message = await ctx.send(parts[1])
+
     digits = ''.join([c for c in parts[0] if c.isdigit()])
     letters = ''.join([c for c in parts[0] if c.isalpha()])
-    print("'{}'".format(letters))
-    if letters in ["hours", "h", "hrs"]:
-        print(letters)
-        await asyncio.sleep(10)
-        await message.edit(content="no no no {} hours".format(digits))
-    elif letters in ["mins", "m"]:
-        print(letters)
-        await asyncio.sleep(10)
-        await message.edit(content="no no no {} minutes".format(digits))
 
+    if letters in ["hours", "h", "hrs"]:
+        await message.edit(content="{0}\nTime Left: {1} hours".format(parts[1], digits))
+    elif letters in ["mins", "m"]:
+        for i in range(int(digits), 1, -1):
+            await message.edit(content="{0}\nTime Left: {1} minutes".format(parts[1], i))
+            await asyncio.sleep(59.7)
+
+        await message.edit(content="{0}\nTime Left: one minute")
+
+        for i in range(59, 0, -1):
+            await message.edit(content="{0}\nTime Left: {1} seconds".format(parts[1], i))
+            await asyncio.sleep(0.7)
+
+        await message.edit(content="{0}\nCountdown Expired".format(parts[1]))
 
 @bot.command()
 async def help(ctx):

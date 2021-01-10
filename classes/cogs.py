@@ -130,7 +130,7 @@ class CharactersCog(commands.Cog):
 
     @commands.command()
     async def build(self, ctx, arg):
-        search = self.db_service.get_collection('builds').find_one({"name": arg})
+        search = self.db_service.get_collection('builds').find_one({"name": arg.lower()})
         if search:
             if search["value"]:
                 await ctx.send(search["value"])
@@ -142,7 +142,7 @@ class CharactersCog(commands.Cog):
     @commands.command(aliases=["p"])
     async def passives(self, ctx, arg):
         character = self.db_service.get_collection('characters').find_one(
-            {'acronym': arg}, {'passives': 3})
+            {'acronym': arg.lower()}, {'passives': 3})
 
         if character:
             out_list = []
@@ -159,7 +159,7 @@ class CharactersCog(commands.Cog):
     @commands.command(aliases=["sp"])
     async def specials(self, ctx, arg):
         character = self.db_service.get_collection('characters').find_one(
-            {'acronym': arg}, {'specials': 3})
+            {'acronym': arg.lower()}, {'specials': 3})
 
         if character:
             out_list = []
@@ -176,7 +176,7 @@ class CharactersCog(commands.Cog):
     @commands.command(aliases=["sm", "ult", "ultimate"])
     async def supermove(self, ctx, arg):
         character = self.db_service.get_collection('characters').find_one(
-            {'acronym': arg}, {'supermove': 1})
+            {'acronym': arg.lower()}, {'supermove': 1})
 
         if character:
             out_list = []
@@ -201,7 +201,7 @@ class CharactersCog(commands.Cog):
             for lines_splitted in [lines[i:i + 50] for i in range(0, len(lines), 50)]:
                 await ctx.send(self.formatstr(out.join(lines_splitted), CHUNKED))
         else:
-            character = characters.find_one({'acronym': arg}, {'name': 1})
+            character = characters.find_one({'acronym': arg.lower()}, {'name': 1})
             if character:
                 await ctx.send(character["name"])
             else:
@@ -399,9 +399,9 @@ class MessagingCog(commands.Cog):
 
     @commands.command()
     async def dmr(self, ctx, role: discord.Role, *, message):
-        knights_role = discord.utils.get(ctx.guild.roles, name = "Knights")
+        random = discord.utils.get(ctx.guild.roles, name = "random")
 
-        if knights_role in ctx.author.roles:
+        if random in ctx.author.roles:
             for m in role.members:
                 try:
                     await m.send(message)
@@ -412,9 +412,9 @@ class MessagingCog(commands.Cog):
 
     @commands.command()
     async def dmp(self, ctx, member: discord.Member, *, message):
-        knights_role = discord.utils.get(ctx.guild.roles, name = "Knights")
+        random = discord.utils.get(ctx.guild.roles, name = "random")
 
-        if knights_role in ctx.author.roles:
+        if random in ctx.author.roles:
             try:
                 await member.send(message)
             except Exception:

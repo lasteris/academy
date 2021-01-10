@@ -95,7 +95,7 @@ Just visiting? Feel free to cruise with us at the Academy!
 Or maybe you are looking for a league.
 In our arsenal, we have four, depends on your raid preference time:
 Vipers raid around 1-2 AM GMT.
-Stars raid around 12:30 PM-2 PM GMT.
+Stars raid around 1 PM-2 PM GMT.
 Predators raid around 5-7 PM GMT.
 Eternals raid around 2-3 PM GMT.
 To see in-game code of chosen league, please type one of these commands:
