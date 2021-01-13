@@ -332,7 +332,10 @@ class JumpCog(commands.Cog):
             member = await self.bot.fetch_user(int(jumper["memberId"]))
             end_time = datetime.datetime.strptime(jumper['end'], DATE_TIME_FORMAT)
             if end_time <= now_time:
-                await member.send("Your jump cooldown has expired.\n**Have fun!**")
+                try:
+                    await member.send("Your jump cooldown has expired.\n**Have fun!**")
+                except Exception:
+                    pass
                 cds.update_one(
                     filter=jumper,
                     update={"$set": {'warned': True}})
@@ -397,6 +400,13 @@ class MessagingCog(commands.Cog):
         self.create_func_dict()
 
 
+    @commands.command(name="rm")
+    async def delete_messages(self, ctx, *, arg):
+        async for message in ctx.channel.history(limit=100):
+            if arg.lower() in message.content.lower():
+               await message.delete()
+
+
     @commands.command()
     async def dmr(self, ctx, role: discord.Role, *, message):
         random = discord.utils.get(ctx.guild.roles, name = "random")
@@ -443,7 +453,6 @@ class MessagingCog(commands.Cog):
                         message = MSG_FORMAT.format(warn["name"], warn["message"])
                         self.func_dict[warn["name"]] = Sender(channel, message, warn["interval"])
                         self.func_dict[warn["name"]].start()
-                        break
 
     async def start_some(self, ctx, arg):
         parts = arg.split(' ', 2)
