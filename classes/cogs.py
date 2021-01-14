@@ -8,6 +8,10 @@ class LeaguesCog(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
 
+    @commands.command(aliases=['reaper'])
+    async def rebel(self, ctx):
+        await ctx.send(REBEL)
+
     @commands.command()
     async def predators(self, ctx):
         await ctx.send(PREDATORS)
@@ -406,6 +410,11 @@ class MessagingCog(commands.Cog):
             if arg.lower() in message.content.lower():
                await message.delete()
 
+    @commands.command(name="rmn")
+    async def delete_messages_not(self, ctx, *, arg):
+        async for message in ctx.channel.history(limit=100):
+            if arg.lower() not in message.content.lower():
+               await message.delete()
 
     @commands.command()
     async def dmr(self, ctx, role: discord.Role, *, message):
