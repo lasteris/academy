@@ -37,6 +37,14 @@ class NamedCog(commands.Cog):
         self.bot = bot
 
     @commands.command()
+    async def haibito(self, ctx):
+        await ctx.send("**The real haitodo**", file=discord.File("gif/haibito.gif"))
+
+    @commands.command()
+    async def adotam(self, ctx):
+        await ctx.send(file=discord.File("gif/adotam.gif"))
+
+    @commands.command()
     async def batman(self, ctx):
         await ctx.send("**Who am i ?**", file=discord.File("gif/batmanson2.gif"))
 

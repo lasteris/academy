@@ -1,5 +1,6 @@
 
 import discord
+from discord.errors import Forbidden
 
 from classes.services.database import DatabaseService
 from classes.services.config import get_config
@@ -63,7 +64,10 @@ async def time(ctx):
 
 @bot.command()
 async def help(ctx):
-    await ctx.send(HELP)
+    try:
+        await ctx.author.send(HELP)
+    except Forbidden as e:
+        logger.debug(e)
 
 
 bot.run(config['token'])
