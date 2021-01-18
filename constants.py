@@ -95,10 +95,11 @@ JOIN_MESSAGE = """Hey {0.mention}, welcome to **The Academy!**
 Just visiting? Feel free to cruise with us at the Academy!
 Or maybe you are looking for a league.
 In our arsenal, we have four, depends on your raid preference time:
-Vipers raid around 1-2 AM GMT.
-Stars raid around 1 PM-2 PM GMT.
-Predators raid around 5-7 PM GMT.
-Eternals raid around 2-3 PM GMT.
+**V**ipers raid around 1-2 AM GMT. (T7)
+**P**redators raid around 5-7 PM GMT. (T7)
+**E**ternals raid around 3-4 PM GMT. (T6)
+**R**ebels raid free hits any hour (T4-T6)
+**S**tars raid around 1 PM-2 PM GMT. (T6).
 To see in-game code of chosen league, please type one of these commands:
     -predators, -stars, -vipers, eternals
 To see chats of chosen league, you need to have corresponding role.
@@ -182,15 +183,19 @@ GKETR1 | Raid 7 | 1-2 AM GMT
 ```
 ```yaml
 Academy Predator
-2EH9EW | Raid 6-7| 5-7 PM GMT
+2EH9EW | Raid 7| 5-7 PM GMT
 ```
 ```yaml
 Academy Eternals
-R66C8M | Raid 6 | 2-3 PM GMT
+R66C8M | Raid 6 | 3-4 PM GMT
 ```
 ```yaml
 Academy Stars
 P87X95 | Raid 6 | 1-2 PM GMT
+```
+```yaml
+Academy Rebels
+1R125Q | Raid 4-6 | Free Hits Anytime (untill T6 mode)
 ```
 """
 PREDATORS = '2EH9EW'
@@ -240,3 +245,8 @@ CHUNKED = "```\n{}\n```"
 #unscheduled
 INVALID_NUMBER_ARGUMENTS = "Invalid number of arguments."
 DEBUG_MESSAGE = "{0.display_name} sent message '{1.content}' to {2.mention}."
+NOT_ENOUGH_POWER = "Sorry, you have not enough power."
+DELETION_STARTED = "deletion started."
+DELETION_PROCESS = "{} messages deleted. Goal is {}"
+DELETION_STOPPED = "{} messages deleted. Stopped."
+NOT_VALID_NUMBER = "Please, try valid number."

@@ -19,15 +19,55 @@ class MessagingCog(commands.Cog):
 
     @commands.command(name="rm", aliases=["clear-in"])
     async def delete_messages(self, ctx, *, arg):
-        async for message in ctx.channel.history(limit=100):
-            if arg.lower() in message.content.lower():
-               await message.delete()
+        random = discord.utils.get(ctx.guild.roles, name = "random")
+
+        parts = arg.split(' ', 1)
+
+        try:
+            limit = int(parts[0])
+            content = parts[1].lower()
+            if random not in ctx.author.roles:
+                await ctx.send(NOT_ENOUGH_POWER)
+                return
+
+            count = 0
+            async for message in ctx.channel.history(limit=100):
+                if (content in message.content.lower()):
+                    if count == limit:
+                        break
+
+                    await message.delete()
+                    count+=1
+
+        except ValueError:
+            await ctx.send(NOT_VALID_NUMBER)
+
 
     @commands.command(name="rmn", aliases=["clear-not-in"])
     async def delete_messages_not(self, ctx, *, arg):
-        async for message in ctx.channel.history(limit=100):
-            if arg.lower() not in message.content.lower():
-               await message.delete()
+        random = discord.utils.get(ctx.guild.roles, name = "random")
+
+        if random not in ctx.author.roles:
+            await ctx.send(NOT_ENOUGH_POWER)
+            return
+
+        parts = arg.split(' ', 1)
+
+        try:
+            limit = int(parts[0])
+            content = parts[1].lower()
+            count = 0
+            async for message in ctx.channel.history(limit=100):
+                if (content not in message.content.lower()):
+                    if count == limit:
+                        break
+
+                    await message.delete()
+                    count += 1
+
+        except ValueError:
+            await ctx.send(NOT_VALID_NUMBER)
+
 
     @commands.command()
     async def dmr(self, ctx, role: discord.Role, *, message):

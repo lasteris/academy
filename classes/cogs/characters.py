@@ -12,7 +12,7 @@ class CharactersCog(commands.Cog):
     def formatarray(self, arr, type):
         return [type.format(val) for val in arr]
 
-    @commands.command()
+    @commands.command(aliases=["b"])
     async def build(self, ctx, arg):
         search = self.db_service.get_collection('builds').find_one({"name": arg.lower()})
         if search:
