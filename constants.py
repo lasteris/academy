@@ -104,6 +104,10 @@ To see in-game code of chosen league, please type one of these commands:
     -predators, -stars, -vipers, eternals
 To see chats of chosen league, you need to have corresponding role.
 So, type: -join <league name here> (-join stars)"""
+
+LEFT_SERVER = "{0.display_name} left the Academy!"
+#special for akpro
+AKPRO = "Hey, new guy arrived into server. His name - {0.name}"
 ###################################################
 
 ###################################################

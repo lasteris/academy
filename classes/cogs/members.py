@@ -14,6 +14,17 @@ class MemberCog(commands.Cog):
         welcome = discord.utils.get(member.guild.channels, name='welcome')
         await welcome.send(JOIN_MESSAGE.format(member))
 
+        akpro = await self.bot.fetch_user(793173432136368128)
+        await akpro.send(AKPRO.format(member))
+
+    @commands.Cog.listener()
+    async def on_member_remove(self, member):
+        if member.guild.id != 717021950387421225: #Academy Main Server
+            return
+
+        welcome = discord.utils.get(member.guild.channels, name='welcome')
+        await welcome.send(LEFT_SERVER.format(member))
+
 
     @commands.Cog.listener()
     async def on_member_update(self, old_user_info, new_user_info):
