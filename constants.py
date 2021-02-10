@@ -98,7 +98,7 @@ In our arsenal, we have four, depends on your raid preference time:
 **V**ipers raid around 1-2 AM GMT. (T7)
 **P**redators raid around 5-7 PM GMT. (T7)
 **E**ternals raid around 3-4 PM GMT. (T6)
-**R**ebels raid free hits any hour (T4-T6)
+**R**ebels raid free hits any hour (T6)
 **S**tars raid around 1 PM-2 PM GMT. (T6).
 To see in-game code of chosen league, please type one of these commands:
     -predators, -stars, -vipers, eternals
@@ -199,7 +199,7 @@ P87X95 | Raid 6 | 1-2 PM GMT
 ```
 ```yaml
 Academy Rebels
-1R125Q | Raid 4-6 | Free Hits Anytime (untill T6 mode)
+1R125Q | Raid 6 | Free Hits Anytime
 ```
 """
 PREDATORS = '2EH9EW'

@@ -11,7 +11,7 @@ class MemberCog(commands.Cog):
         if member.guild.id != 717021950387421225: #Academy Main Server
             return
 
-        welcome = discord.utils.get(member.guild.channels, name='welcome')
+        welcome = await self.bot.fetch_channel(717863274909139055)
         await welcome.send(JOIN_MESSAGE.format(member))
 
         akpro = await self.bot.fetch_user(793173432136368128)
@@ -22,8 +22,8 @@ class MemberCog(commands.Cog):
         if member.guild.id != 717021950387421225: #Academy Main Server
             return
 
-        welcome = discord.utils.get(member.guild.channels, name='welcome')
-        await welcome.send(LEFT_SERVER.format(member))
+        channel = await self.bot.fetch_channel(807957905235247124)
+        await channel.send(LEFT_SERVER.format(member))
 
 
     @commands.Cog.listener()

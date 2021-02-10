@@ -6,7 +6,7 @@ class LeaguesCog(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
 
-    @commands.command(aliases=['reaper'])
+    @commands.command(aliases=['rebels'])
     async def rebel(self, ctx):
         await ctx.send(REBEL)
 
