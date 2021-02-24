@@ -7,7 +7,7 @@ from classes.services.config import get_config
 from classes.services.logging import config_logger
 from classes.cogs.members import NamedCog, MemberCog
 from classes.cogs.characters import CharactersCog
-from classes.cogs.leagues import LeaguesCog
+from classes.cogs.leagues import LeaguesCog, RaidCog
 from classes.cogs.messaging import MessagingCog
 from classes.cogs.roles import RolesCog
 from classes.cogs.gears import UpgradesCog
@@ -39,6 +39,7 @@ def register_cogs():
     bot.add_cog(UpgradesCog(db_service))
     bot.add_cog(MessagingCog(bot, db_service))
     bot.add_cog(MemberCog(bot))
+    bot.add_cog(RaidCog(bot, db_service))
 
 @bot.event
 async def on_command_error(ctx, error):

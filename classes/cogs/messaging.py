@@ -19,14 +19,14 @@ class MessagingCog(commands.Cog):
 
     @commands.command(name="rm", aliases=["clear-in"])
     async def delete_messages(self, ctx, *, arg):
-        random = discord.utils.get(ctx.guild.roles, name = "random")
+        mod = discord.utils.get(ctx.guild.roles, name = "Moderator")
 
         parts = arg.split(' ', 1)
 
         try:
             limit = int(parts[0])
             content = parts[1].lower()
-            if random not in ctx.author.roles:
+            if mod not in ctx.author.roles:
                 await ctx.send(NOT_ENOUGH_POWER)
                 return
 
@@ -45,9 +45,9 @@ class MessagingCog(commands.Cog):
 
     @commands.command(name="rmn", aliases=["clear-not-in"])
     async def delete_messages_not(self, ctx, *, arg):
-        random = discord.utils.get(ctx.guild.roles, name = "random")
+        mod = discord.utils.get(ctx.guild.roles, name = "Moderator")
 
-        if random not in ctx.author.roles:
+        if mod not in ctx.author.roles:
             await ctx.send(NOT_ENOUGH_POWER)
             return
 
@@ -71,9 +71,9 @@ class MessagingCog(commands.Cog):
 
     @commands.command()
     async def dmr(self, ctx, role: discord.Role, *, message):
-        random = discord.utils.get(ctx.guild.roles, name = "random")
+        mod = discord.utils.get(ctx.guild.roles, name = "Moderator")
 
-        if random in ctx.author.roles:
+        if mod in ctx.author.roles:
             for m in role.members:
                 try:
                     await m.send(message)
@@ -84,9 +84,9 @@ class MessagingCog(commands.Cog):
 
     @commands.command()
     async def dmp(self, ctx, member: discord.Member, *, message):
-        random = discord.utils.get(ctx.guild.roles, name = "random")
+        mod = discord.utils.get(ctx.guild.roles, name = "Moderator")
 
-        if random in ctx.author.roles:
+        if mod in ctx.author.roles:
             try:
                 await member.send(message)
             except Exception:

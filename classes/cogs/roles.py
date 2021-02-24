@@ -6,7 +6,7 @@ def lookup_role(ctx, name):
     return discord.utils.get(ctx.guild.roles, name = name)
 
 def lookup_predefined_roles(ctx):
-    return [role for role in [lookup_role(ctx, name) for name in ["Predators", "Stars", "Vipers", "Jumpers", "Eternals", "Among", "Rebels", "Reapers"]] if role]
+    return [role for role in [lookup_role(ctx, name) for name in ["Predators", "Stars", "Vipers", "Jumpers", "Eternals", "Among", "Rebels", "Reapers", "TestRole"]] if role]
 
 class RolesCog(commands.Cog):
     def __init__(self, bot):
