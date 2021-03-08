@@ -8,6 +8,7 @@ HELP = """**List of Academy bot commands**
 -vipers (Academy Vipers)
 -stars (Academy Stars)
 -eternal (Academy Eternals)
+-rebels (Academy Rebels)
 ```
 \t*additional league codes (for jumps):*
 ```
@@ -96,12 +97,12 @@ Just visiting? Feel free to cruise with us at the Academy!
 Or maybe you are looking for a league.
 In our arsenal, we have four, depends on your raid preference time:
 **V**ipers raid around 1-2 AM GMT. (T7)
-**P**redators raid around 5-7 PM GMT. (T7)
-**E**ternals raid around 3-4 PM GMT. (T6)
+**P**redators raid around 6-7 PM GMT. (T7)
+**E**ternals raid around 6 PM GMT. (T6)
 **R**ebels raid free hits any hour (T6)
-**S**tars raid around 1 PM-2 PM GMT. (T6).
+**S**tars raid around 1-2 PM GMT. (T6).
 To see in-game code of chosen league, please type one of these commands:
-    -predators, -stars, -vipers, eternals
+    -predators, -stars, -vipers, eternals, rebels
 To see chats of chosen league, you need to have corresponding role.
 So, type: -join <league name here> (-join stars)"""
 
@@ -187,11 +188,11 @@ GKETR1 | Raid 7 | 1-2 AM GMT
 ```
 ```yaml
 Academy Predator
-2EH9EW | Raid 7| 5-7 PM GMT
+2EH9EW | Raid 7| 6-7 PM GMT
 ```
 ```yaml
 Academy Eternals
-R66C8M | Raid 6 | 3-4 PM GMT
+R66C8M | Raid 6 | 6 PM GMT
 ```
 ```yaml
 Academy Stars
