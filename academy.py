@@ -43,7 +43,7 @@ def register_cogs():
 
 @bot.event
 async def on_command_error(ctx, error):
-    debug_channel = bot.get_channel(782610775096164373)
+    debug_channel = bot.get_channel(784119325958864936)#bot - канал на моем сервере
     if isinstance(error, CommandNotFound):
         debug_msg = DEBUG_MESSAGE.format(
             ctx.author,
