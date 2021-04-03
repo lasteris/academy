@@ -45,6 +45,22 @@ class LeaguesCog(commands.Cog):
     async def leagues(self, ctx):
         await ctx.send(LEAGUES)
 
+    @commands.command(aliases=['arthur', 'arthur-fleck'])
+    async def fleck(self, ctx):
+        await ctx.send(FLECK)
+
+    @commands.command(aliases=['mvm2'])
+    async def mvm(self, ctx):
+        await ctx.send(MVM2)
+
+    @commands.command(aliases=['harley-squints', 'squints'])
+    async def harley(self, ctx):
+        await ctx.send(SQUINTS)
+
+    @commands.command(aliases=['immortal'])
+    async def immortals(self, ctx):
+        await ctx.send(IMMORTAL)
+
     @commands.command()
     async def newplayer(self, ctx):
         if ctx.author.guild.id != 717021950387421225: #Academy Main Server

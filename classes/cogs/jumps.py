@@ -63,13 +63,18 @@ class JumpCog(commands.Cog):
             if jumper:
                 end_time = datetime.datetime.strptime(jumper['end'], DATE_TIME_FORMAT)
                 now_time = datetime.datetime.now(datetime.timezone.utc).replace(tzinfo=None)
-                days_left = (end_time - now_time).days
-                if days_left > 0:
-                    await ctx.send(CD_STATUS.format(ctx.author, days_left))
-                else:
+                diff = end_time - now_time
+                days = diff.days
+                hours = diff.seconds//3600
+                minutes = (diff.seconds//60)%60
+                if now_time > end_time:
                     await ctx.send(CD_EXPIRED.format(ctx.author))
+                else:
+                    await ctx.send(CD_STATUS.format(ctx.author, days, hours, minutes))
 
-    @tasks.loop(hours=24)
+
+
+    @tasks.loop(hours=8)
     async def countdown(self):
         cds = self.db_service.get_collection('cooldowns')
         now_time = datetime.datetime.now(datetime.timezone.utc).replace(tzinfo=None)

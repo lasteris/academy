@@ -87,9 +87,9 @@ class NamedCog(commands.Cog):
     async def dx2(self, ctx):
         await ctx.send("**The Courageous knight for the people**")
 
-    @commands.command()
-    async def makslays(self, ctx):
-        await ctx.send("**The power of the everyone tag**", file=discord.File("gif/macslays.gif"))
+    @commands.command(aliases=['makoslays', 'slay'])
+    async def mako(self, ctx):
+        await ctx.send("**\"for the world is  the batten and death the  prize, and life the game, shed no tears for the absent, nor the fallen, for death is an inexorable ballad that plays upon your end, I MAKO HAVE COME TO APPORTION YOUR SONG, WITH MY HEART THE INSTRUMENT WHICH I EMPLOY TO SLAY**\"", file=discord.File("gif/mako.gif"))
 
     @commands.command()
     async def chrisdroid(self, ctx):
@@ -101,7 +101,7 @@ class NamedCog(commands.Cog):
 
     @commands.command()
     async def akpro(self, ctx):
-        await ctx.send("**I am ready**", file=discord.File("gif/akpro.gif"))
+        await ctx.send("**I am faster than you**", file=discord.File("gif/akpro.gif"))
 
     @commands.command()
     async def misty(self, ctx):
@@ -126,3 +126,11 @@ class NamedCog(commands.Cog):
     @commands.command()
     async def sensei(self, ctx):
         await ctx.send("**I have arrived.**", file=discord.File("gif/sensei.gif"))
+
+    @commands.command()
+    async def lunar(self, ctx):
+        await ctx.send(file=discord.File("gif/lunar.gif"))
+
+    @commands.command()
+    async def blue(self, ctx):
+        await ctx.send(file=discord.File("gif/blue.gif"))

@@ -100,7 +100,7 @@ In our arsenal, we have four, depends on your raid preference time:
 **P**redators raid around 6-7 PM GMT. (T7)
 **E**ternals raid around 6 PM GMT. (T6)
 **R**ebels raid free hits any hour (T6)
-**S**tars raid around 1-2 PM GMT. (T6).
+**S**tars raid around 1-2 PM GMT. (T7).
 To see in-game code of chosen league, please type one of these commands:
     -predators, -stars, -vipers, eternals, rebels
 To see chats of chosen league, you need to have corresponding role.
@@ -171,7 +171,7 @@ WATCH_INACTIVE = "Watching is **inactive**."
 WATCH_STARTED = "Watching **started**."
 WATCH_CANCELLED = "Watching **cancelled**."
 PARAMETER_NOT_RECOGNIZED = "Parameter not recognized."
-CD_STATUS = '{0.mention}, {1} days before your cooldown expires.'
+CD_STATUS = '{0.mention}, {1} days {2} hours {3} minutes before your cooldown expires.'
 CD_EXPIRED = '{0.mention}, cooldown expired.'
 CD_START_MESSAGE = """**cooldown** (re)started for {0.mention} at {1} AT.
 **It** will end on {2} AT.
@@ -196,7 +196,7 @@ R66C8M | Raid 6 | 6 PM GMT
 ```
 ```yaml
 Academy Stars
-P87X95 | Raid 6 | 1-2 PM GMT
+P87X95 | Raid 7 | 1-2 PM GMT
 ```
 ```yaml
 Academy Rebels
@@ -211,6 +211,10 @@ KNIGHTS = '8R5QGE'
 REVERSE = 'EFQGZ2'
 ETERNAL = 'R66C8M'
 REBEL = '1R125Q'
+FLECK = 'E24WGA'
+SQUINTS = 'THS8BC'
+MVM2 = '3E72EM'
+IMMORTAL = '36ZAC0'
 ###################################################
 
 ###################################################
