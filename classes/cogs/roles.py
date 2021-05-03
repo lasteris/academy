@@ -6,7 +6,7 @@ def lookup_role(ctx, name):
     return discord.utils.get(ctx.guild.roles, name = name)
 
 def lookup_predefined_roles(ctx):
-    return [role for role in [lookup_role(ctx, name) for name in ["Predators", "Stars", "Vipers", "Jumpers", "Eternals", "Among", "Rebels", "Reapers", "TestRole"]] if role]
+    return [role for role in [lookup_role(ctx, name) for name in ["Predators", "Stars", "Vipers", "Jumpers", "Eternals", "Among", "Rebels", "Immortals", "Academy", "Sinister"]] if role]
 
 class RolesCog(commands.Cog):
     def __init__(self, bot):
@@ -38,7 +38,7 @@ class RolesCog(commands.Cog):
         if not found:
             await ctx.send(ERROR_ON_ROLES_INTERACTION)
 
-    @commands.command()
+    @commands.command(aliases=['leave'])
     async def remove(self, ctx, *, arg):
 
         if len(arg) < 4:

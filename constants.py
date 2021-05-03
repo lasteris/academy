@@ -124,7 +124,7 @@ ROLE_ALREADY_ADDED = "{0.mention}, you have already promoted to {1.name} earlier
 ROLE_ADDED_SUCCESSFULLY = "Congratulations, {0.mention}, you have been promoted to the {1.name}. :thumbsup:"
 ROLE_ALREADY_REMOVED = "{0.mention}, you have already demoted from {1.name} earlier!"
 ROLE_REMOVED_SUCCESSFULLY = "Congratulations, {0.mention}, you have been demoted from {1.name}. :thumbsup:"
-ERROR_ON_ROLES_INTERACTION = '**Warning!**\nYou should interact only with these roles:\npredators, vipers, stars, eternals, jumpers, rebels, among us!'
+ERROR_ON_ROLES_INTERACTION = '**Warning!**\nYou should interact only with these roles:\npredators, vipers, stars, eternals, jumpers, rebels, academy, sinister, among us!'
 LEAGUE_RAID_WARNING = """Hello, {0.name}
 
 Since you joined {1.name}, you need to know how we attack raids.
@@ -173,10 +173,15 @@ WATCH_CANCELLED = "Watching **cancelled**."
 PARAMETER_NOT_RECOGNIZED = "Parameter not recognized."
 CD_STATUS = '{0.mention}, {1} days {2} hours {3} minutes before your cooldown expires.'
 CD_EXPIRED = '{0.mention}, cooldown expired.'
-CD_START_MESSAGE = """**cooldown** (re)started for {0.mention} at {1} AT.
+CD_START_MESSAGE = """**cooldown** started for {0.mention} at {1} AT.
 **It** will end on {2} AT.
 **You** *will recieve a warning*.
 """
+CD_RESTART_MESSAGE = """**cooldown** restarted for {0.mention} at {1} AT.
+**It** will end on {2} AT.
+**You** *will recieve a warning*.
+"""
+NO_CD = "I am sorry, {0.mention}. I can't see any cooldown records for you in my database."
 ###################################################
 
 ###################################################

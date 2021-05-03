@@ -43,6 +43,29 @@ class JumpCog(commands.Cog):
         end_str = end_time.strftime(DATE_TIME_FORMAT)
 
         if not args:
+            jumper = cds.find_one({'memberId': jumper_id_str})
+            if jumper:
+                end_time = datetime.datetime.strptime(jumper['end'], DATE_TIME_FORMAT)
+                now_time = datetime.datetime.now(datetime.timezone.utc).replace(tzinfo=None)
+                diff = end_time - now_time
+                days = diff.days
+                hours = diff.seconds//3600
+                minutes = (diff.seconds//60)%60
+                if now_time > end_time:
+                    await ctx.send(CD_EXPIRED.format(ctx.author))
+                else:
+                    await ctx.send(CD_STATUS.format(ctx.author, days, hours, minutes))
+            else:
+                cds.insert_one({
+                        'memberId': jumper_id_str,
+                        'start': cur_str,
+                        'end': end_str,
+                        'name': ctx.author.name,
+                        'warned': False
+                    })
+                await ctx.send(CD_START_MESSAGE.format(ctx.author, cur_str, end_str))
+
+        elif args[0] == 'restart':
             cds.update_one(
                 filter={'memberId': jumper_id_str},
                 update={
@@ -50,13 +73,12 @@ class JumpCog(commands.Cog):
                         'memberId': jumper_id_str,
                         'start': cur_str,
                         'end': end_str,
-                        'name': ctx.author.display_name,
+                        'name': ctx.author.name,
                         'warned': False
                     }
                 },
                 upsert=True)
-
-            await ctx.send(CD_START_MESSAGE.format(ctx.author, cur_str, end_str))
+            await ctx.send(CD_RESTART_MESSAGE.format(ctx.author, cur_str, end_str))
 
         elif args[0] == 'status':
             jumper = cds.find_one({'memberId': jumper_id_str})
@@ -71,7 +93,8 @@ class JumpCog(commands.Cog):
                     await ctx.send(CD_EXPIRED.format(ctx.author))
                 else:
                     await ctx.send(CD_STATUS.format(ctx.author, days, hours, minutes))
-
+            else:
+                await ctx.send(NO_CD.format(ctx.author))
 
 
     @tasks.loop(hours=8)
