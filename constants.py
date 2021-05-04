@@ -172,16 +172,22 @@ WATCH_STARTED = "Watching **started**."
 WATCH_CANCELLED = "Watching **cancelled**."
 PARAMETER_NOT_RECOGNIZED = "Parameter not recognized."
 CD_STATUS = '{0.mention}, {1} days {2} hours {3} minutes before your cooldown expires.'
-CD_EXPIRED = '{0.mention}, cooldown expired.'
-CD_START_MESSAGE = """**cooldown** started for {0.mention} at {1} AT.
-**It** will end on {2} AT.
-**You** *will recieve a warning*.
-"""
-CD_RESTART_MESSAGE = """**cooldown** restarted for {0.mention} at {1} AT.
+CD_EXPIRED = '{0.mention}, congrats! your cooldown has expired.'
+CD_DELETED = '{0.mention}, your cooldown successfully stopped.'
+CD_START_MESSAGE = """New **cooldown** started for {0.mention} at {1} AT.
 **It** will end on {2} AT.
 **You** *will recieve a warning*.
 """
 NO_CD = "I am sorry, {0.mention}. I can't see any cooldown records for you in my database."
+DAYS = 21
+CD_INFO = """
+                wrong usage of command '-cd'
+                syntax: -cd [OPTION]
+                where option can be from list:
+                 - start
+                 - status
+                 - stop
+            """
 ###################################################
 
 ###################################################

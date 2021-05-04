@@ -31,70 +31,67 @@ class JumpCog(commands.Cog):
             await ctx.send(PARAMETER_NOT_RECOGNIZED)
 
 
-    @commands.command(name='jump-cd')
+    @commands.command(name='cd', aliases=['jump-cd'])
     async def cooldown(self, ctx, *args):
-        cur_time = datetime.datetime.now(datetime.timezone.utc)
-        end_time = cur_time + timedelta(days=21)
-
         cds = self.db_service.get_collection('cooldowns')
 
-        jumper_id_str = str(ctx.author.id)
-        cur_str = cur_time.strftime(DATE_TIME_FORMAT)
-        end_str = end_time.strftime(DATE_TIME_FORMAT)
-
         if not args:
-            jumper = cds.find_one({'memberId': jumper_id_str})
-            if jumper:
-                end_time = datetime.datetime.strptime(jumper['end'], DATE_TIME_FORMAT)
-                now_time = datetime.datetime.now(datetime.timezone.utc).replace(tzinfo=None)
-                diff = end_time - now_time
-                days = diff.days
-                hours = diff.seconds//3600
-                minutes = (diff.seconds//60)%60
-                if now_time > end_time:
-                    await ctx.send(CD_EXPIRED.format(ctx.author))
-                else:
-                    await ctx.send(CD_STATUS.format(ctx.author, days, hours, minutes))
-            else:
-                cds.insert_one({
-                        'memberId': jumper_id_str,
-                        'start': cur_str,
-                        'end': end_str,
-                        'name': ctx.author.name,
-                        'warned': False
-                    })
-                await ctx.send(CD_START_MESSAGE.format(ctx.author, cur_str, end_str))
+            await ctx.send(CD_INFO)
+        elif args[0] == 'status':
+            await self.show(cds, ctx)
+        elif args[0] == 'start':
+            await self.create(cds, ctx)
+        elif args[0] == 'stop':
+            await self.stop(cds, ctx)
 
-        elif args[0] == 'restart':
-            cds.update_one(
-                filter={'memberId': jumper_id_str},
+
+    async def create(self, cds, ctx):
+        """ Create cooldown record """
+        start = datetime.datetime.now(datetime.timezone.utc)
+        end = start + timedelta(days=DAYS)
+        cds.update_one(
+                filter={'memberId': ctx.author.id},
                 update={
                     "$set": {
-                        'memberId': jumper_id_str,
-                        'start': cur_str,
-                        'end': end_str,
+                        'memberId': ctx.author.id,
+                        'start': start.strftime(DATE_TIME_FORMAT),
+                        'end': end.strftime(DATE_TIME_FORMAT),
                         'name': ctx.author.name,
                         'warned': False
                     }
                 },
                 upsert=True)
-            await ctx.send(CD_RESTART_MESSAGE.format(ctx.author, cur_str, end_str))
+        await ctx.send(CD_START_MESSAGE.format(ctx.author, start, end))
 
-        elif args[0] == 'status':
-            jumper = cds.find_one({'memberId': jumper_id_str})
-            if jumper:
-                end_time = datetime.datetime.strptime(jumper['end'], DATE_TIME_FORMAT)
-                now_time = datetime.datetime.now(datetime.timezone.utc).replace(tzinfo=None)
-                diff = end_time - now_time
-                days = diff.days
-                hours = diff.seconds//3600
-                minutes = (diff.seconds//60)%60
-                if now_time > end_time:
-                    await ctx.send(CD_EXPIRED.format(ctx.author))
-                else:
-                    await ctx.send(CD_STATUS.format(ctx.author, days, hours, minutes))
+
+    async def show(self, cds, ctx):
+        """ Status of cooldown """
+        jumper = cds.find_one({'memberId': ctx.author.id})
+
+        if not jumper:
+            await ctx.send(NO_CD.format(ctx.author))
+        else:
+            now = datetime.datetime.now(datetime.timezone.utc).replace(tzinfo=None)
+            end = datetime.datetime.strptime(jumper['end'], DATE_TIME_FORMAT)
+            diff = end - now
+            days = diff.days
+            hours = diff.seconds//3600
+            minutes = (diff.seconds//60)%60
+            if now > end:
+                await ctx.send(CD_EXPIRED.format(ctx.author))
             else:
-                await ctx.send(NO_CD.format(ctx.author))
+                await ctx.send(CD_STATUS.format(ctx.author, days, hours, minutes))
+
+
+    async def stop(self, cds, ctx):
+        """ Stop existed cooldown"""
+        jumper = cds.find_one({'memberId': ctx.author.id})
+
+        if not jumper:
+            await ctx.send(NO_CD.format(ctx.author))
+        else:
+            cds.delete_one(jumper)
+            await ctx.send(CD_DELETED.format(ctx.author))
 
 
     @tasks.loop(hours=8)
@@ -106,7 +103,7 @@ class JumpCog(commands.Cog):
             end_time = datetime.datetime.strptime(jumper['end'], DATE_TIME_FORMAT)
             if end_time <= now_time:
                 try:
-                    await member.send("Your jump cooldown has expired.\n**Have fun!**")
+                    await member.send(CD_EXPIRED)
                 except Exception:
                     pass
                 cds.update_one(

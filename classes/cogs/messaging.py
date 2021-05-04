@@ -105,7 +105,7 @@ class MessagingCog(commands.Cog):
         else:
             await self.start_some(ctx, arg)
 
-    @commands.command(aliases=["cd"])
+    @commands.command()
     async def countdown(self, ctx, *, arg):
         """This Function is under hard development right now"""
 
