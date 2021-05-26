@@ -4,11 +4,12 @@ HELP = """**List of Academy bot commands**
 *commands to see some league codes(to find them in game):*
 \t*major league codes:*
 ```
--predators (Academy Predator)
 -vipers (Academy Vipers)
--stars (Academy Stars)
+-immortals (Academy Immortal)
+-predators (Academy Predator)
 -eternal (Academy Eternals)
 -rebels (Academy Rebels)
+-stars (Academy Stars)
 ```
 \t*additional league codes (for jumps):*
 ```
@@ -97,6 +98,7 @@ Just visiting? Feel free to cruise with us at the Academy!
 Or maybe you are looking for a league.
 In our arsenal, we have four, depends on your raid preference time:
 **V**ipers raid around 1-2 AM GMT. (T7)
+**I**mmortals raid free hits any hour (T6)
 **P**redators raid around 6-7 PM GMT. (T7)
 **E**ternals raid around 6 PM GMT. (T6)
 **R**ebels raid free hits any hour (T6)
@@ -212,6 +214,10 @@ P87X95 | Raid 7 | 1-2 PM GMT
 ```yaml
 Academy Rebels
 1R125Q | Raid 6 | Free Hits Anytime
+```
+```yaml
+Academy Immortals
+36ZAC0 | Raid 6 | Free Hits Anytime
 ```
 """
 PREDATORS = '2EH9EW'
