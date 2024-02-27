@@ -96,17 +96,11 @@ NEW_PLAYER = """1. Select your league in {0.mention}.
 JOIN_MESSAGE = """Hey {0.mention}, welcome to **The Academy!**
 Just visiting? Feel free to cruise with us at the Academy!
 Or maybe you are looking for a league.
-In our arsenal, we have four, depends on your raid preference time:
-**V**ipers raid around 1-2 AM GMT. (T7)
-**I**mmortals raid free hits any hour (T6)
-**P**redators raid around 6-7 PM GMT. (T7)
-**E**ternals raid around 6 PM GMT. (T6)
-**R**ebels raid free hits any hour (T6)
-**S**tars raid around 1-2 PM GMT. (T7).
-To see in-game code of chosen league, please type one of these commands:
-    -predators, -stars, -vipers, eternals, rebels
-To see chats of chosen league, you need to have corresponding role.
-So, type: -join <league name here> (-join stars)"""
+**V**ipers raid around 1-2 AM GMT. (T10)
+To see in-game code of Vipers, please type the command:
+    -vipers
+To see chat of Viper, you need to have corresponding role.
+So, type: -join vipers"""
 
 LEFT_SERVER = "{0.display_name} left the Academy!"
 #special for akpro
